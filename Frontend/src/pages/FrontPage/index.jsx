@@ -7,5 +7,6 @@ export function FrontPage() {
         <>
         <h1>Welcome to StudentHub</h1>
         </>
+        
     )
 }
