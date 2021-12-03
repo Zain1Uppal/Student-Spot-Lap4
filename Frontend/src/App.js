@@ -4,7 +4,7 @@ import { Header, Footer } from './layout/index';
 import { MainFeed, Profile, Categories, FrontPage } from './pages/index';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
-import Navbar from './layout/Navbar.js/navbar';
+import Navbar from './layout/Navbar';
 import Login from './views/auth/login';
 import Signup from './views/auth/Signup';
 import Logout from './views/auth/Logout'
