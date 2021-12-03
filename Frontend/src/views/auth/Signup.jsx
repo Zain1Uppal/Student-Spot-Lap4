@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { BackButton } from '../../components';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -49,8 +51,9 @@ const Signup = () => {
 
   return (
     <div>
-      {loading === false && <h1>Signup</h1>}
+      {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>Sign Up</div>}
       {errors === true && <h2>Cannot signup with provided credentials</h2>}
+      <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
       <form onSubmit={onSubmit}>
         <label htmlFor='email'>Email address:</label> <br />
         <input
@@ -81,6 +84,13 @@ const Signup = () => {
         <br />
         <input type='submit' value='Signup' />
       </form>
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
+        <Link to='/login'><div>Log In</div></Link>
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
+        <Link to='/'><div>Home</div></Link>
+      </div>
     </div>
   );
 };

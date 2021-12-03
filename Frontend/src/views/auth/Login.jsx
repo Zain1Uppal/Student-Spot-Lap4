@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BackButton } from '../../components';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -71,8 +72,11 @@ const Login = () => {
           <br />
           <input type='submit' value='Login' />
         </form>
-        </div>
+        </div>   
       )}
+      <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
+      <BackButton className="backButton" />
+      </div>
     </div>
   );
 };
