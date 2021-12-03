@@ -1,0 +1,5 @@
+nav {
+    width: 100vw;
+    justify-content: space-evenly;
+    display: flex;
+}
