@@ -7,12 +7,11 @@ import './style.css'
 function App() {
     return (
         <>
-            <Header />
             <Switch>
                 <Route exact path="/"><FrontPage/></Route>
-                <Route path="/MainFeed"><MainFeed/></Route>
-                <Route path="/Profile"><Profile /></Route>
-                <Route path="/Categories"><Categories /></Route>
+                <Route path="/MainFeed"><MainFeed/> <Header /></Route>
+                <Route path="/Profile"><Profile /> <Header /></Route>
+                <Route path="/Categories"><Categories /> <Header /></Route>
             </Switch>
             <Footer />
         </>
