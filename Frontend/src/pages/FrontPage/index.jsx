@@ -5,7 +5,9 @@ export function FrontPage() {
 
     return(
         <>
-        <h1>Welcome to StudentHub</h1>
+        <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px'}}>
+            <div>StudentHub</div>
+        </div>
         </>
         
     )

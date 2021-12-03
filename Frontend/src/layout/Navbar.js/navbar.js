@@ -26,12 +26,13 @@ const Navbar = () => {
         ) : (
           <Fragment>
             {' '}
-            <li>
-              <Link to='/login'>Log In</Link>
-            </li>
-            <li>
-              <Link to='/signup'>Sign Up</Link>
-            </li>
+            <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
+            <Link to='/login'><div>Log In</div></Link>
+            </div>
+
+            <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
+            <Link to='/signup'><div>Sign Up</div></Link>
+            </div>
           </Fragment>
         )}
       </ul>

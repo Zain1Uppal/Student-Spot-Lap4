@@ -22,7 +22,7 @@ const Login = () => {
       password: password
     };
 
-    fetch('http://127.0.0.1:8000/api/v1/users/auth/login/', {
+    fetch('http://127.0.0.1:8080/api/v1/users/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -46,9 +46,10 @@ const Login = () => {
 
   return (
     <div>
-      {loading === false && <h1>Login</h1>}
+      {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>Login</div>}
       {errors === true && <h2>Oops! There are some issues logging in with provided credentials</h2>}
       {loading === false && (
+        <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
         <form onSubmit={onSubmit}>
           <label htmlFor='email'>Email address:</label> <br />
           <input
@@ -70,6 +71,7 @@ const Login = () => {
           <br />
           <input type='submit' value='Login' />
         </form>
+        </div>
       )}
     </div>
   );
