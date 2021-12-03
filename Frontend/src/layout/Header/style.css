@@ -15,6 +15,7 @@ nav {
     display: flex;
     margin: auto 0;
     text-decoration: none;
+    color: white;
 }
 
 .nav-link {
@@ -56,3 +57,4 @@ nav button:hover {
 .logo-nav {
     margin-top: 10px;
 }
+

@@ -8,7 +8,7 @@ export function MainFeed() {
         
         <main>
             <Header />
-            <div class="content">
+            <div className="content">
                 <h1>MainFeed page</h1>
             </div>
         </main>

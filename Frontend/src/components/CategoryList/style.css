@@ -1,0 +1,39 @@
+.group-container {
+    display: grid;
+    justify-content: center;
+    margin: auto;
+    margin-top: 70px;
+    width: 85vw;
+}
+
+
+/* .group-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 70%;
+} */
+
+.group-row{
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    height: auto;
+    background-color: darkblue;
+}
+
+
+
+.group-img {
+    display: block;
+    max-width: 70px;
+    height: 70px;
+    margin: auto;
+
+}
+
+.group-name {
+    font-size: 1.3rem;
+    margin: auto;
+}

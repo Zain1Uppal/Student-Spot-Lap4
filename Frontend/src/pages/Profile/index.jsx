@@ -8,7 +8,7 @@ export function Profile() {
     return (
         <main>
             <Header />
-            <div class="content">
+            <div className="content">
                 <h1>Profile page</h1>
             </div>
         </main>
