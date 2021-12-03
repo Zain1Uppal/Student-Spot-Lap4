@@ -27,14 +27,10 @@ const Navbar = () => {
           <Fragment style={{display: 'flex', justifyContent: 'center'}}>
             {' '}
             <div class="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
-            {/* <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}> */}
             <Link to='/login'> <button type="button" class="btn btn-secondary btn-lg btn-block" style={{padding:'10px', margin:'10px'}}>Log In</button></Link>
-            {/* </div> */}
-
-            {/* <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}> */}
             <Link to='/signup'><button type="button" class="btn btn-primary btn-lg btn-block" style={{padding:'10px', margin:'10px'}}>Sign Up</button></Link>
             </div>
-            {/* </div> */}
+        
           </Fragment>
         )}
       </ul>

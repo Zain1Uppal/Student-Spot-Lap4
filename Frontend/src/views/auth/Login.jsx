@@ -78,13 +78,17 @@ const Login = () => {
             onChange={e => setPassword(e.target.value)}
           />{' '}
           <br />
-          <input type='submit' value='Login' />
+          <div class="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
+          <input class="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} />
+          {/* <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}> */}
+      <BackButton className="backButton" />
+  
+          </div>
         </form>
         </div>   
       )}
-      <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
-      <BackButton className="backButton" />
-      </div>
+      
+      
     </div>
   );
 };

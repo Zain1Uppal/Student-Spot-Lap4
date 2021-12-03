@@ -58,7 +58,7 @@ const Signup = () => {
         <div>StudentHub</div>
     </div>
       {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>Sign Up</div>}
-      {errors === true && <h2>Cannot signup with provided credentials</h2>}
+      {errors === true && <h2>Oops! You cannot signup with provided credentials</h2>}
       <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
       <form onSubmit={onSubmit}>
         <label htmlFor='email'>Email address:</label> <br />
