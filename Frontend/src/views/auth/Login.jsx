@@ -52,7 +52,7 @@ const Login = () => {
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
     <img style={{height: '100px', width: '120px'}}src={logo} />
     </div>
-    <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px'}}>
+    <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
         <div>StudentHub</div>
     </div>
       {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>Login</div>}
@@ -80,8 +80,7 @@ const Login = () => {
           <br />
           <div class="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
           <input class="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} />
-          {/* <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}> */}
-      <BackButton className="backButton" />
+          <BackButton className="backButton" />
   
           </div>
         </form>

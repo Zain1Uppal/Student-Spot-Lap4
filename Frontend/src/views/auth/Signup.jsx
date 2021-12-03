@@ -54,7 +54,7 @@ const Signup = () => {
       <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
     <img style={{height: '100px', width: '120px'}}src={logo} />
     </div>
-    <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px'}}>
+    <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
         <div>StudentHub</div>
     </div>
       {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>Sign Up</div>}
