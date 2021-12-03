@@ -1,11 +1,15 @@
 import React from 'react';
+import { Header, Footer } from './layout/index';
 import './style.css'
 
 function App() {
     return (
         <>
-            <h1>Welcome to Student</h1>
+            <Header/>
+            <h1>Welcome to StudentHub</h1>
+            <Footer/>
         </>
+
 
     )
 }
