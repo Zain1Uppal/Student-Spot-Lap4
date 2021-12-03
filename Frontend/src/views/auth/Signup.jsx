@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BackButton } from '../../components';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -11,7 +10,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/dashboard');
+      window.location.replace('http://localhost:8080/dashboard');
     } else {
       setLoading(false);
     }
@@ -26,7 +25,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch('http://127.0.0.1:8000/api/v1/users/auth/register/', {
+    fetch('http://localhost:8000/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -38,7 +37,7 @@ const Signup = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:3000/dashboard');
+          window.location.replace('http://localhost:8080/dashboard');
         } else {
           setEmail('');
           setPassword1('');

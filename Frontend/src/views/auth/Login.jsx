@@ -23,7 +23,7 @@ const Login = () => {
       password: password
     };
 
-    fetch('http://127.0.0.1:8080/api/v1/users/auth/login/', {
+    fetch('http://localhost:8000/users/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
