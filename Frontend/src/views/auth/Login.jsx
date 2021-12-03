@@ -8,7 +8,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/dashboard');
+      window.location.replace('http://localhost:8080/dashboard');
     } else {
       setLoading(false);
     }
@@ -34,7 +34,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:3000/dashboard');
+          window.location.replace('http://localhost:8080/dashboard');
         } else {
           setEmail('');
           setPassword('');
@@ -47,7 +47,7 @@ const Login = () => {
   return (
     <div>
       {loading === false && <h1>Login</h1>}
-      {errors === true && <h2>Cannot log in with provided credentials</h2>}
+      {errors === true && <h2>Oops! There are some issues logging in with provided credentials</h2>}
       {loading === false && (
         <form onSubmit={onSubmit}>
           <label htmlFor='email'>Email address:</label> <br />
