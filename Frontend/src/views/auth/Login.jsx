@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BackButton } from '../../components';
+import logo from '../../img/logo.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -46,7 +47,14 @@ const Login = () => {
   };
 
   return (
+      
     <div>
+    <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
+    <img style={{height: '100px', width: '120px'}}src={logo} />
+    </div>
+    <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px'}}>
+        <div>StudentHub</div>
+    </div>
       {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>Login</div>}
       {errors === true && <h2>Oops! There are some issues logging in with provided credentials</h2>}
       {loading === false && (
