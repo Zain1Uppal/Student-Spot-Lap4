@@ -12,4 +12,5 @@ class CustomUserAdmin(UserAdmin):
     model = User
     list_display = ['username']
 
-admin.site.register(User, CustomUserAdmin)
+# admin.site.register(User, CustomUserAdmin)
+admin.site.register(User)
