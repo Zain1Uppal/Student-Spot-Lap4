@@ -1,12 +1,16 @@
 import React from 'react';
+import { Header } from '../../layout/index';
 import './style.css';
 
 
 export function Profile() {
     
     return (
-        <>
-            <h1>Profile page</h1>
-        </>
+        <main>
+            <Header />
+            <div class="content">
+                <h1>Profile page</h1>
+            </div>
+        </main>
     )
 }

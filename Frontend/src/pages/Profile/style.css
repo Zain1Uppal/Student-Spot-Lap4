@@ -3,3 +3,7 @@ body {
     height: 100vh;
     background-color: white;
 }
+
+main {
+    margin-top: 20px;
+}

@@ -4,17 +4,18 @@ import './style.css';
 
 export function Header() {
     return(
-        <>
-            
+        <header>
+            <p class="logo-nav">LOGO</p>
+
             <nav>
-                <p>LOGO (ptag for now)</p>
-                <NavLink exact to="/">Front</NavLink>
-                <NavLink to="/MainFeed">Feed</NavLink>
-                <NavLink to="/Profile">Profile</NavLink>
-                <NavLink to="/Categories">Groups</NavLink>
+                <NavLink class="nav-link" to="/MainFeed">Feed</NavLink>
+                <NavLink class="nav-link" to="/Profile">Profile</NavLink>
+                <NavLink class="nav-link" to="/Categories">Groups</NavLink>
+
+                <button>Log out</button>
 
             </nav>
             
-        </>
+        </header>
     )
 }
