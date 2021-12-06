@@ -8,6 +8,7 @@ import Navbar from './layout/Navbar';
 import Login from './views/auth/login';
 import Signup from './views/auth/Signup';
 import Logout from './views/auth/Logout'
+import { Dashboard } from './views/app/Dashboard'
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/MainFeed"><MainFeed/> <Header /></Route>
                 <Route path="/Profile"><Profile /> <Header /></Route>
                 <Route path="/Categories"><Categories /> <Header /></Route>
+                <Route path="/dashboard"><Dashboard /></Route>
             </Switch>
             <Footer />
         </>
