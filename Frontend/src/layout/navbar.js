@@ -1,3 +1,4 @@
+import { auto } from '@popperjs/core';
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -28,8 +29,8 @@ const Navbar = () => {
             {' '}
             {/* style={{display: 'flex', justifyContent: 'center'}} */}
             <div className="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
-            <Link to='/login'> <button type="button" className="btn btn-secondary btn-lg btn-block" style={{padding:'10px', margin:'10px'}}>Log In</button></Link>
-            <Link to='/signup'><button type="button" className="btn btn-primary btn-lg btn-block" style={{padding:'10px', margin:'10px'}}>Sign Up</button></Link>
+          <Link to='/login'> <button type="button" className="btn btn-secondary btn-lg btn-block" id='loginButton' style={{padding:'10px', margin:'10px', height: 'auto', width: 'auto' }}>Log In</button></Link>
+            <Link to='/signup'><button type="button" className="btn btn-primary btn-lg btn-block" id='signUpButton' style={{padding:'10px', margin:'10px', height: 'auto', width: 'auto' }}>Sign Up</button></Link>
             </div>
         
           </Fragment>
