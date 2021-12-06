@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Footer } from './layout/index';
-import { MainFeed, Profile, Categories, FrontPage, Category } from './pages/index';
+import { MainFeed, Profile, Categories, FrontPage } from './pages/index';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 import Navbar from './layout/Navbar';
@@ -18,10 +18,9 @@ function App() {
                 <Route path='/login' component={Login} exact />
                 <Route path='/signup' component={Signup} exact />
                 <Route path='/logout' component={Logout} exact />
-                <Route path="/MainFeed"><MainFeed/> <Header /></Route>
+                <Route path="/MainFeed"><MainFeed/></Route>
                 <Route path="/Profile"><Profile /></Route>
-                <Route path="/Categories"><Categories /> <Header /></Route>
-                <Route path="/Category"><Category /></Route>
+                <Route path="/Categories"><Categories /></Route>
                 <Route path="/dashboard"><Dashboard /></Route>
             </Switch>
             {/* <Footer /> */}
