@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.post_index, name='posts-index'),
     path('new/', views.post_create, name='posts-create'),
     path('users/<int:user_id>/', views.show_by_user, name='user-posts'),
+    path('users/<int:user_id>/following', views.show_following_posts, name="user-feed"),
     path('categories/<int:category_id>/', views.show_by_category, name='category-posts'),
     path('comments/', views.comment_index, name='comments-index'),
     path('comments/new/', views.comment_create, name='comments-create'),
