@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Header } from '../../layout';
+import { MainFeed } from '..';
 // import '@popperjs/core';
 // import {default as email} from '../../views/auth/Signup';
 class Profile extends React.Component {
@@ -8,6 +10,9 @@ class Profile extends React.Component {
   render() {
    
     return (
+    <>
+    <Header />
+   
     <div className="page-holder bg-gray-100">
         <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
               <div className="page-header mb-4">
@@ -194,7 +199,7 @@ class Profile extends React.Component {
         </div>
        
       </div>
-      
+      </>
    
 )
 };
