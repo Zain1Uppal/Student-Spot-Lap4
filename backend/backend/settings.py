@@ -89,8 +89,6 @@ import datetime
 
 TOKEN_TTL = datetime.timedelta(days=7)
 
-AUTH_USER_MODEL = 'users.User'
-
 REST_AUTH_TOKEN_MODEL = "users.models.AuthToken"
 REST_AUTH_TOKEN_CREATOR = "users.utils.custom_create_token"
 
