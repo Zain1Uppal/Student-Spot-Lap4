@@ -18,7 +18,7 @@ class User(AbstractUser):
 class AuthToken(Token):
     key = models.CharField("Key", max_length=40, db_index=True, unique=True)
     user = models.ForeignKey(
-        User,
+        settings.AUTH_USER_MODEL,
         related_name="auth_token",
         on_delete=models.CASCADE,
         verbose_name="User",

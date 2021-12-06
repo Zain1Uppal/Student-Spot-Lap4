@@ -77,6 +77,8 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
+AUTH_USER_MODEL = 'users.User'
+
 SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
@@ -101,7 +103,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-APPEND_SLASH = False
+# APPEND_SLASH = False
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -177,5 +179,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-AUTH_USER_MODEL = 'users.User'
