@@ -26,7 +26,7 @@ const Login = () => {
       password: password
     };
 
-    fetch('http://localhost:8080/auth/', {
+    fetch('http://localhost:8000/users/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
