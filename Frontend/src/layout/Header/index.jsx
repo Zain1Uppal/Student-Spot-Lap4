@@ -1,11 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { HeaderSearch } from '../../components/index';
 import './style.css';
 
 export function Header() {
     return(
         <header>
             <p className="logo-nav">LOGO</p>
+            <HeaderSearch />
 
             <nav>
                 <NavLink className="nav-link" to="/MainFeed">Feed</NavLink>
