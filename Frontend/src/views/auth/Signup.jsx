@@ -57,9 +57,9 @@ const Signup = () => {
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
         <div>StudentHub</div>
     </div>
-      {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>Sign Up</div>}
+      {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color:'white', margin: '10px'}}>Sign Up</div>}
       {errors === true && <h2>Oops! You cannot signup with provided credentials</h2>}
-      <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
+      <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white'}}>
       <form onSubmit={onSubmit}>
         <label htmlFor='email'>Email address:</label> <br />
         <input
@@ -88,16 +88,16 @@ const Signup = () => {
           required
         />{' '}
         <br />
-        <input type='submit' value='Signup' />
+        <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', margin: '10px'}}>
+        <input class="btn btn-primary" style={{margin: '10px'}} type="submit" value='Sign Up' />
+        <Link to='/login' class="btn btn-secondary" style={{margin: '10px'}}><div>Log In</div></Link>
+        </div>
       </form>
       </div>
       <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
-        <Link to='/login'><div>Log In</div></Link>
+        <Link to='/' input class="btn btn-dark" ><div>Home</div></Link>
       </div>
-      <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
-        <Link to='/'><div>Home</div></Link>
       </div>
-    </div>
   );
 };
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BackButton } from '../../components';
+import { Redirect } from 'react-router-dom';
+import { MainFeed } from '../../pages';
 import logo from '../../img/logo.png';
 
 const Login = () => {
@@ -37,6 +39,7 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           window.location.replace('http://localhost:8080/dashboard');
+          return <Redirect to={ MainFeed } />
         } else {
           setEmail('');
           setPassword('');
@@ -55,10 +58,10 @@ const Login = () => {
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
         <div>StudentHub</div>
     </div>
-      {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>Login</div>}
+      {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white', margin: '10px'}}>Login</div>}
       {errors === true && <h2>Oops! There are some issues logging in with provided credentials</h2>}
       {loading === false && (
-        <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
+        <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white'}}>
         <form onSubmit={onSubmit}>
           <label htmlFor='email'>Email address:</label> <br />
           <input

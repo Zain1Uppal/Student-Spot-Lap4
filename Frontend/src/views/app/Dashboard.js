@@ -26,7 +26,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      {loading === false && (
+      {loading === false && (  
         <Fragment>
           <h1>Dashboard</h1>
           <h2>Hello {userEmail}!</h2>
