@@ -1,470 +1,202 @@
 import React from 'react';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {default as email} from '../../views/auth/Signup';
 class Profile extends React.Component {
   
  
   render() {
    
     return (
-     
-        <div className="maincontainer">
-        <div className="container">
-            <div className="profile-page tx-13">
-                <div className="row">
-                    <div className="col-12 grid-margin">
-                        <div className="profile-header">
-                            <div className="cover">
-                                <div className="gray-shade"></div>
-                            
-                                <div className="cover-body d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <img className="profile-pic" src="https://therichpost.com/wp-content/uploads/2021/03/avatar6.png" alt="profile" />
-                                        <span className="profile-name">Test Page</span>
-                                    </div>
-                                    <div className="d-none d-md-block">
-                                        <button className="btn btn-primary btn-icon-text btn-edit-profile">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-edit btn-icon-prepend">
-                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                            </svg> Edit profile
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="header-links">
-                                <ul className="links d-flex align-items-center mt-3 mt-md-0">
-                                    <li className="header-link-item d-flex align-items-center active">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-columns mr-1 icon-md">
-                                            <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"></path>
-                                        </svg>
-                                        <a className="pt-1px d-none d-md-block" href="#">Timeline</a>
-                                    </li>
-                                    <li className="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-user mr-1 icon-md">
-                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                            <circle cx="12" cy="7" r="4"></circle>
-                                        </svg>
-                                        <a className="pt-1px d-none d-md-block" href="#">About</a>
-                                    </li>
-                                    <li className="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-users mr-1 icon-md">
-                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                            <circle cx="9" cy="7" r="4"></circle>
-                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                        </svg>
-                                        <a className="pt-1px d-none d-md-block" href="#">Friends <span className="text-muted tx-12">3,765</span></a>
-                                    </li>
-                                    <li className="header-link-item ml-3 pl-3 border-left d-flex align-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-image mr-1 icon-md">
-                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                            <polyline points="21 15 16 10 5 21"></polyline>
-                                        </svg>
-                                        <a className="pt-1px d-none d-md-block" href="#">Photos</a>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    
+    <div className="page-holder bg-gray-100">
+        <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
+              <div className="page-header mb-4">
+                <h1 className="page-heading">{name}'s Profile</h1>
+              </div>
+          <section>
+            <div className="row">
+              <div className="col-lg-4">
+                <div className="card card-profile mb-4">
+                  <div className="card-header" style={{backgroundImage: "url(https://therichpost.com/wp-content/uploads/2021/05/bootstrap5-carousel-slider-img1.jpg)"}}> </div>
+                  <div className="card-body text-center"> <img className="card-profile-img" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="profile img"/>
+                    <h3 className="mb-3">{name} Name here</h3>
+                    <p className="mb-4">University Course Here</p>
+                    <button className="btn btn-outline-dark btn-sm"><span className="fab fa-twitter"></span> Follow</button>
+                  </div>
                 </div>
-                <div className="row profile-body">
-                   
-                    <div className="d-none d-md-block col-md-4 col-xl-3 left-wrapper">
-                        <div className="card rounded">
-                            <div className="card-body">
-                                <div className="d-flex align-items-center justify-content-between mb-2">
-                                    <h6 className="card-title mb-0">About</h6>
-                                    <div className="dropdown">
-                                        <button className="btn p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-horizontal icon-lg text-muted pb-3px">
-                                                <circle cx="12" cy="12" r="1"></circle>
-                                                <circle cx="19" cy="12" r="1"></circle>
-                                                <circle cx="5" cy="12" r="1"></circle>
-                                            </svg>
-                                        </button>
-                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-edit-2 icon-sm mr-2">
-                                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-                                                </svg> <span className="">Edit</span></a>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-git-branch icon-sm mr-2">
-                                                    <line x1="6" y1="3" x2="6" y2="15"></line>
-                                                    <circle cx="18" cy="6" r="3"></circle>
-                                                    <circle cx="6" cy="18" r="3"></circle>
-                                                    <path d="M18 9a9 9 0 0 1-9 9"></path>
-                                                </svg> <span className="">Update</span></a>
-                                            <a className="dropdown-item d-flex align-items-center" href="#">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-eye icon-sm mr-2">
-                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                    <circle cx="12" cy="12" r="3"></circle>
-                                                </svg> <span className="">View all</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p>About me section</p>
-                                <div className="mt-3">
-                                    <label className="tx-11 font-weight-bold mb-0 text-uppercase">Joined:</label>
-                                    <p className="text-muted">November 15, 2017</p>
-                                </div>
-                                <div className="mt-3">
-                                    <label className="tx-11 font-weight-bold mb-0 text-uppercase">Location/University:</label>
-                                    <p className="text-muted">New York, USA</p>
-                                </div>
-                                <div className="mt-3">
-                                    <label className="tx-11 font-weight-bold mb-0 text-uppercase">Contact:</label>
-                                    <p className="text-muted">www.therichpost.com</p>
-                                </div>
-                                
-                            </div>
-                        </div>
+                <div className="card mb-4">
+                  <div className="card-body">
+                    <div className="d-flex align-items-center">
+                      <div className="flex-shrink-0"><img className="avatar avatar-lg p-1" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="Jassa Rich"/></div>
+                      <div className="flex-grow-1 ps-3">
+                        <h4>Name Here</h4>
+                        <p className="text-muted mb-0">Social media links here</p>
+                        <ul className="social-links list-inline mb-0 mt-2">
+                          <li className="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Nathan's Facebook" aria-label="Nathan's Facebook"><i className="fab fa-facebook"></i></a></li>
+                          <li className="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="@nathan_andrews" aria-label="@nathan_andrews"><i className="fab fa-twitter"></i></a></li>
+                          <li className="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="+420777555987" aria-label="+420777555987"><i className="fa fa-phone"></i></a></li>
+                          <li className="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="@nathan" aria-label="@nathan"><i className="fab fa-skype"></i></a></li>
+                        </ul>
+                      </div>
                     </div>
-                  
-                    <div className="col-md-8 col-xl-6 middle-wrapper">
-                        <div className="row">
-                            <div className="col-md-12 grid-margin">
-                                <div className="card rounded">
-                                    <div className="card-header">
-                                        <div className="d-flex align-items-center justify-content-between">
-                                            <div className="d-flex align-items-center">
-                                                <img className="img-xs rounded-circle" src="https://therichpost.com/wp-content/uploads/2021/03/avatar6.png" alt="" />
-                                                <div className="ml-2">
-                                                    <p>Jassa</p>
-                                                    <p className="tx-11 text-muted">1 min ago</p>
-                                                </div>
-                                            </div>
-                                            <div className="dropdown">
-                                                <button className="btn p-0" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-horizontal icon-lg pb-3px">
-                                                        <circle cx="12" cy="12" r="1"></circle>
-                                                        <circle cx="19" cy="12" r="1"></circle>
-                                                        <circle cx="5" cy="12" r="1"></circle>
-                                                    </svg>
-                                                </button>
-                                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                                    <a className="dropdown-item d-flex align-items-center" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-meh icon-sm mr-2">
-                                                            <circle cx="12" cy="12" r="10"></circle>
-                                                            <line x1="8" y1="15" x2="16" y2="15"></line>
-                                                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                                                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                                                        </svg> <span className="">Unfollow</span></a>
-                                                    <a className="dropdown-item d-flex align-items-center" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-corner-right-up icon-sm mr-2">
-                                                            <polyline points="10 9 15 4 20 9"></polyline>
-                                                            <path d="M4 20h7a4 4 0 0 0 4-4V4"></path>
-                                                        </svg> <span className="">Go to post</span></a>
-                                                    <a className="dropdown-item d-flex align-items-center" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-share-2 icon-sm mr-2">
-                                                            <circle cx="18" cy="5" r="3"></circle>
-                                                            <circle cx="6" cy="12" r="3"></circle>
-                                                            <circle cx="18" cy="19" r="3"></circle>
-                                                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                                                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                                                        </svg> <span className="">Share</span></a>
-                                                    <a className="dropdown-item d-flex align-items-center" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-copy icon-sm mr-2">
-                                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                                        </svg> <span className="">Copy link</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card-body">
-                                        <p className="mb-3 tx-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus minima delectus nemo unde quae recusandae assumenda.</p>
-                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar6.png" alt="" />
-                                    </div>
-                                    <div className="card-footer">
-                                        <div className="d-flex post-actions">
-                                            <a href="javascript:;" className="d-flex align-items-center text-muted mr-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-heart icon-md">
-                                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                                </svg>
-                                                <p className="d-none d-md-block ml-2">Like</p>
-                                            </a>
-                                            <a href="javascript:;" className="d-flex align-items-center text-muted mr-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-message-square icon-md">
-                                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                                </svg>
-                                                <p className="d-none d-md-block ml-2">Comment</p>
-                                            </a>
-                                            <a href="javascript:;" className="d-flex align-items-center text-muted">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-share icon-md">
-                                                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-                                                    <polyline points="16 6 12 2 8 6"></polyline>
-                                                    <line x1="12" y1="2" x2="12" y2="15"></line>
-                                                </svg>
-                                                <p className="d-none d-md-block ml-2">Share</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-12">
-                                <div className="card rounded">
-                                    <div className="card-header">
-                                        <div className="d-flex align-items-center justify-content-between">
-                                            <div className="d-flex align-items-center">
-                                                <img className="img-xs rounded-circle" src="https://therichpost.com/wp-content/uploads/2021/03/avatar6.png" alt="" />
-                                                <div className="ml-2">
-                                                    <p>jassa</p>
-                                                    <p className="tx-11 text-muted">5 min ago</p>
-                                                </div>
-                                            </div>
-                                            <div className="dropdown">
-                                                <button className="btn p-0" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-more-horizontal icon-lg pb-3px">
-                                                        <circle cx="12" cy="12" r="1"></circle>
-                                                        <circle cx="19" cy="12" r="1"></circle>
-                                                        <circle cx="5" cy="12" r="1"></circle>
-                                                    </svg>
-                                                </button>
-                                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                                                    <a className="dropdown-item d-flex align-items-center" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-meh icon-sm mr-2">
-                                                            <circle cx="12" cy="12" r="10"></circle>
-                                                            <line x1="8" y1="15" x2="16" y2="15"></line>
-                                                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                                                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                                                        </svg> <span className="">Unfollow</span></a>
-                                                    <a className="dropdown-item d-flex align-items-center" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-corner-right-up icon-sm mr-2">
-                                                            <polyline points="10 9 15 4 20 9"></polyline>
-                                                            <path d="M4 20h7a4 4 0 0 0 4-4V4"></path>
-                                                        </svg> <span className="">Go to post</span></a>
-                                                    <a className="dropdown-item d-flex align-items-center" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-share-2 icon-sm mr-2">
-                                                            <circle cx="18" cy="5" r="3"></circle>
-                                                            <circle cx="6" cy="12" r="3"></circle>
-                                                            <circle cx="18" cy="19" r="3"></circle>
-                                                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                                                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                                                        </svg> <span className="">Share</span></a>
-                                                    <a className="dropdown-item d-flex align-items-center" href="#">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-copy icon-sm mr-2">
-                                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                                        </svg> <span className="">Copy link</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card-body">
-                                        <p className="mb-3 tx-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                       
-                                    </div>
-                                    <div className="card-footer">
-                                        <div className="d-flex post-actions">
-                                            <a href="javascript:;" className="d-flex align-items-center text-muted mr-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-heart icon-md">
-                                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                                </svg>
-                                                <p className="d-none d-md-block ml-2">Like</p>
-                                            </a>
-                                            <a href="javascript:;" className="d-flex align-items-center text-muted mr-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-message-square icon-md">
-                                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                                </svg>
-                                                <p className="d-none d-md-block ml-2">Comment</p>
-                                            </a>
-                                            <a href="javascript:;" className="d-flex align-items-center text-muted">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-share icon-md">
-                                                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-                                                    <polyline points="16 6 12 2 8 6"></polyline>
-                                                    <line x1="12" y1="2" x2="12" y2="15"></line>
-                                                </svg>
-                                                <p className="d-none d-md-block ml-2">Share</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <div className="d-none d-xl-block col-xl-3 right-wrapper">
-                        <div className="row">
-                            <div className="col-md-12 grid-margin">
-                                <div className="card rounded">
-                                    <div className="card-body">
-                                        <h6 className="card-title">latest photos</h6>
-                                        <div className="latest-photos">
-                                            <div className="row">
-                                                <div className="col-md-4">
-                                                    <figure>
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar1.png" alt="" />
-                                                    </figure>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <figure>
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar2.png" alt="" />
-                                                    </figure>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <figure>
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar3.png" alt="" />
-                                                    </figure>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <figure>
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar4.png" alt="" />
-                                                    </figure>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <figure>
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar5.png" alt="" />
-                                                    </figure>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <figure>
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar6.png" alt="" />
-                                                    </figure>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <figure className="mb-0">
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" alt="" />
-                                                    </figure>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <figure className="mb-0">
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar8.png" alt="" />
-                                                    </figure>
-                                                </div>
-                                                <div className="col-md-4">
-                                                    <figure className="mb-0">
-                                                        <img className="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/03/avatar9.png" alt=""/>
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-md-12 grid-margin">
-                                <div className="card rounded">
-                                    <div className="card-body">
-                                        <h6 className="card-title">suggestions for you</h6>
-                                        <div className="d-flex justify-content-between mb-2 pb-2 border-bottom">
-                                            <div className="d-flex align-items-center hover-pointer">
-                                                <img className="img-xs rounded-circle" src="https://therichpost.com/wp-content/uploads/2021/03/avatar2.png" alt="" />
-                                                <div className="ml-2">
-                                                    <p>jassa</p>
-                                                    <p className="tx-11 text-muted">12 Mutual Friends</p>
-                                                </div>
-                                            </div>
-                                            <button className="btn btn-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
-                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                                    <line x1="20" y1="8" x2="20" y2="14"></line>
-                                                    <line x1="23" y1="11" x2="17" y2="11"></line>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div className="d-flex justify-content-between mb-2 pb-2 border-bottom">
-                                            <div className="d-flex align-items-center hover-pointer">
-                                                <img className="img-xs rounded-circle" src="https://therichpost.com/wp-content/uploads/2021/03/avatar3.png" alt="" />
-                                                <div className="ml-2">
-                                                    <p>jassa</p>
-                                                    <p className="tx-11 text-muted">12 Mutual Friends</p>
-                                                </div>
-                                            </div>
-                                            <button className="btn btn-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
-                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                                    <line x1="20" y1="8" x2="20" y2="14"></line>
-                                                    <line x1="23" y1="11" x2="17" y2="11"></line>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div className="d-flex justify-content-between mb-2 pb-2 border-bottom">
-                                            <div className="d-flex align-items-center hover-pointer">
-                                                <img className="img-xs rounded-circle" src="https://therichpost.com/wp-content/uploads/2021/03/avatar4.png" alt="" />
-                                                <div className="ml-2">
-                                                    <p>jassa</p>
-                                                    <p className="tx-11 text-muted">12 Mutual Friends</p>
-                                                </div>
-                                            </div>
-                                            <button className="btn btn-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
-                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                                    <line x1="20" y1="8" x2="20" y2="14"></line>
-                                                    <line x1="23" y1="11" x2="17" y2="11"></line>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div className="d-flex justify-content-between mb-2 pb-2 border-bottom">
-                                            <div className="d-flex align-items-center hover-pointer">
-                                                <img className="img-xs rounded-circle" src="https://therichpost.com/wp-content/uploads/2021/03/avatar5.png" alt="" />
-                                                <div className="ml-2">
-                                                    <p>jassa</p>
-                                                    <p className="tx-11 text-muted">12 Mutual Friends</p>
-                                                </div>
-                                            </div>
-                                            <button className="btn btn-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
-                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                                    <line x1="20" y1="8" x2="20" y2="14"></line>
-                                                    <line x1="23" y1="11" x2="17" y2="11"></line>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div className="d-flex justify-content-between mb-2 pb-2 border-bottom">
-                                            <div className="d-flex align-items-center hover-pointer">
-                                                <img className="img-xs rounded-circle" src="https://therichpost.com/wp-content/uploads/2021/03/avatar6.png" alt="" />
-                                                <div className="ml-2">
-                                                    <p>jassa</p>
-                                                    <p className="tx-11 text-muted">12 Mutual Friends</p>
-                                                </div>
-                                            </div>
-                                            <button className="btn btn-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
-                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                                    <line x1="20" y1="8" x2="20" y2="14"></line>
-                                                    <line x1="23" y1="11" x2="17" y2="11"></line>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div className="d-flex justify-content-between">
-                                            <div className="d-flex align-items-center hover-pointer">
-                                                <img className="img-xs rounded-circle" src="https://therichpost.com/wp-content/uploads/2021/03/avatar7.png" alt="" />
-                                                <div className="ml-2">
-                                                    <p>jassa</p>
-                                                    <p className="tx-11 text-muted">12 Mutual Friends</p>
-                                                </div>
-                                            </div>
-                                            <button className="btn btn-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-user-plus" data-toggle="tooltip" title="" data-original-title="Connect">
-                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="8.5" cy="7" r="4"></circle>
-                                                    <line x1="20" y1="8" x2="20" y2="14"></line>
-                                                    <line x1="23" y1="11" x2="17" y2="11"></line>
-                                                </svg>
-                                            </button>
-                                        </div>
-            
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 
+                  </div>
                 </div>
+                <form className="card mb-4">
+                  <div className="card-header">
+                    <h4 className="card-heading">My Profile</h4>
+                  </div>
+                  <div className="card-body">
+                    <div className="row mb-3">
+                      <div className="col-auto d-flex align-items-center"><img className="avatar avatar-lg p-1" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="Avatar"/></div>
+                      <div className="col">
+                        <label className="form-label">Name</label>
+                        <input className="form-control" placeholder="Your name"/>
+                      </div>
+                    </div>
+                    <div className="mb-3"> 
+                      <label className="form-label">Bio</label>
+                      <textarea className="form-control" rows="8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</textarea>
+                    </div>
+                    <div className="mb-3"> 
+                      <label className="form-label">Email</label>
+                      <input className="form-control" placeholder="you@domain.com"/>
+                    </div>
+                    <label className="form-label">Password</label>
+                    <input className="form-control" type="password" value="password" />
+                  </div>
+                  <div className="card-footer text-end">
+                    <button className="btn btn-primary">Save</button>
+                  </div>
+                </form>
+              </div>
+              <div className="col-lg-8">
+                <div className="card overflow-hidden mb-4">
+                  <div className="card-header">
+                    <div className="input-group">
+                      <input className="form-control" type="text" placeholder="Message"></input>
+                      <button className="btn btn-outline-secondary" type="button"><i className="fa fa-paper-plane"></i></button>
+                    </div>
+                  </div>
+                  <div className="list-group rounded-0">
+                    <div className="list-group-item border-start-0 border-end-0 py-5 border-top-0">
+                      <div className="d-flex">
+                        <div className="flex-shrink-0"><img className="avatar avatar-lg p-1" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="Jassa Rich"/></div>
+                        <div className="flex-grow-1 ps-3"><small className="float-right">10 mins ago</small>
+                          <h5 className="fw-bold">Jassa Rich</h5>
+                          <div className="text-muted text-sm"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                          <div className="d-flex mt-4">
+                            <div className="flex-shrink-0"><img className="avatar avatar-md p-1" src="https://i.pinimg.com/originals/9b/a5/86/9ba586b516e875b0c668e6861aa236bf.png" alt="Serenity Mitchelle"/></div>
+                            <div className="flex-grow-1 ps-3 text-sm text-muted"><strong className="text-dark">Serenity Mitchelle: </strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                          </div>
+                          <div className="d-flex mt-4">
+                            <div className="flex-shrink-0"><img className="avatar avatar-md p-1" src="https://i.pinimg.com/originals/cc/25/33/cc25330bf6b8a0c022df9a2f683089aa.png" alt="Tony O'Brian"/></div>
+                            <div className="flex-grow-1 ps-3 text-sm text-muted"><strong className="text-dark">Tony O'Brian: </strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="list-group-item border-start-0 border-end-0 py-5">
+                      <div className="d-flex">
+                        <div className="flex-shrink-0"><img className="avatar avatar-lg p-1" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="Jassa Rich"/></div>
+                        <div className="flex-grow-1 ps-3"><small className="float-right">12 mins ago</small>
+                          <h5 className="fw-bold">Jassa Rich</h5>
+                          <div className="text-muted text-sm"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="list-group-item border-start-0 border-end-0 py-5">
+                      <div className="d-flex">
+                        <div className="flex-shrink-0"><img className="avatar avatar-lg p-1" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="Jassa Rich"/></div>
+                        <div className="flex-grow-1 ps-3"><small className="float-right">34 mins ago</small>
+                          <h5 className="fw-bold">Jassa Rich</h5>
+                          <div className="text-muted text-sm"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                          <div className="d-flex mt-4">
+                            <div className="flex-shrink-0"><img className="avatar avatar-md p-1" src="https://www.svgrepo.com/show/91050/boy.svg" alt="Javier Gregory"/></div>
+                            <div className="flex-grow-1 ps-3 text-sm text-muted"><strong className="text-dark">Javier Gregory: </strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <form className="card mb-4">
+                  <div className="card-header">
+                    <h4 className="card-heading">Edit Profile</h4>
+                  </div>
+                  <div className="card-body">
+                    <div className="row">
+                      <div className="col-md-5">
+                        <div className="mb-4">
+                          <label className="form-label">University</label>
+                          <input className="form-control" type="text" placeholder="University" value="King's College London"/>
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-3">
+                        <div className="mb-4">
+                          <label className="form-label">Username</label>
+                          <input className="form-control" type="text" placeholder="Username" value="Rachiey"/>
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-4">
+                        <div className="mb-4">
+                          <label className="form-label">Email address</label>
+                          <input className="form-control" type="email" placeholder="Email"/>
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-6">
+                        <div className="mb-4">
+                          <label className="form-label">First Name</label>
+                          <input className="form-control" type="text" placeholder="First name"/>
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-6">
+                        <div className="mb-4">
+                          <label className="form-label">Last Name</label>
+                          <input className="form-control" type="text" placeholder="Last Name"/>
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="mb-4">
+                          <label className="form-label">Address</label>
+                          <input className="form-control" type="text" placeholder="Home Address"/>
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-4">
+                        <div className="mb-4">
+                          <label className="form-label">City</label>
+                          <input className="form-control" type="text" placeholder="City"/>
+                        </div>
+                      </div>
+                      <div className="col-md-5">
+                        <div className="mb-4">
+                          <label className="form-label">Country</label>
+                          <select className="form-control custom-select">
+                            <option value="">UK</option>
+                            <option value="">US</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="mb-0">
+                          <label className="form-label">About Me</label>
+                          <textarea className="form-control" rows="5" placeholder="Here can be your description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-footer text-end">
+                    <button className="btn btn-primary" type="submit">Update Profile</button>
+                  </div>
+                </form>
+              </div>
             </div>
-            </div>
-          </div> 
-             
+          </section>
+        </div>
        
-     
+      </div>
       
+   
 )
 };
 }
