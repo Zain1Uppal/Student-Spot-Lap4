@@ -1,0 +1,14 @@
+.resources-page{
+    margin: 0;
+    background-color: #d9d9d9;
+    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); 
+    width: 100vw;
+    height: auto;
+
+}
+
+.content-resources {
+    display: flex;
+    width: 100vw;
+    padding: 40px 30px;
+}

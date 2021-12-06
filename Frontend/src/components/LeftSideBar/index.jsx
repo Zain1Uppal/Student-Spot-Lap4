@@ -13,7 +13,7 @@ export function LeftSideBar() {
                     </li>
                     <li className="lsb-list-item">
                         <i className="fas fa-book-open"></i>
-                        <span className="lsb-list-item-text">Resources</span>
+                        <span className="lsb-list-item-text"><NavLink to="/resources">Resources</NavLink></span>
                     </li>
                     <li className="lsb-list-item">
                         <i className="fas fa-globe"></i>
