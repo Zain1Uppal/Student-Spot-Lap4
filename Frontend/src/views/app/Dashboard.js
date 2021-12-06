@@ -9,7 +9,7 @@ const Dashboard = () => {
     if (localStorage.getItem('token') === null) {
       window.location.replace('http://localhost:8080/login');
     } else {
-      fetch('http://localhost:8000/users/auth/user/', {
+      fetch('http://localhost:8080/users/auth/user/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
