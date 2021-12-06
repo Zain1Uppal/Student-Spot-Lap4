@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     # 3rd Party Apps
     'rest_framework',
-    'rest_framework.authtoken',
+    # 'rest_framework.authtoken',
     'rest_auth',
     'django.contrib.sites',
     'allauth',
@@ -84,11 +84,20 @@ ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_UNIQUE_EMAIL = True
 
+# Auth Tokens
+import datetime
+
+TOKEN_TTL = datetime.timedelta(seconds=30)
+
+REST_AUTH_TOKEN_MODEL = "users.models.AuthToken"
+REST_AUTH_TOKEN_CREATOR = "users.utils.custom_create_token"
+
 # Rest Framework config
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': "%d/%m/%Y %I: %M%P",
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+        "users.authentication.ExpiringTokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
     ],
 }
 
