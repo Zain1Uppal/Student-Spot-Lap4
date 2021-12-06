@@ -12,7 +12,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      window.location.replace('http://localhost:8080/dashboard');
+      window.location.replace('http://localhost:8080/MainFeed');
     } else {
       setLoading(false);
     }
@@ -38,7 +38,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:8080/dashboard');
+          window.location.replace('http://localhost:8080/login');
           // return <Redirect to= '/dashboard'  />
         } else {
           setEmail('');
