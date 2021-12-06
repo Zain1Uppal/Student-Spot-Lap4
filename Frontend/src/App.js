@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Footer } from './layout/index';
-import { MainFeed, Profile, Categories, FrontPage } from './pages/index';
+import { MainFeed, Profile, Categories, Category, FrontPage } from './pages/index';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 import Navbar from './layout/Navbar';
 import Login from './views/auth/login';
 import Signup from './views/auth/Signup';
-import Logout from './views/auth/Logout'
+import Logout from './views/auth/Logout';
 import { Dashboard } from './views/app/Dashboard'
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
                 <Route path="/MainFeed"><MainFeed/></Route>
                 <Route path="/Profile"><Profile /></Route>
                 <Route path="/Categories"><Categories /></Route>
+                <Route path="/Category"><Category /></Route>
                 <Route path="/dashboard"><Dashboard /></Route>
             </Switch>
             {/* <Footer /> */}

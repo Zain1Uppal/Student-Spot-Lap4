@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
 export const Dashboard = () => {
-  const [userEmail, setUserEmail] = useState('');
+  const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export const Dashboard = () => {
                       }
                     })
         .then(data => {
-          setUserEmail(data.email);
+          setUserName(data.username);
           setLoading(false);
         });
     }
@@ -37,7 +37,7 @@ export const Dashboard = () => {
       {loading === false && (  
         <Fragment>
           <h1>Dashboard</h1>
-          <h2>Hello {userEmail}!</h2>
+          <h2>Hello {userName}!</h2>
         </Fragment>
       )}
     </div>

@@ -17,12 +17,16 @@ const Navbar = () => {
         {isAuth === true ? (
           <Fragment>
             {' '}
-            <li>
-              <Link to='/dashboard'>Dashboard</Link>
-            </li>
-            <li>
-              <Link to='/logout'>Logout</Link>
-            </li>
+            
+            <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', height: 'auto', width:'auto', textDecoration: 'none', margin: '10px',}}>
+            <Link to='/MainFeed' input className="btn btn-dark" id="mainPageButton" ><div>Home</div></Link>
+            </div>
+            <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', height: 'auto', width:'auto', textDecoration: 'none', margin: '10px',}}>
+            <Link to='/logout' input className="btn btn-secondary" id="logOutButton" ><div>Log Out</div></Link>
+            </div>
+           
+            
+            
           </Fragment>
         ) : (
           <Fragment>
