@@ -6,3 +6,4 @@ export { LeftSideBar } from './LeftSideBar'
 export { RightSideBar } from './RightSideBar'
 export { CreatePost } from './CreatePost'
 export { Post } from './Post'
+export { BackButton } from './BackButton';

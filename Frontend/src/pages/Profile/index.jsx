@@ -9,16 +9,6 @@ class Profile extends React.Component {
   render() {
    
     return (
-<<<<<<< HEAD
-        <main>
-            <Header />
-            <div className="content">
-                <h1>Profile page</h1>
-            </div>
-        </main>
-    )
-}
-=======
     
     <div className="page-holder bg-gray-100">
         <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
@@ -212,4 +202,3 @@ class Profile extends React.Component {
 };
 }
 export default Profile;
->>>>>>> staging
