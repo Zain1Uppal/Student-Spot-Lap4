@@ -1,5 +1,9 @@
 footer {
     text-align: center;
+<<<<<<< HEAD
+=======
+    position: fixed;
+>>>>>>> staging
     bottom: 0;
     width: 100vw;
     height: 25px;
