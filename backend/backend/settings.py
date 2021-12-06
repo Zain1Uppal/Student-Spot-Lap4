@@ -87,7 +87,9 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Auth Tokens
 import datetime
 
-TOKEN_TTL = datetime.timedelta(seconds=30)
+TOKEN_TTL = datetime.timedelta(minutes=30)
+
+AUTH_USER_MODEL = 'users.User'
 
 REST_AUTH_TOKEN_MODEL = "users.models.AuthToken"
 REST_AUTH_TOKEN_CREATOR = "users.utils.custom_create_token"
@@ -177,5 +179,3 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-AUTH_USER_MODEL = 'users.User'
