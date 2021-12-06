@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Header, Footer } from './layout/index';
+import { Footer } from './layout/index';
 import { MainFeed, Profile, Categories, FrontPage, Category } from './pages/index';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
@@ -24,7 +24,7 @@ function App() {
                 <Route path="/Category"><Category /></Route>
                 <Route path="/dashboard"><Dashboard /></Route>
             </Switch>
-            <Footer />
+            {/* <Footer /> */}
         </>
 
 
