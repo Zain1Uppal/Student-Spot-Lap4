@@ -9,7 +9,7 @@ export const NewsList = () => {
 
     useEffect(() => {
         const getArticles = async () => {
-            const res = await axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=39bbb537fd7d4b2ab94e2d8c5fc3f6b2')
+            const res = await axios.get('https://newsapi.org/v2/everything?domains=wsj.com&pageSize=6&apiKey=39bbb537fd7d4b2ab94e2d8c5fc3f6b2') //currently just gets 5 recent posts
             setArticles(res.data.articles)
             
         }
@@ -17,9 +17,9 @@ export const NewsList = () => {
     }, []);
     
     return(
-        <div>
+        <div className="newslist-cont">
             {articles.map(({title, description, url, urlToImage}) => (
-                <NewsItem 
+                <NewsItem
                 title={title}
                 description={description}
                 url={url}

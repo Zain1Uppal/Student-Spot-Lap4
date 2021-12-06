@@ -5,8 +5,9 @@ export const NewsItem = ({ title, description, url, urlToImage}) => {
 
     return(
         <div className="newsItem-cont">
-            <img className="news-image" src={urlToImage} alt="News image"/>
-            <a className="news-title" href={url}>{title}</a>
+
+            <a href={url}><img className="news-image" src={urlToImage} alt="News image"/></a>
+            <h3 className="news-title">{title}</h3>
             <p className="news-description">{description}</p>
 
         </div>
