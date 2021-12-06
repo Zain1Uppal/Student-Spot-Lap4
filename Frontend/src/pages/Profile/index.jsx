@@ -1,14 +1,13 @@
 import React from 'react';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@popperjs/core';
 import {default as email} from '../../views/auth/Signup';
 class Profile extends React.Component {
-  
  
   render() {
    
     return (
-    
     <div className="page-holder bg-gray-100">
         <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
               <div className="page-header mb-4">
@@ -30,13 +29,13 @@ class Profile extends React.Component {
                     <div className="d-flex align-items-center">
                       <div className="flex-shrink-0"><img className="avatar avatar-lg p-1" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="Jassa Rich"/></div>
                       <div className="flex-grow-1 ps-3">
-                        <h4>Name Here</h4>
+                        <h4>Follow me:</h4>
                         <p className="text-muted mb-0">Social media links here</p>
                         <ul className="social-links list-inline mb-0 mt-2">
-                          <li className="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Nathan's Facebook" aria-label="Nathan's Facebook"><i className="fab fa-facebook"></i></a></li>
-                          <li className="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="@nathan_andrews" aria-label="@nathan_andrews"><i className="fab fa-twitter"></i></a></li>
-                          <li className="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="+420777555987" aria-label="+420777555987"><i className="fa fa-phone"></i></a></li>
-                          <li className="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="@nathan" aria-label="@nathan"><i className="fab fa-skype"></i></a></li>
+                          <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="Bob's Facebook" aria-label="Bob's Facebook"><i className="fab fa-facebook"></i></a></li>
+                          <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-twitter"></i></a></li>
+                          <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-instagram"></i></a></li>
+                          <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@nathan" aria-label="@bob"><i className="fab fa-skype"></i></a></li>
                         </ul>
                       </div>
                     </div>
