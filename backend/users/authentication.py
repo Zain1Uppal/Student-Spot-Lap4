@@ -5,7 +5,7 @@ from django.utils import timezone
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.exceptions import AuthenticationFailed
 
-from users.models import Token
+from users.models import AuthToken
 
 
 class ExpiringTokenAuthentication(TokenAuthentication):
@@ -15,7 +15,7 @@ class ExpiringTokenAuthentication(TokenAuthentication):
     and password for new one to be created.
     """
 
-    model = Token
+    model = AuthToken
 
     def authenticate_credentials(self, key, request=None):
         models = self.get_model()

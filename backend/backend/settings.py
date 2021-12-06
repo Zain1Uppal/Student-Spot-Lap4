@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Specifies where the React server is running is safe to receive requests from
-CORS_ALLOWED_ORIGINS = ['http://localhost', 'https://hoppscotch.io']
+CORS_ALLOWED_ORIGINS = ['http://localhost','http://localhost:8080' , 'https://hoppscotch.io']
 
 
 # Application definition
@@ -79,7 +79,7 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_UNIQUE_EMAIL = True
@@ -87,7 +87,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Auth Tokens
 import datetime
 
-TOKEN_TTL = datetime.timedelta(minutes=30)
+TOKEN_TTL = datetime.timedelta(days=7)
 
 AUTH_USER_MODEL = 'users.User'
 
