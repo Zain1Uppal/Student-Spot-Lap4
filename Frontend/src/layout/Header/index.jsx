@@ -6,7 +6,7 @@ import './style.css';
 export function Header() {
     return(
         <header>
-            <p className="logo-nav">LOGO</p>
+            <p><i class="fas fa-users"></i>StudentHub</p>
             <HeaderSearch />
 
             <nav>

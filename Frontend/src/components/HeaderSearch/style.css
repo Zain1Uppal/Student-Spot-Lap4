@@ -1,11 +1,11 @@
 .wrapper {
     position: relative;
-    margin-top: 3px;
-    max-width: 250px;
+    max-width: 310px;
+    min-width: 310px;
     height:100%;
     border-radius: 5px;
-    padding: 0 5px;
-    margin-left: 5px;
+    padding: 30px 5px;
+    margin-left: 60px;
 }
 
 .wrapper .search-input{
@@ -13,6 +13,7 @@
     width: 100%;
     border-radius: 5px;
     position: relative;
+    margin: auto;
   }
 
   .search-input input{
@@ -23,9 +24,9 @@
     border-radius: 5px;
     padding: 0 20px 0 20px;
     font-size: 15px;
-    box-shadow: 0 0 1px 1px#fcfcfcd7; 
+    box-shadow: 0 0 1px 1px rgb(167, 167, 167); 
     background-color: transparent;
-    color: #fcfcfcd7;
+    color: black;
   }
   .search-input.active input{
     border-radius: 5px 5px 0 0;
@@ -48,17 +49,17 @@
     display: none;
     width: 100%;
     cursor: pointer;
-    border-bottom: 1px solid #fcfcfcd7;
-    background-color: #24292f;
-    color: #fcfcfcd7;
+    border-bottom: 1px solid rgb(167, 167, 167);
+    background-color: white;
+    color: black;
     text-decoration: none;
   }
   .search-input.active .autocom-box li{
     display: block;
   }
   .autocom-box li:hover{
-    background: #efefef;
-    color:#24292f;
+    background: darkblue;
+    color:white;
   }
   .search-input .icon{
     position: absolute;
@@ -69,6 +70,7 @@
     text-align: center;
     line-height: 55px;
     font-size: 13px;
-    color: #fcfcfcd7;
+    color: rgb(192, 192, 192);
     cursor: pointer;
+    margin: auto;
   }
