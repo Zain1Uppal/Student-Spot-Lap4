@@ -1,8 +1,9 @@
 .group-container {
     display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    margin: auto;
-    margin-top: 70px;
+    margin: 40px 0;
     width: 85vw;
 }
 
@@ -16,11 +17,9 @@
 } */
 
 .group-row{
-    display: flex;
     justify-content: start;
     align-items: stretch;
     height: auto;
-    background-color: darkblue;
 }
 
 
