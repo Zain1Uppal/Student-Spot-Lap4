@@ -11,12 +11,12 @@ const Login = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (localStorage.getItem('token') !== null) {
+    if (localStorage.getItem('token')) {
       window.location.replace('http://localhost:8080/dashboard');
     } else {
       setLoading(false);
     }
-  }, []);
+  }, [localStorage.getItem('token')]);
 
   const onSubmit = e => {
     e.preventDefault();
@@ -39,7 +39,7 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           window.location.replace('http://localhost:8080/dashboard');
-          return <Redirect to={ MainFeed } />
+          // return <Redirect to= '/dashboard'  />
         } else {
           setEmail('');
           setPassword('');
@@ -70,7 +70,6 @@ const Login = () => {
             value={email}
             required
             onChange={e => setEmail(e.target.value)}
-            autoComplete="on"
           />{' '}
           <br />
           <label htmlFor='password'>Password:</label> <br />
@@ -80,11 +79,10 @@ const Login = () => {
             value={password}
             required
             onChange={e => setPassword(e.target.value)}
-            autoComplete="on"
           />{' '}
           <br />
-          <div className="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
-          <input className="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} />
+          <div class="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
+          <input class="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} />
           <BackButton className="backButton" />
   
           </div>
