@@ -26,7 +26,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch('http://localhost:8000/users/auth/register/', {
+    fetch('http://localhost:8080/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -77,6 +77,7 @@ const Signup = () => {
           value={password1}
           onChange={e => setPassword1(e.target.value)}
           required
+          autoComplete="on"
         />{' '}
         <br />
         <label htmlFor='password2'>Confirm password:</label> <br />
@@ -86,16 +87,17 @@ const Signup = () => {
           value={password2}
           onChange={e => setPassword2(e.target.value)}
           required
+          autoComplete="on"
         />{' '}
         <br />
         <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', margin: '10px'}}>
-        <input class="btn btn-primary" style={{margin: '10px'}} type="submit" value='Sign Up' />
-        <Link to='/login' class="btn btn-secondary" style={{margin: '10px'}}><div>Log In</div></Link>
+        <input className="btn btn-primary" style={{margin: '10px'}} type="submit" value='Sign Up' />
+        <Link to='/login' className="btn btn-secondary" style={{margin: '10px'}}><div>Log In</div></Link>
         </div>
       </form>
       </div>
       <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px'}}>
-        <Link to='/' input class="btn btn-dark" ><div>Home</div></Link>
+        <Link to='/' input className="btn btn-dark" ><div>Home</div></Link>
       </div>
       </div>
   );
