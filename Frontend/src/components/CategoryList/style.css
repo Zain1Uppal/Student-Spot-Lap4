@@ -1,0 +1,38 @@
+.group-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    margin: 40px 0;
+    width: 85vw;
+}
+
+
+/* .group-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 70%;
+} */
+
+.group-row{
+    justify-content: start;
+    align-items: stretch;
+    height: auto;
+}
+
+
+
+.group-img {
+    display: block;
+    max-width: 70px;
+    height: 70px;
+    margin: auto;
+
+}
+
+.group-name {
+    font-size: 1.3rem;
+    margin: auto;
+}
