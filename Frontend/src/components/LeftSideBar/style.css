@@ -1,7 +1,7 @@
 .left-side-bar {
     flex: 15%;
     height: calc(100vh - 8vh);
-    border-right: 1px solid grey;
+    border-right: 1px solid rgb(192, 192, 192);
 }
 
 .lsb-wrapper{
@@ -59,4 +59,29 @@
     margin-bottom: 50px;
     font-size: 1.3rem;
     cursor: pointer;
+}
+
+/*icon colors*/
+.fa-laptop {
+    color: rgb(12, 88, 151)
+}
+
+.fa-rocket{
+    color: rgb(55, 133, 153)
+}
+
+.fa-atom {
+    color: rgb(57, 95, 0)
+}
+
+.fa-dna{
+    color:rgb(53, 1, 1)
+}
+
+.fa-calculator{
+    color:rgb(39, 1, 54)
+}
+
+.fa-pen-nib{
+    color: rgb(95, 38, 0)
 }
