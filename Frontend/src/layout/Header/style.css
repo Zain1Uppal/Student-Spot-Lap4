@@ -6,12 +6,18 @@
     box-shadow: 1px 1px 10px rgb(192, 192, 192);
     font-size: 1.3rem;
     margin: auto;
+    margin-top: 10px;
 }
 
 header p {
     display: flex;
     margin: auto 5px;
     font-size: 1.7rem;
+    text-decoration: none;
+}
+
+.nav-link a {
+    outline: none;
 }
 
 nav {
