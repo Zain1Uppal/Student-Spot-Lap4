@@ -1,0 +1,5 @@
+.feed {
+    flex: 60%; /*I could write 25% 50% 25% but flex is better*/
+    height: calc(100vh - 8vh);
+    background-color: rgb(30, 128, 0);
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '../../layout/index';
+import { Feed, LeftSideBar, RightSideBar } from '../../components/index'
 import './style.css';
 
 export function MainFeed() {
@@ -9,7 +10,11 @@ export function MainFeed() {
         <main>
             <Header />
             <div className="content">
-                <h1>MainFeed page</h1>
+                <LeftSideBar />
+                <Feed />
+                <RightSideBar />
+                
+
             </div>
         </main>
     )
