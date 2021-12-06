@@ -47,7 +47,9 @@ Request body for `categories/new:
 - `posts/new/`
   - Create route for new post
 - `posts/users/<int:user_id>/`
-  - Show all posts by user of id user_id
+  - Show all posts by user of id `user_id`
+- `posts/users/<int:user_id>/following`
+  - Show all posts from users/categories that user of id `user_id` is following
 - `posts/categories/<int:category_id>/`
   - Show all posts by category of specified id
 - `posts/comments/`

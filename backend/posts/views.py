@@ -1,9 +1,15 @@
+from django.shortcuts import get_object_or_404
+from django.db.models import Q
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 
+
 from .serializers import PostSerializer, CommentSerializer
 from .models import Comment, Post
+
+from users.models import User
+from users.serializers import UserSerializer
 
 # Create your views here.
 
@@ -61,3 +67,19 @@ def show_by_post(req, post_id):
     posts = Comment.objects.filter(post=post_id)
     serialized = CommentSerializer(posts, many=True)
     return Response({ "data": serialized.data })
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def show_following_posts(req, user_id):
+    # Get user's following users/categories
+    user_data = get_object_or_404(User, pk=user_id)
+    user = UserSerializer(user_data).data
+    followed_users = user["followed_users"]
+    followed_categories = user["followed_categories"]
+    # Iterate through and retrieve all posts from following
+    all_posts = []
+    for uid, cid in zip(followed_users, followed_categories):
+        posts = Post.objects.filter(Q(poster=uid) | Q(tags=cid)).distinct()
+        serialized = PostSerializer(posts, many=True)
+        all_posts.append(serialized.data)
+    return Response(all_posts[0])
