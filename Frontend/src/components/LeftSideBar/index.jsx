@@ -17,7 +17,7 @@ export function LeftSideBar() {
                     </li>
                     <li className="lsb-list-item">
                         <i className="fas fa-globe"></i>
-                        <span className="lsb-list-item-text">News</span>
+                        <span className="lsb-list-item-text"><NavLink to="/news">News</NavLink></span>
                     </li>
                 </ul>
                 <hr className="hr"/>

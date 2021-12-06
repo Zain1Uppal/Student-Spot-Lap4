@@ -5,7 +5,8 @@
 }
 
 .search-book{
-    margin: auto;
+    width: 100%;
+    text-align: center;
 }
 
 .search-book input{

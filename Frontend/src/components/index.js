@@ -9,3 +9,5 @@ export { Post } from './Post'
 export { BackButton } from './BackButton';
 export { ResourcesList } from './ResourcesList';
 export { ResourcesSB } from './ResourcesSB';
+export { NewsItem } from './NewsItem';
+export { NewsList } from './NewsList';
