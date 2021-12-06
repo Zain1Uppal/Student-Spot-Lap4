@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import NewUserForm, ChangeUserForm
-from .models import User
+from .models import AuthToken, User
 
 # Register your models here.
 class CustomUserAdmin(UserAdmin):
@@ -14,3 +14,4 @@ class CustomUserAdmin(UserAdmin):
 
 # admin.site.register(User, CustomUserAdmin)
 admin.site.register(User)
+admin.site.register(AuthToken)
