@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@popperjs/core';
-import {default as email} from '../../views/auth/Signup';
+// import '@popperjs/core';
+// import {default as email} from '../../views/auth/Signup';
 class Profile extends React.Component {
  
   render() {
