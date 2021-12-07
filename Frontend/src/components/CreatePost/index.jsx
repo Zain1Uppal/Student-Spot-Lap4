@@ -33,7 +33,7 @@ export function CreatePost({userId}) {
         
     }
     function handleChange(e){
-        let value = Array.from(e.target.selectedOptions, options => options.value)
+        let value = (e.target.value)
         console.log('what is this'+value)
         setCategory(value)
     }
@@ -44,7 +44,7 @@ export function CreatePost({userId}) {
                 <textarea className="cp-input" placeholder="Share your thoughts..." maxLength="220" ref={postDescription}  onChange={e => setBody(e.target.value)}required></textarea>
                 <button className="cp-button">+</button>
                 <div className="tag-wrapper">
-                    <ul className="ks-cboxtags">
+                    <ul className="ks-cboxtags" onChange={handleChange}>
                         <li><input type="checkbox" id="biology" value="biology" /><label htmlFor="biology">Biology</label></li>
                         <li><input type="checkbox" id="chemsitry" value="chemistry" /><label htmlFor="chemsitry">Chemistry</label></li>
                         <li><input type="checkbox" id="computing" value="computing" /><label htmlFor="computing">Computing</label></li>
