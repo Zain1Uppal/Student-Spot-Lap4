@@ -9,7 +9,6 @@ export const Profile = () => {
     const [firstName, setFirstName] = useState('');
     // const [uniCourse, setUniCourse] = useState('');
     const [loading, setLoading] = useState(true);
-    console.log(localStorage.getItem('userId'))
     useEffect(() => {
       console.log('before if dashboard')
       if (!localStorage.getItem('token')) {
