@@ -50,13 +50,7 @@ class PostDetail(APIView):
     def put(self, req, post_id):
         post = self.get_object(post_id)
         self.check_object_permissions(req, post)
-        # Check if new tags added
-
-        data = req.data
-        if "body" not in data:
-            data["body"] = post.body
-
-        serialized = PostSerializer(post, data=data)
+        serialized = PostSerializer(post, data=req.data, partial=True)
         if serialized.is_valid():
             serialized.save()
             return Response({"data": serialized.data})
@@ -122,7 +116,7 @@ class CommentDetail(APIView):
     def put(self, req, comment_id):
         comment = self.get_object(comment_id)
         self.check_object_permissions(req, comment)
-        serialized = CommentSerializer(comment, data=req.data)
+        serialized = CommentSerializer(comment, data=req.data, partial=True)
         if serialized.is_valid():
             serialized.save()
             return Response({"data": serialized.data})

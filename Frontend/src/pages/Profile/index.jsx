@@ -5,12 +5,10 @@ import { Header } from '../../layout/index';
 // import '@popperjs/core';
 // import {default as email} from '../../views/auth/Signup';
 export const Profile = () => {
- 
     const [userName, setUserName] = useState('');
     const [firstName, setFirstName] = useState('');
     // const [uniCourse, setUniCourse] = useState('');
     const [loading, setLoading] = useState(true);
-  
     useEffect(() => {
       console.log('before if dashboard')
       if (!localStorage.getItem('token')) {
