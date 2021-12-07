@@ -44,13 +44,13 @@ export function CreatePost({userId}) {
                 <textarea className="cp-input" placeholder="Share your thoughts..." maxLength="220" ref={postDescription}  onChange={e => setBody(e.target.value)}required></textarea>
                 <button className="cp-button">+</button>
                 <div className="tag-wrapper">
-                    <ul class="ks-cboxtags">
-                        <li><input type="checkbox" id="biology" value="biology" /><label for="biology">Biology</label></li>
-                        <li><input type="checkbox" id="chemsitry" value="chemistry" /><label for="chemsitry">Chemistry</label></li>
-                        <li><input type="checkbox" id="computing" value="computing" /><label for="computing">Computing</label></li>
-                        <li><input type="checkbox" id="english" value="english" /><label for="english">English</label></li>
-                        <li><input type="checkbox" id="maths" value="maths" /><label for="maths">Maths</label></li>
-                        <li><input type="checkbox" id="physics" value="physics" /><label for="physics">Physics</label></li>
+                    <ul className="ks-cboxtags">
+                        <li><input type="checkbox" id="biology" value="biology" /><label htmlFor="biology">Biology</label></li>
+                        <li><input type="checkbox" id="chemsitry" value="chemistry" /><label htmlFor="chemsitry">Chemistry</label></li>
+                        <li><input type="checkbox" id="computing" value="computing" /><label htmlFor="computing">Computing</label></li>
+                        <li><input type="checkbox" id="english" value="english" /><label htmlFor="english">English</label></li>
+                        <li><input type="checkbox" id="maths" value="maths" /><label htmlFor="maths">Maths</label></li>
+                        <li><input type="checkbox" id="physics" value="physics" /><label htmlFor="physics">Physics</label></li>
                     </ul>
                 </div>
             </form>
