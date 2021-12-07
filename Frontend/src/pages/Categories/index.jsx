@@ -1,19 +1,18 @@
 import React from 'react';
 import { Header } from '../../layout/index';
-import { CategorySearch } from '../../components/index';
+import { CategorySearch, LeftSideBar } from '../../components/index';
 import './style.css';
 
 export function Categories() {
 
     return(
-        <main>
+        <div className="categories-page">
             <Header />
-            <div className="content">
-                <h1>Categories page</h1>
+            <div className="content-categories">
+                <LeftSideBar />
                 <CategorySearch />
             </div>
-        </main>
-        
+        </div>        
         
     )
 }

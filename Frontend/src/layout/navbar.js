@@ -1,9 +1,27 @@
-import { auto } from '@popperjs/core';
+// import { auto } from '@popperjs/core';
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isAuth, setIsAuth] = useState(false);
+
+  const handleLogout = e => {
+    e.preventDefault();
+
+    fetch('http://localhost:8000/users/auth/logout/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Token ${localStorage.getItem('token')}`
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        localStorage.clear();
+        window.location.replace('http://localhost:8080/login');
+      });
+  };
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
@@ -22,7 +40,7 @@ const Navbar = () => {
             <Link to='/MainFeed' input className="btn btn-dark" id="mainPageButton" ><div>Home</div></Link>
             </div>
             <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', height: 'auto', width:'auto', textDecoration: 'none', margin: '10px',}}>
-            <Link to='/logout' input className="btn btn-secondary" id="logOutButton" ><div>Log Out</div></Link>
+            <Link to='/logout' input className="btn btn-secondary" id="logOutButton" onClick={handleLogout}><div>Log Out</div></Link>
             </div>
            
             

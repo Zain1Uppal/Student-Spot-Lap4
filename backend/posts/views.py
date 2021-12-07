@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from rest_framework.views import APIView
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
@@ -8,6 +9,7 @@ from rest_framework.decorators import api_view, permission_classes
 from .serializers import PostSerializer, CommentSerializer
 from .models import Comment, Post
 
+from users.permissions import IsPosterOrReadOnly
 from users.models import User
 from users.serializers import UserSerializer
 
@@ -31,6 +33,39 @@ def post_create(req):
         serialized.save()
         return Response(serialized.data, status=201)
     return Response(serialized.errors, status=400)
+
+class PostDetail(APIView):
+    """
+    Retrieve, update, or delete a post
+    """
+    permission_classes = [IsPosterOrReadOnly]
+
+    def get_object(self, pk):
+        return get_object_or_404(Post, pk=pk)
+    
+    def get(self, req, post_id):
+        post = self.get_object(post_id)
+        self.check_object_permissions(req, post)
+        serialized = PostSerializer(post)
+        return Response({"data": serialized.data})
+
+    def put(self, req, post_id):
+        post = self.get_object(post_id)
+        self.check_object_permissions(req, post)
+        serialized = PostSerializer(post, data=req.data)
+        if serialized.is_valid():
+            serialized.save()
+            return Response({"data": serialized.data})
+        return Response(serialized.errors, status=400)
+
+    def patch(self, req, post_id):
+        return self.put(req, post_id)
+
+    def delete(self, req, post_id):
+        post = self.get_object(post_id)
+        self.check_object_permissions(req, post)
+        post.delete()
+        return Response(status=204)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
