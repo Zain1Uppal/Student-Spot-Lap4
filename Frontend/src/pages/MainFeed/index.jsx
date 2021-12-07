@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Header } from '../../layout/index';
 import { Feed, LeftSideBar, RightSideBar } from '../../components/index'
 import './style.css';

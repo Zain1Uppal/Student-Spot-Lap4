@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeaderSearch } from '../../components/index';
 import './style.css';
-import   Logout  from '../../views/auth/Logout'
 
 export function Header() {
     return(
@@ -15,7 +14,7 @@ export function Header() {
                 <NavLink className="nav-link" to="/Profile">Profile</NavLink>
                 <NavLink className="nav-link" to="/Categories">Groups</NavLink>
 
-                <Logout/>
+                <button>Log out</button>
 
             </nav>
             
