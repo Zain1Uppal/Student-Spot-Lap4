@@ -17,6 +17,7 @@ from users.serializers import UserSerializer
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def post_index(req):
+    # Get all posts in database
     data = Post.objects.all()
     serialized = PostSerializer(data, many=True)
     return Response({"data": serialized.data})
@@ -24,6 +25,7 @@ def post_index(req):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def post_create(req):
+    # Create new post
     serialized = PostSerializer(data=req.data)
     if serialized.is_valid():
         serialized.save()
@@ -33,6 +35,7 @@ def post_create(req):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def show_by_user(req, user_id):
+    # Retrieve all posts made by user of id user_id
     user_posts = Post.objects.filter(poster=user_id)
     serialized = PostSerializer(user_posts, many=True)
     return Response({ "data": serialized.data })
@@ -40,6 +43,7 @@ def show_by_user(req, user_id):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def show_by_category(req, category_id):
+    # Retrieve all posts tagged with category of id category_id
     category_posts = Post.objects.filter(tags=category_id)
     serialized = PostSerializer(category_posts, many=True)
     return Response({ "data": serialized.data })
@@ -48,6 +52,7 @@ def show_by_category(req, category_id):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def comment_index(req):
+    # Retrieve all comments in database
     data = Comment.objects.all()
     serialized = CommentSerializer(data, many=True)
     return Response({"data": serialized.data})
@@ -55,6 +60,7 @@ def comment_index(req):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def comment_create(req):
+    # Create new comment
     serialized = CommentSerializer(data=req.data)
     if serialized.is_valid():
         serialized.save()
@@ -64,6 +70,7 @@ def comment_create(req):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def show_by_post(req, post_id):
+    # Get all comments for post of id post_id
     posts = Comment.objects.filter(post=post_id)
     serialized = CommentSerializer(posts, many=True)
     return Response({ "data": serialized.data })
@@ -76,10 +83,7 @@ def show_following_posts(req, user_id):
     user = UserSerializer(user_data).data
     followed_users = user["followed_users"]
     followed_categories = user["followed_categories"]
-    # Iterate through and retrieve all posts from following
-    all_posts = []
-    for uid, cid in zip(followed_users, followed_categories):
-        posts = Post.objects.filter(Q(poster=uid) | Q(tags=cid)).distinct()
-        serialized = PostSerializer(posts, many=True)
-        all_posts.append(serialized.data)
-    return Response(all_posts[0])
+    # Retrieve all posts from followed users/categories
+    posts =  Post.objects.filter(Q(poster__in=followed_users) | Q(tags__in=followed_categories)).distinct()
+    serialized = PostSerializer(posts, many=True)
+    return Response({ "data": serialized.data })
