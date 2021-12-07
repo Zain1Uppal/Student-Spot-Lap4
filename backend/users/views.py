@@ -21,9 +21,4 @@ def index(req):
 def show(req, user_id):
     data = get_object_or_404(User, pk=user_id)
     serialized = UserSerializer(data)
-    return Response({
-        "data": serialized.data, 
-        "user is superuser?": data.is_superuser,
-        "user is authenticated?": data.is_authenticated,
-        "user is staff?": data.is_staff
-    })
+    return Response({"data": serialized.data})
