@@ -12,7 +12,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      window.location.replace('http://localhost:8080/dashboard');
+      window.location.replace('http://localhost:8080/MainFeed');
     } else {
       setLoading(false);
     }
@@ -26,7 +26,7 @@ const Login = () => {
       password: password
     };
 
-    fetch('http://localhost:8080/auth/', {
+    fetch('http://localhost:8080/users/auth/login/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
