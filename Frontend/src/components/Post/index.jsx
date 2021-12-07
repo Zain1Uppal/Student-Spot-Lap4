@@ -18,7 +18,7 @@ export function Post({userId}) {
     
     function dataPost(){
         return(
-        postData.map((p, i) => 
+          postData.map((p, i) => 
             <div className="post-feed" key={i}>
                 <div className="post-wrapper">
                     <div className="post-top">
@@ -44,7 +44,7 @@ export function Post({userId}) {
                     </div>
                 </div>
             </div>
-            )
+          )
         )
 
         
