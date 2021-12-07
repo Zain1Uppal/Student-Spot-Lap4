@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Header } from '../../layout/index';
 import { Feed, LeftSideBar, RightSideBar } from '../../components/index'
 import './style.css';
+import {Profile} from '../Profile/index'
 
 export function MainFeed() {
     const [userEmail, setUserEmail] = useState('');
@@ -36,15 +37,14 @@ export function MainFeed() {
             });
         }
       }, []);
-
-    return(
+    
+      return(
         <div>
             {loading === false && (  
-            <main>
+              <main>
                     <Header />
                     <div className="content">
                         <LeftSideBar />
-                        
                         <Feed userId={userId}/>
                         <RightSideBar />
                     </div>

@@ -5,7 +5,7 @@ import { MainFeed } from '../../pages';
 import logo from '../../img/logo.png';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
 
     const user = {
-      email: email,
+      username: username,
       password: password
     };
 
@@ -38,6 +38,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
+          localStorage.setItem('userName', username)
           window.location.replace('http://localhost:8080/login');
           // return <Redirect to= '/dashboard'  />
         } else {
@@ -63,13 +64,13 @@ const Login = () => {
       {loading === false && (
         <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white'}}>
         <form onSubmit={onSubmit}>
-          <label htmlFor='email'>Email address:</label> <br />
+          <label htmlFor='username'>username:</label> <br />
           <input
-            name='email'
-            type='email'
-            value={email}
+            name='username'
+            type='text'
+            value={username}
             required
-            onChange={e => setEmail(e.target.value)}
+            onChange={e => setUsername(e.target.value)}
           />{' '}
           <br />
           <label htmlFor='password'>Password:</label> <br />
