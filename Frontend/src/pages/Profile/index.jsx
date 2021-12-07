@@ -5,8 +5,10 @@ import { Header } from '../../layout/index';
 // import '@popperjs/core';
 // import {default as email} from '../../views/auth/Signup';
 export const Profile = () => {
+ 
     const [userName, setUserName] = useState('');
     const [firstName, setFirstName] = useState('');
+    const [uniCourse, setUniCourse] = useState('');
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
@@ -32,12 +34,13 @@ export const Profile = () => {
                       })
           .then(data => {
             setUserName(data.username);
-            setFirstName(data.first_name)
+            setFirstName(data.first_name);
+            setUniCourse(data.uni_course);
             setLoading(false);
           });
       }
     }, []);
-  
+      
     return (
        
       <div>
@@ -56,7 +59,8 @@ export const Profile = () => {
                       <div className="card-header" style={{backgroundImage: "url(https://therichpost.com/wp-content/uploads/2021/05/bootstrap5-carousel-slider-img1.jpg)"}}> </div>
                       <div className="card-body text-center"> <img className="card-profile-img" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="profile img"/>
                         <h3 className="mb-3">{firstName}</h3>
-                        <p className="mb-4">University Course Here</p>
+                        <p className="mb-4">{uniCourse}</p>
+                        {/* not needed on own profile */}
                         <button className="btn btn-outline-dark btn-sm"><span className="fab fa-twitter"></span> Follow</button>
                       </div>
                     </div>
@@ -86,7 +90,7 @@ export const Profile = () => {
                           <div className="col-auto d-flex align-items-center"><img className="avatar avatar-lg p-1" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="Avatar"/></div>
                           <div className="col">
                             <label className="form-label">Name</label>
-                            <input className="form-control" placeholder="Your name"/>
+                            <input className="form-control" placeholder={userName}/>
                           </div>
                         </div>
                         <div className="mb-3"> 
@@ -164,7 +168,38 @@ export const Profile = () => {
                           <div className="col-md-5">
                             <div className="mb-4">
                               <label className="form-label">University</label>
-                              <input className="form-control" type="text" placeholder="University" value="King's College London"/>
+                              <select className="form-control custom-select">
+                              {/* select value={optionsState} */}
+                                <option value="">University of Oxford</option>
+                                <option value="">University of Cambridge</option>
+                                <option value="">Kings College London</option>
+                                <option value="">LSE</option>
+                                <option value="">University of St Andrews</option>
+                                <option value="">Imperial College London</option>
+                                <option value="">Durham University</option>
+                                <option value="">Loughborough University</option>
+                                <option value="">University College London</option>
+                                <option value="">University of Warwick</option>
+                                <option value="">University of Bath</option>
+                                <option value="">Lancaster University</option>
+                                <option value="">University of Edinburgh</option>
+                                <option value="">University of Manchester</option>
+                                <option value="">University of Exeter</option>
+                                <option value="">University of Southampton</option>
+                                <option value="">University of Glasgow</option>
+                                <option value="">University of London</option>
+                                <option value="">University of Bristol</option>
+                                <option value="">University of York</option>
+                                <option value="">University of Birmingham</option>
+                                <option value="">University of Leeds</option>
+                                <option value="">University of Nottingham</option>
+                                <option value="">University of Sheffield</option>
+                                <option value="">University of Essex</option>
+                                <option value="">University of Dundee</option>
+                                <option value="">University of Liverpool</option>
+                                <option value="">University of Surrey</option>
+                                <option value="">University of Reading</option>
+                              </select>
                             </div>
                           </div>
                           <div className="col-sm-6 col-md-3">
@@ -187,16 +222,11 @@ export const Profile = () => {
                           </div>
                           <div className="col-sm-6 col-md-6">
                             <div className="mb-4">
-                              <label className="form-label">Last Name</label>
+                              <label className="form-label">Last Name (optional)</label>
                               <input className="form-control" type="text" placeholder="Last Name"/>
                             </div>
                           </div>
-                          <div className="col-md-12">
-                            <div className="mb-4">
-                              <label className="form-label">Address</label>
-                              <input className="form-control" type="text" placeholder="Home Address"/>
-                            </div>
-                          </div>
+                         
                           <div className="col-sm-6 col-md-4">
                             <div className="mb-4">
                               <label className="form-label">City</label>
@@ -233,6 +263,8 @@ export const Profile = () => {
           )}
       </div>
     )
+    
   };
+
 
 export default Profile;
