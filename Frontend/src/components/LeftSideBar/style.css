@@ -18,7 +18,7 @@
 .lsb-list-item {
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 1.3rem;
 }
 
@@ -56,7 +56,7 @@
     margin-top: 30px;
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 1.3rem;
     cursor: pointer;
 }

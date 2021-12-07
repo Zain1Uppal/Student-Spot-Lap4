@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.css'
 
 export function LeftSideBar() {
@@ -8,15 +9,15 @@ export function LeftSideBar() {
                 <ul className="lsb-list">
                     <li className="lsb-list-item">
                         <i className="fas fa-rss"></i>
-                        <span className="lsb-list-item-text">Feed</span>
+                        <span className="lsb-list-item-text"><NavLink to="/MainFeed">Feed</NavLink></span>
                     </li>
                     <li className="lsb-list-item">
                         <i className="fas fa-book-open"></i>
-                        <span className="lsb-list-item-text">Resources</span>
+                        <span className="lsb-list-item-text"><NavLink to="/resources">Resources</NavLink></span>
                     </li>
                     <li className="lsb-list-item">
                         <i className="fas fa-globe"></i>
-                        <span className="lsb-list-item-text">News</span>
+                        <span className="lsb-list-item-text"><NavLink to="/news">News</NavLink></span>
                     </li>
                 </ul>
                 <hr className="hr"/>
