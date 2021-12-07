@@ -7,7 +7,7 @@ export function Feed({userId}) {
     return (
         <div className="feed">
             <div className="feed-wrapper">
-                <CreatePost />
+                <CreatePost userId={userId}/>
                 <Post userId={userId}/>
             </div>
             
