@@ -4,11 +4,14 @@ import './style.css';
 export function CreatePost({userId}) {
     const [postBody, setPostBody] = useState('') 
     const [body, setBody] = useState('')
+    const [category, setCategory] = useState()
+    
 
-    console.log('what is this'+userId)
+
     const post = {
         body: postBody,
-        poster: userId
+        poster: userId,
+        tags: category
     }
     console.log('this is the post'+ JSON.stringify(post))
     const postDescription = useRef()
@@ -22,13 +25,19 @@ export function CreatePost({userId}) {
             body: JSON.stringify(post)
         })
     },[postBody])
-
+    
     function onSubmit(e){
         e.preventDefault()
         setPostBody(body)
+        console.log('this is the cat'+category)
+        
     }
-    console.log(body)
-
+    function handleChange(e){
+        let value = Array.from(e.target.selectedOptions, options => options.value)
+        console.log('what is this'+value)
+        setCategory(value)
+    }
+    console.log(category)
     return(
         <div className="create-post">
             <form className="cp-wrapper" onSubmit={e => onSubmit(e)}>
