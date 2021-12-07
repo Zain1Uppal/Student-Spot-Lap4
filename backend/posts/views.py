@@ -50,7 +50,13 @@ class PostDetail(APIView):
     def put(self, req, post_id):
         post = self.get_object(post_id)
         self.check_object_permissions(req, post)
-        serialized = PostSerializer(post, data=req.data)
+        # Check if new tags added
+
+        data = req.data
+        if "body" not in data:
+            data["body"] = post.body
+
+        serialized = PostSerializer(post, data=data)
         if serialized.is_valid():
             serialized.save()
             return Response({"data": serialized.data})

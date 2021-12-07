@@ -7,8 +7,8 @@ from rest_framework.authtoken.models import Token
 
 # Create your models here.
 class User(AbstractUser):
-    followed_users = models.ManyToManyField("self")
-    followed_categories = models.ManyToManyField(Category)
+    followed_users = models.ManyToManyField("self", blank=True)
+    followed_categories = models.ManyToManyField(Category, blank=True)
     bio = models.CharField(max_length=500, null=True)
     university = models.CharField(max_length=50, null=True)
     course = models.CharField(max_length=50, null=True)
