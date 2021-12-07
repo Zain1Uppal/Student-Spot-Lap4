@@ -5,6 +5,7 @@ class IsPosterOrReadOnly(permissions.BasePermission):
     Custom permission to only allow owners of a post or admins to edit it
     """
     edit_methods = ("PUT", "PATCH")
+    message = "You do not have permission to edit this post!"
 
     def has_permission(self, request, view):
         # Needs to be authenticated for basic access
