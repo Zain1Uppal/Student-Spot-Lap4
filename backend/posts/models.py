@@ -13,7 +13,7 @@ def get_deleted_user():
 # Create your models here.
 class Post(models.Model):
     tags = ManyToManyField(Category, null=True)
-    poster = ForeignKey(User, on_delete=models.SET(get_deleted_user))
+    poster = ForeignKey(User, null=True, on_delete=models.SET(get_deleted_user))
     body = CharField(max_length=500)
     # reactions = JSONField(null=True)
     date = DateField(auto_now_add= True)

@@ -10,5 +10,6 @@ urlpatterns = [
     path('categories/<int:category_id>/', views.show_by_category, name='category-posts'),
     path('comments/', views.comment_index, name='comments-index'),
     path('comments/new/', views.comment_create, name='comments-create'),
+    path('comments/<int:comment_id>/', views.CommentDetail.as_view(), name="individual-comment"),
     path('<int:post_id>/comments/', views.show_by_post, name='comments-show-by-posts'),
 ]

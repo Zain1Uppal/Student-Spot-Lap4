@@ -1,11 +1,10 @@
 from rest_framework import permissions
 
-class IsPosterOrReadOnly(permissions.BasePermission):
+class IsAdminOrReadOnly(permissions.BasePermission):
     """
-    Custom permission to only allow owners of a post or admins to edit it
+    Custom permission to extend from to allow only admin access or read-only access
     """
     edit_methods = ("PUT", "PATCH")
-    message = "You do not have permission to edit this post!"
 
     def has_permission(self, request, view):
         # Needs to be authenticated for basic access
@@ -21,13 +20,47 @@ class IsPosterOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        # Posters can edit/delete their posts
-        if obj.poster == request.user:
-            return True
-
-        # Staff users can delete posts
+        # Staff users have delete access
         if request.user.is_staff and request.method not in self.edit_methods:
             return True
         
         # Otherwise deny access
         return False
+
+
+class IsPosterOrReadOnly(IsAdminOrReadOnly):
+    """
+    Custom permission extension to only allow owners of a post or admins to edit it
+    """
+    message = "You do not have permission to edit this post!"
+
+    def has_permission(self, request, view):
+        return super(IsPosterOrReadOnly, self).has_permission(request, view)
+
+    def has_object_permission(self, request, view, obj):
+        
+        # Posters can edit/delete their posts
+        if obj.poster == request.user:
+            return True
+
+        # Otherwise use the base IsAdminOrReadOnly permissions
+        return super(IsPosterOrReadOnly, self).has_object_permission(request, view, obj)
+
+
+class IsCommenterOrReadOnly(IsAdminOrReadOnly):
+    """
+    Custom permission extension to only allow owners of a comment or admins to edit it
+    """
+    message = "You do not have permission to edit this comment!"
+
+    def has_permission(self, request, view):
+        return super(IsCommenterOrReadOnly, self).has_permission(request, view)
+
+    def has_object_permission(self, request, view, obj):
+        
+        # Commenters can edit/delete their posts
+        if obj.commenter == request.user:
+            return True
+
+        # Otherwise use the base IsAdminOrReadOnly permissions
+        return super(IsCommenterOrReadOnly, self).has_object_permission(request, view, obj)
