@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Footer } from './layout/index';
-import { MainFeed, Profile, Categories, Category, FrontPage, UserPage } from './pages/index';
+import { MainFeed, Profile, Categories, FrontPage, Resources, News, Category, UserPage } from './pages/index';
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 import Navbar from './layout/Navbar';
@@ -26,7 +27,9 @@ function App() {
                 <Route path="/Categories"><Categories /></Route>
                 <Route path="/Category"><Category /></Route>
                 <Route path="/dashboard"><Dashboard /></Route>
-               
+                <Route path="/resources"><Resources /></Route>
+                <Route path="/news"><News /></Route>
+
             </Switch>
         
             {/* <Footer /> */}

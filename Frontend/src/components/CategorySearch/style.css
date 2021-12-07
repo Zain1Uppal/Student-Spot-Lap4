@@ -1,4 +1,4 @@
-.group-input {
+ .group-input {
     width: 30%;
     background-color: transparent;
     outline: none;
@@ -11,10 +11,23 @@
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif;
 
+
 }
 
-.category-search-div {
-    margin: auto;
+.search-category{
     text-align: center;
+    margin: auto;
+}
 
+
+.category-search-div{
+    flex: 85%;
+    height: calc(100vh - 8vh);
+    padding: 20px 40px;
+}
+
+.cate-list-cont{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 0;
 }
