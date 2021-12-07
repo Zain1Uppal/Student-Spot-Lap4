@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../img/logo.png';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -52,7 +51,7 @@ const Signup = () => {
   return (
     <div>
       <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
-    <img style={{height: '100px', width: '120px'}}src={logo} />
+      <i className="fas fa-users" style={{color:'white', fontSize:'60px'}}/>
     </div>
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
         <div>StudentHub</div>

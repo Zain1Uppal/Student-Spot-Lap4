@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BackButton } from '../../components';
 import { Redirect } from 'react-router-dom';
 import { MainFeed } from '../../pages';
-import logo from '../../img/logo.png';
+import { Link } from 'react-router-dom';
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -53,7 +54,7 @@ const Login = () => {
       
     <div>
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
-    <img style={{height: '100px', width: '120px'}}src={logo} />
+    <i className="fas fa-users" style={{color:'white', fontSize:'60px'}}/>
     </div>
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
         <div>StudentHub</div>
@@ -84,6 +85,9 @@ const Login = () => {
           <div class="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
           <input class="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} />
           <BackButton className="backButton" />
+          <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', height: 'auto', width:'auto', textDecoration: 'none', margin: '10px',}}>
+        <Link to='/' input className="btn btn-dark" id="homeButton" ><div>Home</div></Link>
+      </div>
   
           </div>
         </form>
