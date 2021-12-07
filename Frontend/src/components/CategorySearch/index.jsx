@@ -32,19 +32,22 @@ export const CategorySearch = () => {
 
     return(
         <div className="category-search-div">
+            <h1>Groups</h1>
             <div className="search-category">
                 <form>
                     <input type="text" placeholder="Search a Group" className="group-input" onChange={handleChange}></input>
                 </form>
             </div>
-            {filteredGroups.map(group => {
-                return (
-                    <CategoryList 
-                    key={group.id}
-                    icon={group.image}
-                    groupname={group.name}/>
-                )
-            })}
+            <div className="cate-list-cont">
+                {filteredGroups.map(group => {
+                    return (
+                        <CategoryList 
+                        key={group.id}
+                        icon={group.image}
+                        groupname={group.name}/>
+                    )
+                })}
+            </div>
             
         </div>
     )

@@ -9,6 +9,7 @@ main {
 .content {
     display: flex;
     width: 100vw;
+    padding: 40px 30px;
     padding-right: 60px;
 
 }
