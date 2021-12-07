@@ -4,6 +4,7 @@ import './style.css';
 export function CreatePost() {
 
     const postDescription = useRef()
+    
 
     return(
         <div className="create-post">
