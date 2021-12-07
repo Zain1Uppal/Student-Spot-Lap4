@@ -43,7 +43,7 @@ const Login = () => {
           window.location.replace('http://localhost:8080/login');
           // return <Redirect to= '/dashboard'  />
         } else {
-          setEmail('');
+          setUsername('');
           setPassword('');
           localStorage.clear();
           setErrors(true);
