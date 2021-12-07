@@ -17,15 +17,18 @@ export const NewsList = () => {
     }, []);
     
     return(
-        <div className="newslist-cont">
-            {articles.map(({title, description, url, urlToImage}) => (
-                <NewsItem
-                title={title}
-                description={description}
-                url={url}
-                urlToImage={urlToImage}/>
-            ))}
-            
+        <div className="nl-title">
+            <h1>Wall Street Journal</h1>
+            <div className="newslist-cont">
+                {articles.map(({title, description, url, urlToImage}) => (
+                    <NewsItem
+                    title={title}
+                    description={description}
+                    url={url}
+                    urlToImage={urlToImage}/>
+                ))}
+                
+            </div>
         </div>
     )
 }

@@ -1,7 +1,15 @@
 .newslist-cont{
-    flex: 85%;
-    height: calc(100vh - 8vh);
-    padding: 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding: 25px 0;
+    padding-bottom: 20px;
+
+
+}
+
+.nl-title{
+    flex: 85%;
+    height: calc(100vh - 8vh);
+    padding: 60px 60px;
+    
 }
