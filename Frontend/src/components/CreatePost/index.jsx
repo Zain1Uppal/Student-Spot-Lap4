@@ -33,7 +33,7 @@ export function CreatePost({userId}) {
         
     }
     function handleChange(e){
-        let value = Array.from(e.target.selectedOptions, options => options.value)
+        let value = (e.target.value)
         console.log('what is this'+value)
         setCategory(value)
     }
@@ -41,13 +41,18 @@ export function CreatePost({userId}) {
     return(
         <div className="create-post">
             <form className="cp-wrapper" onSubmit={e => onSubmit(e)}>
-                <textarea className="cp-input" placeholder="Share your thoughts..." maxLength="250" ref={postDescription}  onChange={e => setBody(e.target.value)} required></textarea>
-                <select name="categories" id="categories" multiple onChange={e => handleChange(e)}>
-                    <option value="">-----------</option>
-                    <option value='1'>computer</option>
-                    <option value="2">science</option>
-                </select>
-                <button className="cp-button" >+</button>
+                <textarea className="cp-input" placeholder="Share your thoughts..." maxLength="220" ref={postDescription}  onChange={e => setBody(e.target.value)}required></textarea>
+                <button className="cp-button">+</button>
+                <div className="tag-wrapper">
+                    <ul className="ks-cboxtags" onChange={handleChange}>
+                        <li><input type="checkbox" id="biology" value="biology" /><label htmlFor="biology">Biology</label></li>
+                        <li><input type="checkbox" id="chemsitry" value="chemistry" /><label htmlFor="chemsitry">Chemistry</label></li>
+                        <li><input type="checkbox" id="computing" value="computing" /><label htmlFor="computing">Computing</label></li>
+                        <li><input type="checkbox" id="english" value="english" /><label htmlFor="english">English</label></li>
+                        <li><input type="checkbox" id="maths" value="maths" /><label htmlFor="maths">Maths</label></li>
+                        <li><input type="checkbox" id="physics" value="physics" /><label htmlFor="physics">Physics</label></li>
+                    </ul>
+                </div>
             </form>
         </div>
     )
