@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HeaderSearch } from '../../components/index';
 import './style.css';
-import   Logout  from '../../views/auth/Logout'
+import Logout from '../../views/auth/Logout';
 
 export function Header() {
     return(

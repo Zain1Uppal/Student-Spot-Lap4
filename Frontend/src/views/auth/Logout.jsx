@@ -22,13 +22,11 @@ const Logout = () => {
         'Authorization': `Token ${localStorage.getItem('token')}`
       }
     })
-      .then(res => {if(res.status === 500){
-                        window.location.replace('http://localhost:8080/login')
-                        return res.json()
-      }})
+      .then(res => res.json())
       .then(data => {
         console.log(data);
-        localStorage.clear();;
+        localStorage.clear();
+        window.location.replace('http://localhost:8080/login');
       });
   };
 
