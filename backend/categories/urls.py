@@ -8,5 +8,6 @@ from . import views
 urlpatterns = [
     # path('', include(router.urls))
     path('', views.index, name='categories-index'),
-    path('new', views.create, name='categories-create')
+    path('new', views.create, name='categories-create'),
+    path('<int:cateId>', views.show_by_id, name='category-by-id')
 ]

@@ -18,6 +18,13 @@ def index(req):
     serialized = CategorySerializer(data, many=True)
     return Response({"data": serialized.data})
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def show_by_id(req, cateId):
+    category_posts = Category.objects.filter(id=cateId)
+    serialized = CategorySerializer(category_posts, many=True)
+    return Response({"data": serialized.data})
+
 @api_view(['POST'])
 @permission_classes([IsAdminUser])
 def create(req):

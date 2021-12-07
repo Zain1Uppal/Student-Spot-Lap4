@@ -26,7 +26,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch('http://localhost:8080/auth/register/', {
+    fetch('http://localhost:8000/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ const Signup = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:8080/dashboard');
+          window.location.replace('http://localhost:8080/login');
         } else {
           setEmail('');
           setPassword1('');
