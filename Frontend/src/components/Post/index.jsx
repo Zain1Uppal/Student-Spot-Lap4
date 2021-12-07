@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import './style.css'
 
-export function Post() {
-
+export function Post({userId}) {
+    const [postData, setPostData] = useState()
+    useEffect(()=>{
+        console.log(userId)
+        fetch(`http://localhost:8000/posts/users/${userId}/following`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${localStorage.getItem('token')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => setPostData(data))
+    },[])
 
     return(
         <div className="post-feed">
@@ -17,6 +29,7 @@ export function Post() {
                     <i className="fas fa-caret-down"></i>
                 </div>
                 <div className="post-center">
+
                     <span className="post-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.</span>
                 </div>
                 <div className="post-bottom">
