@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './style.css'
 
-export function Post() {
+export function Post({userId}) {
 
+    useEffect(()=>{
+        console.log(userId)
+        fetch(`http://localhost:8000/posts/users/${userId}/following`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${localStorage.getItem('token')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => console.log(data.data[0]))
+    },[])
 
     return(
         <div className="post-feed">

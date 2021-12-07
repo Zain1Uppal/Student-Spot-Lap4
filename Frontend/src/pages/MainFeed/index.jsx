@@ -5,6 +5,7 @@ import './style.css';
 
 export function MainFeed() {
     const [userEmail, setUserEmail] = useState('');
+    const [userId, setUserId] = useState()
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -30,6 +31,7 @@ export function MainFeed() {
                         })
             .then(data => {
               setUserEmail(data.email);
+              setUserId(data.pk)
               setLoading(false);
             });
         }
@@ -42,7 +44,8 @@ export function MainFeed() {
                     <Header />
                     <div className="content">
                         <LeftSideBar />
-                        <Feed />
+                        
+                        <Feed userId={userId}/>
                         <RightSideBar />
                     </div>
             </main>
