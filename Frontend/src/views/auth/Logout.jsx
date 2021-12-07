@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
+import './style.css'
 
 const Logout = () => {
   const [loading, setLoading] = useState(true);
@@ -14,11 +15,11 @@ const Logout = () => {
   const handleLogout = e => {
     e.preventDefault();
 
-    fetch('http://127.0.0.1:8080api/v1/users/auth/logout/', {
+    fetch('http://localhost:8000/users/auth/logout/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Token ${localStorage.getItem('token')}`
+        'Authorization': `Token ${localStorage.getItem('token')}`
       }
     })
       .then(res => res.json())
@@ -33,8 +34,8 @@ const Logout = () => {
     <div>
       {loading === false && (
         <Fragment>
-          <h1>Are you sure you want to logout?</h1>
-          <input type='button' value='Logout' onClick={handleLogout} />
+         <button id='logout-button' type='button' value='Logout' onClick={handleLogout} >Logout</button>
+          {/* <h1>Are you sure you want to logout?</h1> */}
         </Fragment>
       )}
     </div>

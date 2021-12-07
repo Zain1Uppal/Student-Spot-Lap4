@@ -7,7 +7,7 @@ import './style.css'
 import Navbar from './layout/Navbar';
 import Login from './views/auth/login';
 import Signup from './views/auth/Signup';
-import Logout from './views/auth/Logout'
+import Logout from './views/auth/Logout';
 import { Dashboard } from './views/app/Dashboard'
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
                 <Route path="/MainFeed"><MainFeed/></Route>
                 <Route path="/Profile"><Profile /></Route>
                 <Route path="/Categories"><Categories /></Route>
+                <Route path="/Category"><Category /></Route>
                 <Route path="/dashboard"><Dashboard /></Route>
                 <Route path="/resources"><Resources /></Route>
                 <Route path="/news"><News /></Route>

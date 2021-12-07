@@ -1,20 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from '../../layout/index';
 // import '@popperjs/core';
 // import {default as email} from '../../views/auth/Signup';
-class Profile extends React.Component {
- 
-  render() {
-   
+export const Profile = () => {
+    const [userName, setUserName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      console.log('before if dashboard')
+      if (!localStorage.getItem('token')) {
+        console.log('inside first condition')
+        window.location.replace('http://localhost:8080/login');
+      } else {
+        console.log('inside second condition')
+        fetch('http://localhost:8000/users/auth/user/', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Token ${localStorage.getItem('token')}`
+          }
+        })
+          .then(res => {if(res.status === 200){
+                          return res.json()
+                        }else{
+                          localStorage.clear()
+                          window.location.replace('http://localhost:8080/login');
+                        }
+                      })
+          .then(data => {
+            setUserName(data.username);
+            setFirstName(data.first_name)
+            setLoading(false);
+          });
+      }
+    }, []);
+  
     return (
+       
       <div>
+         
         <Header />
+        {loading === false && (  
         <div className="page-holder bg-gray-100">
             <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
                   <div className="page-header mb-4">
-                    <h1 className="page-heading">{name}'s Profile</h1>
+                    <h1 className="page-heading">{userName}'s Profile</h1>
                   </div>
               <section>
                 <div className="row">
@@ -22,7 +55,7 @@ class Profile extends React.Component {
                     <div className="card card-profile mb-4">
                       <div className="card-header" style={{backgroundImage: "url(https://therichpost.com/wp-content/uploads/2021/05/bootstrap5-carousel-slider-img1.jpg)"}}> </div>
                       <div className="card-body text-center"> <img className="card-profile-img" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="profile img"/>
-                        <h3 className="mb-3">{name} Name here</h3>
+                        <h3 className="mb-3">{firstName}</h3>
                         <p className="mb-4">University Course Here</p>
                         <button className="btn btn-outline-dark btn-sm"><span className="fab fa-twitter"></span> Follow</button>
                       </div>
@@ -197,8 +230,9 @@ class Profile extends React.Component {
             </div>
           
           </div>
+          )}
       </div>
     )
   };
-}
+
 export default Profile;
