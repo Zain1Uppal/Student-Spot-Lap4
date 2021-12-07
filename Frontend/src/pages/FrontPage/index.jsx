@@ -6,13 +6,14 @@ export function FrontPage() {
 
     return(
         <>
-         <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
-        <img style={{height: '100px', width: '120px'}}src={logo} />
+         <div style={{display: 'flex', justifyContent: 'center', fontSize: '100px', marginTop: '150px'}}>
+         <i className="fas fa-users" style={{color:'white', fontSize:'60px'}}/>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
             <div>StudentHub</div>
         </div>
         </>
+        
         
     )
 }
