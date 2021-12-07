@@ -57,11 +57,14 @@ export const Profile = () => {
                 <div className="row">
                   <div className="col-lg-4">
                     <div className="card card-profile mb-4">
-                      <div className="card-header" style={{backgroundImage: "url(https://therichpost.com/wp-content/uploads/2021/05/bootstrap5-carousel-slider-img1.jpg)"}}> </div>
+                      <div className="card-header" style={{backgroundImage: "url(https://pbs.twimg.com/media/EeI6u48WkAAC45D.jpg)"}}> </div>
                       <div className="card-body text-center"> <img className="card-profile-img" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="profile img"/>
                         <h3 className="mb-3">{firstName}</h3>
                         <p className="mb-4">University Course goes here</p>
-                        {/* not needed on own profile */}
+                        <p className="mb-4">University here</p>
+                        <div className= "btn-toolbar">
+                        <button className="btn btn-outline-secondary" type="button"><i className="fa fa-paper-plane"></i> My Messages</button>
+                        </div>
                       </div>
                     </div>
                     <div className="card mb-4">
@@ -96,7 +99,8 @@ export const Profile = () => {
                           <label className="form-label">Bio</label>
                           <textarea className="form-control" rows="8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</textarea>
                         </div>
-                        <div className="mb-3"> 
+                        {/* can be added when changing password/email */}
+                        {/* <div className="mb-3"> 
                           <label className="form-label">Email</label>
                           <input className="form-control" placeholder="you@domain.com"/>
                         </div>
@@ -105,6 +109,7 @@ export const Profile = () => {
                       </div>
                       <div className="card-footer text-end">
                         <button className="btn btn-primary">Save</button>
+                      </div> */}
                       </div>
                     </form>
                   </div>

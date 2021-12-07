@@ -9,7 +9,7 @@ export const UserPage = ({match, location}) => {
     const [userName, setUserName] = useState('');
     const [firstName, setFirstName] = useState('');
     // const [uniCourse, setUniCourse] = useState('');
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
   
     useEffect(() => {
       console.log('before if dashboard')
@@ -37,7 +37,7 @@ export const UserPage = ({match, location}) => {
             setUserName(data.username);
             setFirstName(data.first_name);
             // setUniCourse(data.uni_course);
-            setLoading(false);
+            setLoading(true);
         
           });
       }
@@ -48,7 +48,7 @@ export const UserPage = ({match, location}) => {
       <div>
     
         <Header />
-        {loading === false && (  
+        {loading === true && (  
         <div className="page-holder bg-gray-100">
             <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
                   <div className="page-header mb-4">
@@ -63,8 +63,12 @@ export const UserPage = ({match, location}) => {
                         <h3 className="mb-3">first name should go here: {userName}</h3>
                         <p className="mb-4">University Course goes here </p>
                         <p className="mb-4">University here </p>
+                        <div className= "btn-toolbar">
+                        <button className="btn btn-outline-secondary" type="button"><i className="fa fa-paper-plane"></i> Message</button>
                         {/* not needed on own profile */}
-                        <button className="btn btn-outline-dark btn-sm">Follow</button>
+                       
+                        <button className="btn btn-outline-dark"><i className="fas fa-plus"></i>Follow</button>
+                        </div>
                       </div>
                     </div>
                     <div className="card mb-4">
