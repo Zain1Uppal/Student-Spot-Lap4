@@ -25,7 +25,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch('http://localhost:8080/auth/register/', {
+    fetch('http://localhost:8000/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

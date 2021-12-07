@@ -10,6 +10,14 @@
 
 All require at least regular login authentication to access
 
+```JSON
+headers = {
+  "content-type": "application/json",
+  "Authorization": "Token <user auth token>"
+}
+
+```
+
 ## `users/` routes
 
 - `users/`
@@ -47,14 +55,15 @@ Request body for `categories/new:
 - `posts/new/`
   - Create route for new post
 - `posts/users/<int:user_id>/`
-  - Show all posts by user of id user_id
+  - Show all posts by user of id `user_id`
+- `posts/users/<int:user_id>/following`
+  - Show all posts from users/categories that user of id `user_id` is following
 - `posts/categories/<int:category_id>/`
-  - Show all posts by category of specified id
+  - Show all posts by category of id `category_id`
 - `posts/comments/`
   - Index route for all comments in the database
 - `posts/<int:post_id>/comments/`
-  - Show all comments for a post of specified id
-- `posts/comments/new/`
+  - Show all comments for a post of id `post_id`
   - Create route for new comment
 
 Request body for `posts/new/` (tags optional):
