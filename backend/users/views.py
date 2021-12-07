@@ -22,17 +22,17 @@ class UserDetail(APIView):
     # Retrieve, update, or delete a user
     permission_classes = [IsUserOrAdminOrReadOnly]
 
-    def get_user(self, pk):
-        return get_object_or_404(User, pk=pk)
+    def get_user(self, username):
+        return get_object_or_404(User, username__iexact=username)
 
-    def get(self, req, user_id):
-        user = self.get_user(user_id)
+    def get(self, req, username):
+        user = self.get_user(username)
         self.check_object_permissions(req, user)
         serialized = UserSerializer(user)
         return Response({"data": serialized.data})
 
-    def put(self, req, user_id):
-        user = self.get_user(user_id)
+    def put(self, req, username):
+        user = self.get_user(username)
         self.check_object_permissions(req, user)
         serialized = UserSerializer(user, data=req.data, partial=True)
         if serialized.is_valid():
@@ -40,11 +40,41 @@ class UserDetail(APIView):
             return Response({"data": serialized.data})
         return Response(serialized.errors, status=400)
 
-    def patch(self, req, user_id):
-        return self.put(req, user_id)
+    def patch(self, req, username):
+        return self.put(req, username)
 
-    def delete(self, req, user_id):
-        user = self.get_object(user_id)
+    def delete(self, req, username):
+        user = self.get_object(username)
         self.check_object_permissions(req, user)
         user.delete()
         return Response(status=204)
+# class UserDetail(APIView):
+#     # Retrieve, update, or delete a user
+#     permission_classes = [IsUserOrAdminOrReadOnly]
+
+#     def get_user(self, pk):
+#         return get_object_or_404(User, pk=pk)
+
+#     def get(self, req, user_id):
+#         user = self.get_user(user_id)
+#         self.check_object_permissions(req, user)
+#         serialized = UserSerializer(user)
+#         return Response({"data": serialized.data})
+
+#     def put(self, req, user_id):
+#         user = self.get_user(user_id)
+#         self.check_object_permissions(req, user)
+#         serialized = UserSerializer(user, data=req.data, partial=True)
+#         if serialized.is_valid():
+#             serialized.save()
+#             return Response({"data": serialized.data})
+#         return Response(serialized.errors, status=400)
+
+#     def patch(self, req, user_id):
+#         return self.put(req, user_id)
+
+#     def delete(self, req, user_id):
+#         user = self.get_object(user_id)
+#         self.check_object_permissions(req, user)
+#         user.delete()
+#         return Response(status=204)
