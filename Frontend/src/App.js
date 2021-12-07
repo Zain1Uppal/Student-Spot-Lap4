@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Footer } from './layout/index';
-import { MainFeed, Profile, Categories, FrontPage, Resources, News } from './pages/index';
+import { MainFeed, Profile, Categories, FrontPage, Resources, News, Category } from './pages/index';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 import Navbar from './layout/Navbar';
