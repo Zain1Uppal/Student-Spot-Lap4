@@ -93,6 +93,7 @@ TOKEN_TTL = datetime.timedelta(days=7)
 
 REST_AUTH_TOKEN_MODEL = "users.models.AuthToken"
 REST_AUTH_TOKEN_CREATOR = "users.utils.custom_create_token"
+REST_AUTH_SERIALIZERS = {"USER_SERIALIZER":"users.serializers.UserSerializer"}
 
 # Rest Framework config
 REST_FRAMEWORK = {

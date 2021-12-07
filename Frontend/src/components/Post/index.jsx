@@ -17,7 +17,6 @@ export function Post({userId}) {
     },[])
     
     function dataPost(){
-        console.log('in the function'+ postData)
         return(
         postData.map((p, i) => 
             <div className="post-feed" key={i}>

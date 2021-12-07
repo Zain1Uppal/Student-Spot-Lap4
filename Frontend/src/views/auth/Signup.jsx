@@ -38,7 +38,7 @@ const Signup = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:8080/dashboard');
+          window.location.replace('http://localhost:8080/login');
         } else {
           setEmail('');
           setPassword1('');
