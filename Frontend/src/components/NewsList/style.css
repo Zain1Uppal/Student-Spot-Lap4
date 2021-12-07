@@ -1,8 +1,7 @@
 .newslist-cont{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 25px 0;
-    padding-bottom: 20px;
+    padding: 10px 0;
 
 
 }
@@ -10,6 +9,6 @@
 .nl-title{
     flex: 85%;
     height: calc(100vh - 8vh);
-    padding: 60px 60px;
+    padding: 20px 40px;
     
 }
