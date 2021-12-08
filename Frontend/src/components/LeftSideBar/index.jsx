@@ -46,9 +46,6 @@ export function LeftSideBar() {
                         <i className="fas fa-rocket"></i>
                         <span className="lsb-group-list-text"><NavLink to="/physics">Physics</NavLink></span>
                     </li>
-                    
-                    
-                    
                 </ul>
             </div>
             

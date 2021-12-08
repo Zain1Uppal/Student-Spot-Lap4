@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from '../../../layout/index';
-import { LeftSideBar, NewsList } from '../../../components/index';
+import { LeftSideBar, GroupSection } from '../../../components/index';
 import './style.css';
 
 export function Biology(){
@@ -10,7 +10,9 @@ export function Biology(){
             <Header />
             <div className="content-biology">
                 <LeftSideBar />
-                <NewsList />
+                <h1>Biology</h1>
+                <GroupSection />
+                
                 
             </div>
         </div> 

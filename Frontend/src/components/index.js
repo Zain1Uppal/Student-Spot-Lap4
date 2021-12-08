@@ -11,3 +11,5 @@ export { ResourcesList } from './ResourcesList';
 export { ResourcesSB } from './ResourcesSB';
 export { NewsItem } from './NewsItem';
 export { NewsList } from './NewsList';
+export { GroupSection } from './GroupSection';
+export { GroupCreatePost } from './GroupCreatePost';
