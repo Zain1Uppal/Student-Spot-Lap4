@@ -1,57 +1,45 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import JSONDATA from '../../Resources_data.json';
 import { ResourcesList } from '../index';
 import './style.css';
 
 export const ResourcesSB = () => {
 
-    const [ items, setItems ] = useState([]);
-    const [ searchItem, setSearchItem ] = useState('');
+    const [ searchTerm, setSearchTerm ] = useState("");
 
-    useEffect(() => {
-        const fetchItemsAPI = async () => {
-            const result = await axios.get('https://flask-api-funfacts.herokuapp.com/fun_facts')
-            console.log(result.data)
-            setItems(result.data)
-        }
-        fetchItemsAPI();
-    }, [])
-
-    const handleChangeSB = (e) => {
-        setSearchItem(e.target.value)
+    const handleChange = (e) => {
+        setSearchTerm(e.target.value)
     }
-
-    // const filteredBooks = items.filter(item => item.title.toLowerCase().includes(searchItem.toLowerCase()))
-
-
-    
 
     return (
         <div className="resources-search-cont">
             <div className="search-book">
                 <form>
-                    <input type="text" className="book-input" placeholder="Search a resource" onChange={handleChangeSB}></input>
+                    <input type="text" className="book-input" placeholder="Search a resource" onChange={handleChange}></input>
                 </form>
             </div>
-            <ResourcesList />
-            
-            
-            {/* {filteredBooks.map(book => {
-                return(
+            {JSONDATA.filter((val) => {
+                if (searchTerm == "") {
+                    return val
+                } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    return val
+                }
+            }).map((val, key) => {
+                return (
                     <ResourcesList 
-                    key={book.id}
-                    title={book.title}
-                    author={book.author}
-                    year={book.year}
-                    subject={book.subject}
-                    link={book.link}/>
-                   
-
-
+                    key={key}
+                    name={val.name}
+                    author={val.author}
+                    year={val.year}
+                    subject={val.subject}
+                    url={val.url}/>
                 )
-            })} */}
+            })}
+            
+            
             
         </div>
     )
 
 }
+

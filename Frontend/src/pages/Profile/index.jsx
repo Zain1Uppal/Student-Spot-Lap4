@@ -10,6 +10,7 @@ export const Profile = () => {
     const [university, setUniversity] = useState('')
     const [course, setCourse] = useState('')
     const [bio, setBio] = useState('')
+
     let username = localStorage.getItem('userName')
     // const [uniCourse, setUniCourse] = useState('');
     const [loading, setLoading] = useState(true);
@@ -22,6 +23,7 @@ export const Profile = () => {
         console.log('inside second condition')
         fetch(`http://localhost:8000/users/${username}/`, {
           // fetch(`https://studenthub-api.herokuapp.com/users/${username}/`, { 
+
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -40,6 +42,7 @@ export const Profile = () => {
             setUniversity(data.data.university)
             setCourse(data.data.course)
             setBio(data.data.bio)
+
             setLoading(false);
           });
       }
