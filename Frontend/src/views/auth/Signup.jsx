@@ -81,6 +81,7 @@ const Signup = () => {
           onChange={e => setPassword1(e.target.value)}
           required
           autoComplete="on"
+          minLength = '8'
         />{' '}
         <br />
         <label htmlFor='password2'>Confirm password:</label> <br />
