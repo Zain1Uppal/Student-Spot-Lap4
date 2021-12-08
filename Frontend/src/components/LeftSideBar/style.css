@@ -1,0 +1,87 @@
+.left-side-bar {
+    flex: 15%;
+    height: calc(100vh - 8vh);
+    border-right: 1px solid rgb(192, 192, 192);
+}
+
+.lsb-wrapper{
+    padding: 40px ;
+}
+
+.lsb-list {
+    padding: 40px 20px;
+    margin: 0;
+    list-style: none;
+    cursor: pointer;
+}
+
+.lsb-list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+}
+
+.lsb-list-item:hover, .fas:hover {
+    transform: scale(1.1);
+    color: darkblue
+}
+
+.fas {
+    margin-right: 18px;
+    font-size: 1.1rem;
+}
+
+.hr {
+    margin-top: -20px;
+    margin-bottom: -10px;
+    box-shadow: 1px 1px 10px rgb(192, 192, 192);
+}
+
+.lsb-groups-list {
+    padding: 40px 20px;
+    margin: 0;
+    list-style: none;
+    font-size: 1.4rem;
+    
+}
+
+.lsb-group-list-item:hover, .fas:hover {
+    transform: scale(1.1);
+    color: darkblue
+}
+
+
+.lsb-group-list-item {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/*icon colors*/
+.fa-laptop {
+    color: rgb(12, 88, 151)
+}
+
+.fa-rocket{
+    color: rgb(55, 133, 153)
+}
+
+.fa-atom {
+    color: rgb(57, 95, 0)
+}
+
+.fa-dna{
+    color:rgb(92, 0, 0)
+}
+
+.fa-calculator{
+    color:rgb(62, 3, 85)
+}
+
+.fa-pen-nib{
+    color: rgb(146, 60, 3)
+}

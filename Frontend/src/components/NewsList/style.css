@@ -1,0 +1,14 @@
+.newslist-cont{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 0;
+
+
+}
+
+.nl-title{
+    flex: 85%;
+    height: calc(100vh - 8vh);
+    padding: 20px 40px;
+    
+}

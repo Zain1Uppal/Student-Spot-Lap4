@@ -1,0 +1,28 @@
+.computing-page{
+    margin: 0;
+    background-color: #e9e9e9;
+    background-image: linear-gradient(315deg, #e9e9e9 0%, #f6f2f2 84%); 
+    width: 100vw;
+    height: auto;
+}
+
+.content-computing{
+    display: flex;
+    width: 100vw;
+    padding: 40px 30px;
+    height: auto;
+}
+
+.group-computing{
+    width: 100vw;
+    display: block;
+    padding-left: 60px;
+    
+    
+}
+
+.group-computing h1{
+    color: rgb(12, 88, 151);
+    margin-bottom: -30px;
+    padding-left: 20px;
+}

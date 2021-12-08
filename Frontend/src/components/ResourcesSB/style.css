@@ -1,0 +1,29 @@
+.resources-search-cont {
+    flex: 85%;
+    height: calc(100vh - 8vh);
+    padding: 60px;
+}
+
+.search-book{
+    width: 100%;
+    text-align: center;
+}
+
+.search-book input{
+    width: 30%;
+    background-color: transparent;
+    outline: none;
+    color: black;
+    height: 40px;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgb(163, 163, 163);
+    padding: 5px 10px;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+
+
