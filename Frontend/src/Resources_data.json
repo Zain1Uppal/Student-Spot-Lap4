@@ -2,10 +2,10 @@
     {"id": 1, "name": "Biology: Concepts & Connections", "author": "Neil A. Campbell", "year": "1995", "subject": "biology", "url": "https://www.google.co.uk/books/edition/Biology/HepGPwAACAAJ?hl=en"},
     {"id": 2, "name": "National 5 Chemistry", "author": "Barry McBride", "year": "2013", "subject": "chemistry", "url": "https://www.google.co.uk/books/edition/National_5_Chemistry/26u2CgAAQBAJ?hl=en&gbpv=0"},
     {"id": 3, "name": "Cloud Computing", "author": "Douglas Comer", "year": "2021", "subject": "computing", "url": "https://www.google.co.uk/books/edition/The_Cloud_Computing_Book/7Ag0EAAAQBAJ?hl=en&gbpv=0"},
-    {"id": 4, "name": "Biology: Concepts & Connections", "author": "Neil A. Campbell", "year": "1995", "subject": "biology", "url": "https://www.google.co.uk/books/edition/Biology/HepGPwAACAAJ?hl=en"},
-    {"id": 5, "name": "Biology: Concepts & Connections", "author": "Neil A. Campbell", "year": "1995", "subject": "biology", "url": "https://www.google.co.uk/books/edition/Biology/HepGPwAACAAJ?hl=en"},
-    {"id": 6, "name": "Biology: Concepts & Connections", "author": "Neil A. Campbell", "year": "1995", "subject": "biology", "url": "https://www.google.co.uk/books/edition/Biology/HepGPwAACAAJ?hl=en"},
-    {"id": 7, "name": "Biology: Concepts & Connections", "author": "Neil A. Campbell", "year": "1995", "subject": "biology", "url": "https://www.google.co.uk/books/edition/Biology/HepGPwAACAAJ?hl=en"},
-    {"id": 8, "name": "Biology: Concepts & Connections", "author": "Neil A. Campbell", "year": "1995", "subject": "biology", "url": "https://www.google.co.uk/books/edition/Biology/HepGPwAACAAJ?hl=en"},
-    {"id": 9, "name": "Biology: Concepts & Connections", "author": "Neil A. Campbell", "year": "1995", "subject": "biology", "url": "https://www.google.co.uk/books/edition/Biology/HepGPwAACAAJ?hl=en"}
+    {"id": 4, "name": "Computer Science Logic", "author": "Luke Ong", "year": "2005", "subject": "computing", "url": "https://www.google.co.uk/books/edition/Computer_Science_Logic/jQfdDouOV3QC?hl=en&gbpv=0"},
+    {"id": 5, "name": "English Language History", "author": "John Algeo", "year": "1992", "subject": "english", "url": "https://www.google.co.uk/books/edition/The_Cambridge_History_of_the_English_Lan/419yI8SGcnEC?hl=en&gbpv=0"},
+    {"id": 6, "name": "The Maths Book", "author": "Matt Parker", "year": "2019", "subject": "maths", "url": "https://www.google.co.uk/books/edition/The_Maths_Book/sDifDwAAQBAJ?hl=en&gbpv=0"},
+    {"id": 7, "name": "Maths for Science", "author": "Pat Murphy", "year": "2002", "subject": "maths", "url": "https://www.google.co.uk/books/edition/Maths_for_Science/Pn_RLwEACAAJ?hl=en"},
+    {"id": 8, "name": "Understanding Maths", "author": "Hilary Koll", "year": "2015", "subject": "maths", "url": "https://www.google.co.uk/books/edition/Understanding_Maths/XRV7rgEACAAJ?hl=en"},
+    {"id": 9, "name": "The World According to Physics", "author": "Jim Al-Khalili", "year": "2020", "subject": "physics", "url": "https://www.google.co.uk/books/edition/The_World_According_to_Physics/8_-tDwAAQBAJ?hl=en&gbpv=0"}
 ]
