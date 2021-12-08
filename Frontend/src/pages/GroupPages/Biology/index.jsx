@@ -10,8 +10,12 @@ export function Biology(){
             <Header />
             <div className="content-biology">
                 <LeftSideBar />
-                <h1>Biology</h1>
-                <GroupSection />
+                <div className="group-biology">
+                    <h1>Biology</h1>
+                    <GroupSection />
+                </div>
+                
+                
                 
                 
             </div>

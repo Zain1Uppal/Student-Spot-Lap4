@@ -13,7 +13,16 @@
     height: auto;
 }
 
-.content-biology h1{
-    padding-left: 20px;
+.group-biology{
+    width: 100vw;
+    display: block;
+    padding-left: 60px;
+    
+    
+}
+
+.group-biology h1{
     color:rgb(92, 0, 0);
+    margin-bottom: -30px;
+    padding-left: 20px;
 }
