@@ -11,3 +11,4 @@ export { ResourcesList } from './ResourcesList';
 export { ResourcesSB } from './ResourcesSB';
 export { NewsItem } from './NewsItem';
 export { NewsList } from './NewsList';
+// export { ProfileModal } from './Modal';

@@ -22,10 +22,10 @@ function App() {
                 <Route path='/signup' component={Signup} exact />
                 <Route path='/logout' component={Logout} exact />
                 <Route path="/MainFeed"><MainFeed/></Route>
-                <Route path="/Profile"><Profile /></Route>
+                <Route path="/profile/"><Profile /></Route>
                 <Route path="/users/:username"><UserPage /></Route>
                 <Route path="/Categories"><Categories /></Route>
-                <Route path="/Category"><Category /></Route>
+                <Route path="/category"><Category /></Route>
                 <Route path="/dashboard"><Dashboard /></Route>
                 <Route path="/resources"><Resources /></Route>
                 <Route path="/news"><News /></Route>
