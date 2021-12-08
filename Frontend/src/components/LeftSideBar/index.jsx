@@ -23,29 +23,32 @@ export function LeftSideBar() {
                 <hr className="hr"/>
                 <ul className="lsb-groups-list">Groups (6)
                     <li className="lsb-group-list-item">
-                        <i className="fas fa-laptop"></i>
-                        <span className="lsb-group-list-text">Computing</span>
-                    </li>
-                    <li className="lsb-group-list-item">
-                        <i className="fas fa-rocket"></i>
-                        <span className="lsb-group-list-text">Physics</span>
-                    </li>
-                    <li className="lsb-group-list-item">
-                    <i className="fas fa-atom"></i>
-                        <span className="lsb-group-list-text">Chemistry</span>
-                    </li>
-                    <li className="lsb-group-list-item">
                         <i className="fas fa-dna"></i>
-                        <span className="lsb-group-list-text">Biology</span>
+                        <span className="lsb-group-list-text"><NavLink to="/biology">Biology</NavLink></span>
                     </li>
                     <li className="lsb-group-list-item">
-                        <i className="fas fa-calculator"></i>
-                        <span className="lsb-group-list-text">Maths</span>
+                        <i className="fas fa-atom"></i>
+                        <span className="lsb-group-list-text"><NavLink to="/chemistry">Chemistry</NavLink></span>
+                    </li>
+                    <li className="lsb-group-list-item">
+                        <i className="fas fa-laptop"></i>
+                        <span className="lsb-group-list-text"><NavLink to="/computing">Computing</NavLink></span>
                     </li>
                     <li className="lsb-group-list-item">
                         <i className="fas fa-pen-nib"></i>
-                        <span className="lsb-group-list-text">English</span>
+                        <span className="lsb-group-list-text"><NavLink to="/english">English</NavLink></span>
                     </li>
+                    <li className="lsb-group-list-item">
+                        <i className="fas fa-calculator"></i>
+                        <span className="lsb-group-list-text"><NavLink to="/maths">Maths</NavLink></span>
+                    </li>
+                    <li className="lsb-group-list-item">
+                        <i className="fas fa-rocket"></i>
+                        <span className="lsb-group-list-text"><NavLink to="/physics">Physics</NavLink></span>
+                    </li>
+                    
+                    
+                    
                 </ul>
             </div>
             
