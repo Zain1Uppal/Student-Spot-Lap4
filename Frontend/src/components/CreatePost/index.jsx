@@ -68,7 +68,6 @@ export function CreatePost({userId}) {
                     return(
                         <li key={i}><input  type="checkbox" id={c.name} value={c.id} /><label htmlFor={c.name}>{c.name}</label></li>
                     )
-                
             })
 
         }
