@@ -42,14 +42,14 @@ headers = {
 - Only the user themselves / admins
   - PATCH -> add/remove to the followed users/categories lists
     - Need to provide at least one of the following fields (can provide multiple, or just one):
-      - `"follow_user": user_id`
+      - `"follow_user": username`
       - `"follow_category": category_id`
-      - `"unfollow_user": user_id`
+      - `"unfollow_user": username`
       - `"unfollow_category": category_id`
 
       ```JSON
         body = {
-          "follow_user": 2
+          "follow_user": "Jim"
         }
       ```
 
@@ -101,7 +101,7 @@ headers = {
     ```JSON
       body = {
           "body": "Post Content",
-          "poster": user_id,
+          "poster": "username",
           "tags": [<list of category ids>]
       }
     ```
@@ -149,7 +149,7 @@ headers = {
       body = {
           "message": "Comment content",
           "post": post_id,
-          "commenter": user_id
+          "commenter": "username"
       }
     ```
 
