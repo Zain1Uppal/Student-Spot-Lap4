@@ -1,4 +1,4 @@
-body.active-modal {
+/* body.active-modal {
     overflow-y: hidden;
 }
 
@@ -40,4 +40,16 @@ body.active-modal {
     top: 10px;
     right: 10px;
     padding: 5px 7px;
+} */
+
+.overlay-modal, .modal-cont-edit{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: grey;
 }
+

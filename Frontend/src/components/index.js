@@ -12,5 +12,5 @@ export { ResourcesSB } from './ResourcesSB';
 export { NewsItem } from './NewsItem';
 export { NewsList } from './NewsList';
 export { EditForm } from './EditProfile';
-export { default as Modal } from './Modal';
+export { Modal } from './Modal'
 // export { ProfileModal } from './Modal';
