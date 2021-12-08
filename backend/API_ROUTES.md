@@ -96,7 +96,7 @@ headers = {
 ### `posts/new/`
 
 - POST -> Create new post
-  - Request body (note: tags are optional):
+  - Request body (note: if no tags just pass empty array):
 
     ```JSON
       body = {
