@@ -139,7 +139,6 @@ headers = {
 
   - Note: if "remove" is passed on a reaction that is currently at 0 it'll just do nothing, instead of making it negative
 
-
 ### `posts/users/<int:user_id>/`
 
 - GET -> Show all posts by user of id `user_id`
