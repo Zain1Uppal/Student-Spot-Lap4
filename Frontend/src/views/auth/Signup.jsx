@@ -67,6 +67,7 @@ const Signup = () => {
           name='username'
           type='text'
           value={username}
+          style={{color:'black'}}
           onChange={e => setUsername(e.target.value)}
           required
         />{' '}
@@ -76,6 +77,7 @@ const Signup = () => {
           name='password1'
           type='password'
           value={password1}
+          style={{color:'black'}}
           onChange={e => setPassword1(e.target.value)}
           required
           autoComplete="on"
@@ -86,6 +88,7 @@ const Signup = () => {
           name='password2'
           type='password'
           value={password2}
+          style={{color:'black'}}
           onChange={e => setPassword2(e.target.value)}
           required
           autoComplete="on"
