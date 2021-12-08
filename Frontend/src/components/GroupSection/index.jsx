@@ -10,8 +10,9 @@ export function GroupSection() {
                 <GroupCreatePost />
             </div>
             <div className="post-cont-gs">
-                <Post />
                 ALL POST GOES BELOW. DELETE THIS ONCE ALL CONNECTED
+                <Post />
+                
             </div>
             
             
