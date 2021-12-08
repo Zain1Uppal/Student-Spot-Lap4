@@ -76,7 +76,7 @@ const Login = () => {
             onChange={e => setUsername(e.target.value)}
           />{' '}
           <br />
-          <label htmlFor='password' style={{color=}}>Password:</label> <br />
+          <label htmlFor='password'>Password:</label> <br />
           <input
             name='password'
             type='password'
