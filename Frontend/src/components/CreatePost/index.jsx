@@ -5,6 +5,7 @@ export function CreatePost({userId}) {
     const [postBody, setPostBody] = useState('') 
     const [body, setBody] = useState('')
     const [category, setCategory] = useState()
+    const [getCategories, setGetCategories] = useState()
     
 
 
@@ -26,16 +27,31 @@ export function CreatePost({userId}) {
         })
     },[postBody])
     
+    useEffect(() => {
+        fetch('http://localhost:8000/categories/', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${localStorage.getItem('token')}`
+            },
+        }).then(res => res.json())
+        .then(data => setGetCategories(data.data))
+    },[])
+
     function onSubmit(e){
         e.preventDefault()
         setPostBody(body)
-        console.log('this is the cat'+category)
         
     }
     function handleChange(e){
         let value = (e.target.value)
-        console.log('what is this'+value)
-        setCategory(value)
+        getCategories.map((i) => {
+            if(i.name == value){
+                setCategory([i.id])
+            }else{
+                console.log('sth wrong')
+                
+            }})
     }
     console.log(category)
     return(
