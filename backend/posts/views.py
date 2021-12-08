@@ -122,14 +122,6 @@ class PostReactions(APIView):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def show_by_user(req, user_id):
-    # Retrieve all posts made by user of id user_id
-    user_posts = Post.objects.filter(poster=user_id)
-    serialized = PostSerializer(user_posts, many=True)
-    return Response({ "data": serialized.data })
-
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def show_by_category(req, category_id):
     # Retrieve all posts tagged with category of id category_id
     category_posts = Post.objects.filter(tags=category_id)
@@ -196,11 +188,20 @@ def show_by_post(req, post_id):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def show_following_posts(req, user_id):
+def show_by_user(req, username):
+    # Retrieve all posts made by user of id user_id
+    user = get_object_or_404(User, username__iexact=username)
+    user_posts = Post.objects.filter(poster=user)
+    serialized = PostSerializer(user_posts, many=True)
+    return Response({ "data": serialized.data })
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def show_following_posts(req, username):
     # Get user's following users/categories
-    user_data = get_object_or_404(User, pk=user_id)
+    user_data = get_object_or_404(User, username__iexact=username)
     user = UserSerializer(user_data).data
-    followed_users = user["followed_users"]
+    followed_users = [get_object_or_404(User, username=u) for u in user["followed_users"]]
     followed_categories = user["followed_categories"]
     # Retrieve all posts from followed users/categories
     posts =  Post.objects.filter(Q(poster__in=followed_users) | Q(tags__in=followed_categories)).distinct()
