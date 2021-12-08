@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Footer } from './layout/index';
-import { MainFeed, Profile, Categories, FrontPage, Resources, News, Category, UserPage } from './pages/index';
+import { MainFeed, Profile, Categories, FrontPage, Resources, News, UserPage } from './pages/index';
+import { Biology, Chemistry, Computing, English, Maths, Physics } from './pages/GroupPages/index';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
@@ -25,10 +26,15 @@ function App() {
                 <Route path="/Profile"><Profile /></Route>
                 <Route path="/users/:username"><UserPage /></Route>
                 <Route path="/Categories"><Categories /></Route>
-                <Route path="/Category"><Category /></Route>
                 <Route path="/dashboard"><Dashboard /></Route>
                 <Route path="/resources"><Resources /></Route>
                 <Route path="/news"><News /></Route>
+                <Route path="/biology"><Biology /></Route>
+                <Route path="/chemistry"><Chemistry /></Route>
+                <Route path="/computing"><Computing /></Route>
+                <Route path="/english"><English /></Route>
+                <Route path="/maths"><Maths /></Route>
+                <Route path="/physics"><Physics /></Route>
 
             </Switch>
         
