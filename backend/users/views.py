@@ -11,12 +11,27 @@ from .models import User
 from .permissions import IsUserOrAdminOrReadOnly
 
 @api_view(['GET'])
-@permission_classes([IsAdminUser])
+@permission_classes([IsAuthenticated])
 def index(req):
     # Show all users (admin only)
     data = User.objects.all()
     serialized = UserSerializer(data, many=True)
-    return Response({"data": serialized.data})
+    if req.user.is_superuser:
+        # Admins see ALL (eyes emoji)
+        return Response({"data": serialized.data})
+    else:
+        resp_data = serialized.data
+        resp = [{
+            "username": d["username"],
+            "followed_users": d["followed_users"],
+            "followed_categories": d["followed_categories"],
+            "bio": d["bio"],
+            "university": d["university"],
+            "course": d["course"],
+            "image_file": d["image_file"]
+        } for d in resp_data]
+        return Response({"data": resp})
+        
 
 class UserDetail(APIView):
     # Retrieve, update, or delete a user
