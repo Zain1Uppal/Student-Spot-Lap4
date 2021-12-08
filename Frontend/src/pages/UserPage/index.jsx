@@ -6,7 +6,6 @@ import { Header } from '../../layout/index';
 // import {default as email} from '../../views/auth/Signup';
 export const UserPage = ({match, location}) => {
 
-    const [userName, setUserName] = useState('');
     const [firstName, setFirstName] = useState('');
     // const [uniCourse, setUniCourse] = useState('');
     const [loading, setLoading] = useState(false);
@@ -18,7 +17,7 @@ export const UserPage = ({match, location}) => {
         window.location.replace('http://localhost:8080/login');
       } else {
         console.log('inside second condition')
-        fetch('http://localhost:8000/users/', {
+        fetch('https://studenthub-api.herokuapp.com/users/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -60,7 +59,7 @@ export const UserPage = ({match, location}) => {
                     <div className="card card-profile mb-4">
                       <div className="card-header" style={{backgroundImage: "url(https://therichpost.com/wp-content/uploads/2021/05/bootstrap5-carousel-slider-img1.jpg)"}}> </div>
                       <div className="card-body text-center"> <img className="card-profile-img" src="https://i.pinimg.com/originals/d7/fd/9e/d7fd9e0b952d5f9b9adff6ec29a8b20d.png" alt="profile img"/>
-                        <h3 className="mb-3">first name should go here: {userName}</h3>
+                        <h3 className="mb-3">first name should go here: {username}</h3>
                         <p className="mb-4">University Course goes here </p>
                         <p className="mb-4">University here </p>
                         <div className= "btn-toolbar">
