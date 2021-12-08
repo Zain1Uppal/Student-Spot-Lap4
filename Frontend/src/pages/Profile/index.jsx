@@ -70,7 +70,7 @@ export const Profile = () => {
                     <div className=" card-profile-div">
                       
                       <h4 className="card-heading">My Profile</h4>
-                      <div className="modalContainer" style={{marginLeft:'50px'}}> <Modal /> </div>
+                      <div className="modalContainer" style={{margin:'15px', display:'flex', justifyContent:'center'}}> <Modal /> </div>
                       
                       <div className="card-body">
                         <h4 className="user-bio-pp">User bio goes here</h4>
