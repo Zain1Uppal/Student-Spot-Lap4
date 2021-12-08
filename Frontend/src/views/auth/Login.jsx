@@ -66,7 +66,7 @@ const Login = () => {
       {loading === false && (
         <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white'}}>
         <form onSubmit={onSubmit}>
-          <label htmlFor='username'>username:</label> <br />
+          <label htmlFor='username'>Username:</label> <br />
           <input
             name='username'
             type='text'
