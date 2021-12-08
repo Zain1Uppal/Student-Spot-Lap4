@@ -49,7 +49,7 @@
 }
 
 .card1 {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -89,10 +89,13 @@
 .card-header{
   background-position: center center;
   background-size: cover;
+  padding: 2rem 2rem!important;
+  border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0!important;
 }
 
 .card-profile-div{
   margin-top: 70px;
+  border-radius: 1rem!important;
 }
 
 .card-heading{

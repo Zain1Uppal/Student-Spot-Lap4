@@ -15,7 +15,7 @@ export function Category() {
         window.location.replace('http://localhost:8080/login');
       } else {
         console.log('inside second condition')
-        fetch('http://localhost:8000/categories/', {
+        fetch('http://localhost:8000/categories', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -30,8 +30,9 @@ export function Category() {
                         }
                       })
           .then(data => {
-            setCategoryID(data.id);
-            setCategory(data.name)
+            console.log(data.data)
+            setCategoryID(data.data.id);
+            setCategory(data.data.name)
             setLoading(false);
           });
       }
