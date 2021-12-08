@@ -13,4 +13,3 @@ export { NewsItem } from './NewsItem';
 export { NewsList } from './NewsList';
 export { EditForm } from './EditProfile';
 export { Modal } from './Modal'
-// export { ProfileModal } from './Modal';

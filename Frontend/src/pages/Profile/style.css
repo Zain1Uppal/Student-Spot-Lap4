@@ -49,7 +49,7 @@
 }
 
 .card1 {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   min-width: 0;

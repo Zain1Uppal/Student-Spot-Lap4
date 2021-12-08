@@ -45,7 +45,9 @@
 // }
 
 import React, { useState } from 'react';
+import {Button} from 'react-bootstrap';
 import './style.css';
+import { EditForm } from '..';
 
 export function Modal(){
 
@@ -58,16 +60,16 @@ export function Modal(){
   return(
     <div className="for-modal-cont">
       <div className="btn-modal-cont">
-        <button className="btn-modal" onClick={toggleModal}>Edit Profile</button>
+        <Button className="btn-modal" onClick={toggleModal}>Edit Profile</Button>
       </div>
       {modal && (
         <div className="modal-cont-edit">
         <div className="overlay-modal" onClick={toggleModal}></div>
         <div className="modal-content">
-          <button className="close-modal-btn" onClick={toggleModal}>X</button>
-          <h1>Hello Modal</h1>
-          <p>Hello this is where all the inputs go</p>
-          <button className="update-modal-btn">Update</button>
+          <Button className="close-modal-btn" onClick={toggleModal}>X</Button>
+          <h1 style={{textAlign:'center'}}>Edit Profile</h1>
+          <EditForm />
+          <Button className="update-modal-btn">Update</Button>
         </div>
       </div>
       )}

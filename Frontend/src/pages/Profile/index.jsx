@@ -1,8 +1,10 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { CreatePost, Post, Modal  } from '../../components/index';
+import { CreatePost, Post, Modal } from '../../components/index';
 import './style.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from '../../layout/index';
+// import '@popperjs/core';
+// import {default as email} from '../../views/auth/Signup';
 export const Profile = () => {
     const [userName, setUserName] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -44,11 +46,13 @@ export const Profile = () => {
       <div className="pp-head">
          
         <Header />
+    
         {loading === false && (  
         <div className="page-holder">
             <div className="contentDiv">
                   <div className="">
                     <h1 className="page-heading1">{userName}'s Profile</h1>
+                   
                   </div>
               <section>
                 <div className="row">
@@ -66,20 +70,12 @@ export const Profile = () => {
                     <div className=" card-profile-div">
                       
                       <h4 className="card-heading">My Profile</h4>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      <><Modal /></>
-=======
->>>>>>> staging2.0
-=======
-                      
->>>>>>> 5171da2b55a6a5435916655ad7965994575cc354
+                      <Modal />
                       
                       <div className="card-body">
                         <h4 className="user-bio-pp">User bio goes here</h4>
-                        <Modal />
                         
-                        
+                   
 
                       </div>
                     </div>
@@ -101,7 +97,12 @@ export const Profile = () => {
           
           </div>
           )}
+   
+       
+               
+                        
       </div>
+      
     )
     
   };

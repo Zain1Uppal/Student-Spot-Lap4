@@ -50,6 +50,15 @@
     right: 0;
     bottom: 0;
     position: fixed;
-    background-color: grey;
+    background: rgb(128, 127, 127, 0.6);
+
 }
 
+.modal-content {
+    height:auto;
+}
+
+.-modal-open .fixed,
+.-modal-open .content {
+  overflow-y:scroll;
+}
