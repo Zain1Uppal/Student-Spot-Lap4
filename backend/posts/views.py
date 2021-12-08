@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from django.utils.functional import partition
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
@@ -38,17 +39,17 @@ class PostDetail(APIView):
     # Retrieve, update, or delete a post
     permission_classes = [IsPosterOrReadOnly]
 
-    def get_object(self, pk):
+    def get_post(self, pk):
         return get_object_or_404(Post, pk=pk)
     
     def get(self, req, post_id):
-        post = self.get_object(post_id)
+        post = self.get_post(post_id)
         self.check_object_permissions(req, post)
         serialized = PostSerializer(post)
         return Response({"data": serialized.data})
 
     def put(self, req, post_id):
-        post = self.get_object(post_id)
+        post = self.get_post(post_id)
         self.check_object_permissions(req, post)
         serialized = PostSerializer(post, data=req.data, partial=True)
         if serialized.is_valid():
@@ -60,10 +61,64 @@ class PostDetail(APIView):
         return self.put(req, post_id)
 
     def delete(self, req, post_id):
-        post = self.get_object(post_id)
+        post = self.get_post(post_id)
         self.check_object_permissions(req, post)
         post.delete()
         return Response(status=204)
+
+class PostReactions(APIView):
+    # Retrieve and add/remove reactions from posts
+    permission_classes = [IsAuthenticated]
+
+    def get_post(self, pk):
+        return get_object_or_404(Post, pk=pk)
+
+    def get(self, req, post_id):
+        post = self.get_post(post_id)
+        self.check_object_permissions(req, post)
+        serialized = PostSerializer(post)
+        response = serialized.data["reactions"]
+        return Response({"data": response})
+
+    def patch(self, req, post_id):
+        post = self.get_post(post_id)
+        self.check_object_permissions(req, post)
+
+        reactions = ["thumbs_up", "thumbs_down"]
+
+        if "reaction" not in req.data:
+            return Response(status=400)
+        
+        reaction_to_update = req.data["reaction"]
+        if all(reaction not in reaction_to_update for reaction in reactions):
+            # Don't allow if not updating any reactions at all
+            return Response(status=400)
+        
+        # Get the current post reactions
+        serialized = PostSerializer(post)
+        post_reactions = serialized.data["reactions"]
+
+        current_value = post_reactions[reaction_to_update]
+
+        actions = ["add", "remove"]
+        if "action" not in req.data:
+            return Response(status=400)
+        
+        requested_action = req.data["action"]
+        if all(action not in requested_action for action in actions):
+            return Response(status=400)
+
+        if requested_action == "add":
+            post_reactions[reaction_to_update] = current_value + 1
+        if requested_action == "remove":
+            if current_value > 0:
+                post_reactions[reaction_to_update] = current_value - 1
+        
+        updated = PostSerializer(post, data=post_reactions, partial=True)
+        if updated.is_valid():
+            updated.save()
+            return self.get(req, post_id)
+        return Response(updated.errors, status=400)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
