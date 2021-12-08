@@ -10,12 +10,15 @@ from users.models import User
 def get_deleted_user():
     return get_user_model().objects.get_or_create(username="deleted")[0]
 
+def reactions_default_value():
+    return {"thumbs_up":0, "thumbs_down":0}
+
 # Create your models here.
 class Post(models.Model):
     tags = ManyToManyField(Category, blank=True)
     poster = ForeignKey(User, on_delete=models.SET(get_deleted_user), editable=False)
     body = CharField(max_length=500)
-    # reactions = JSONField(null=True)
+    reactions = JSONField(default=reactions_default_value)
     date = DateField(auto_now_add= True, editable=False)
 
     def __str__(self):

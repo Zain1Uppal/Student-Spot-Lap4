@@ -124,6 +124,21 @@ headers = {
 
   - DELETE -> Delete post
 
+### `posts/<int:post_id>/reactions/`
+
+- GET -> Retrieve post reactions
+- PATCH -> Update post reactions
+  - Body should consist of the reaction name and an action of "add" or "remove"
+
+  ```JSON
+    body = {
+      "reaction": "thumbs_up",
+      "action": "add"
+    }
+  ```
+
+  - Note: if "remove" is passed on a reaction that is currently at 0 it'll just do nothing, instead of making it negative
+
 ### `posts/users/<int:user_id>/`
 
 - GET -> Show all posts by user of id `user_id`
