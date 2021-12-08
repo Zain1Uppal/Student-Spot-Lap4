@@ -11,12 +11,27 @@ from .models import User
 from .permissions import IsUserOrAdminOrReadOnly
 
 @api_view(['GET'])
-@permission_classes([IsAdminUser])
+@permission_classes([IsAuthenticated])
 def index(req):
     # Show all users (admin only)
     data = User.objects.all()
     serialized = UserSerializer(data, many=True)
-    return Response({"data": serialized.data})
+    if req.user.is_superuser:
+        # Admins see ALL (eyes emoji)
+        return Response({"data": serialized.data})
+    else:
+        resp_data = serialized.data
+        resp = [{
+            "username": d["username"],
+            "followed_users": d["followed_users"],
+            "followed_categories": d["followed_categories"],
+            "bio": d["bio"],
+            "university": d["university"],
+            "course": d["course"],
+            "image_file": d["image_file"]
+        } for d in resp_data]
+        return Response({"data": resp})
+        
 
 class UserDetail(APIView):
     # Retrieve, update, or delete a user
@@ -79,25 +94,25 @@ class UserFollowing(APIView):
         # Add follow 
         if actions[0] in req.data:
             # Add user to follow list
-            id_to_add = req.data[actions[0]]
-            user_to_add = get_object_or_404(User, pk=id_to_add)
+            name_to_add = req.data[actions[0]]
+            user_to_add = get_object_or_404(User, username__iexact=name_to_add)
             user.followed_users.add(user_to_add)
         if actions[1] in req.data:
             # Add category to follow list
-            id_to_add = req.data[actions[1]]
-            category_to_add = get_object_or_404(Category, pk=id_to_add)
+            name_to_add = req.data[actions[1]]
+            category_to_add = get_object_or_404(Category, username__iexact=name_to_add)
             user.followed_categories.add(category_to_add)
 
         # Remove follow
         if actions[2] in req.data:
             # Remove user from follow list
-            id_to_remove = req.data[actions[2]]
-            user_to_remove = get_object_or_404(User, pk=id_to_remove)
+            name_to_remove = req.data[actions[2]]
+            user_to_remove = get_object_or_404(User, username__iexact=name_to_remove)
             user.followed_users.remove(user_to_remove)
         if actions[3] in req.data:
             # Remove category from follow list
-            id_to_remove = req.data[actions[3]]
-            category_to_remove = get_object_or_404(Category, pk=id_to_remove)
+            name_to_remove = req.data[actions[3]]
+            category_to_remove = get_object_or_404(Category, username__iexact=name_to_remove)
             user.followed_categories.remove(category_to_remove)
 
         # Return updated user data

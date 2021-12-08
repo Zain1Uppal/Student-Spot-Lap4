@@ -13,7 +13,7 @@ def get_deleted_user():
 # Create your models here.
 class Post(models.Model):
     tags = ManyToManyField(Category, blank=True)
-    poster = ForeignKey(User, null=True, on_delete=models.SET(get_deleted_user), editable=False)
+    poster = ForeignKey(User, on_delete=models.SET(get_deleted_user), editable=False)
     body = CharField(max_length=500)
     # reactions = JSONField(null=True)
     date = DateField(auto_now_add= True, editable=False)
@@ -23,8 +23,8 @@ class Post(models.Model):
 
 class Comment(models.Model):
     message = CharField(max_length=140)
-    post = ForeignKey(Post, null= True, on_delete=models.CASCADE, editable=False)
-    commenter = ForeignKey(User, null= True, on_delete=models.SET(get_deleted_user), editable=False)
+    post = ForeignKey(Post, on_delete=models.CASCADE, editable=False)
+    commenter = ForeignKey(User, on_delete=models.SET(get_deleted_user), editable=False)
     date = DateField(auto_now_add= True, editable=False)
 
     def __str__(self):
