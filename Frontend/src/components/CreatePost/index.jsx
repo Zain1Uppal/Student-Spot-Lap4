@@ -8,10 +8,10 @@ export function CreatePost({userId}) {
     const [category, setCategory] = useState([])
     const [getCategories, setGetCategories] = useState()
     const [loading, setLoading] = useState(true)
-    
+
     const post = {
         body: postBody,
-        poster: userId,
+        poster: localStorage.getItem('userName'),
         tags: category
     }
     console.log('this is the post'+ JSON.stringify(post))
@@ -46,18 +46,16 @@ export function CreatePost({userId}) {
         setPostBody(body)
         console.log(category)
     }
-    let cateArr = []
     function handleChange(e){
         let value = (e.target.value)
         let catIndex = category.indexOf(value)
         if(catIndex === -1){
-            // cateArr.push(value)
             setCategory((prevState) => [...prevState,value])
         }else{
             setCategory((prevState) => [...prevState.slice(0, catIndex), ...prevState.slice(catIndex + 1)])
             
         }
-        console.log(cateArr)
+        
     }
         
         function categoriesShow(){

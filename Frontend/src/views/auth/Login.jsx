@@ -21,9 +21,10 @@ const Login = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-
+    let firstCap = username.charAt(0).toUpperCase() + username.slice(1)
+    console.log(firstCap)
     const user = {
-      username: username,
+      username: firstCap,
       password: password
     };
 
@@ -39,7 +40,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          localStorage.setItem('userName', username)
+          localStorage.setItem('userName', firstCap)
           window.location.replace('http://localhost:8080/login');
           // return <Redirect to= '/dashboard'  />
         } else {
