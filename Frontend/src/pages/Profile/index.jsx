@@ -1,13 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { CreatePost, Post  } from '../../components/index';
+import { CreatePost, Post, Modal  } from '../../components/index';
 import './style.css';
-<<<<<<< HEAD
-=======
 // import 'bootstrap/dist/css/bootstrap.min.css';
->>>>>>> staging2.0
 import { Header } from '../../layout/index';
-import { default as Modal } from '../../components/Modal';
-
 export const Profile = () => {
     const [userName, setUserName] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -72,12 +67,17 @@ export const Profile = () => {
                       
                       <h4 className="card-heading">My Profile</h4>
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <><Modal /></>
 =======
 >>>>>>> staging2.0
+=======
+                      
+>>>>>>> 5171da2b55a6a5435916655ad7965994575cc354
                       
                       <div className="card-body">
                         <h4 className="user-bio-pp">User bio goes here</h4>
+                        <Modal />
                         
                         
 
