@@ -3,9 +3,10 @@ import './style.css'
 
 export function Post({userId}) {
     const [postData, setPostData] = useState([])
+    let userName = localStorage.getItem('userName')
     useEffect(()=>{
         console.log(userId)
-        fetch(`http://localhost:8000/posts/users/${userId}/following`, {
+        fetch(`http://localhost:8000/posts/users/${userName}/following`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
