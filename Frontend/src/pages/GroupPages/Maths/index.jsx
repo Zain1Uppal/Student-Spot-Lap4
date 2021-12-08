@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-export function Biology(){
+export function Maths(){
 
     return(
         <>
