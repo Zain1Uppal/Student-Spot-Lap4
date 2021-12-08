@@ -43,38 +43,3 @@ export const ResourcesSB = () => {
 
 }
 
-{/* <div className="cate-list-cont">
-                {filteredGroups.map(group => {
-                    return (
-                        <CategoryList 
-                        key={group.id}
-                        icon={group.image}
-                        groupname={group.name}/>
-                    )
-                })}
-            </div>
-
-import React, { useState, useEffect } from 'react';
-import JSONDATA from '../../Resources_data.json';
-import './style.css';
-
-export const CategorySearch = () => {
-
-    return(
-        <div className="category-search-div">
-            <h1>Groups</h1>
-            <div className="search-category">
-                <form>
-                     <input type="text" placeholder="Search a Group" className="group-input"></input>
-                 </form>
-             </div>
-             <div className="cate-list-cont">
-                {JSONDATA.map((val, key) => {
-                    return 
-                })}
-                 
-            </div>
-            
-        </div>
-    )
-} */}
