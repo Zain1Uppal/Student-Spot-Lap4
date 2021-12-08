@@ -1,6 +1,0 @@
-export { Biology } from '../GroupPages/Biology'
-export { Chemistry } from '../GroupPages/Chemistry'
-export { Computing } from '../GroupPages/Computing'
-export { English } from '../GroupPages/English'
-export { Maths } from '../GroupPages/Maths'
-export { Physics } from '../GroupPages/Physics'
