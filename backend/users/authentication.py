@@ -17,7 +17,7 @@ class ExpiringTokenAuthentication(TokenAuthentication):
 
     model = AuthToken
 
-    def authenticate_credentials(self, key, request=None):
+    def authenticate_credentials(self, key):
         models = self.get_model()
 
         try:

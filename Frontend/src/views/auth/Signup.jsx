@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
   const [errors, setErrors] = useState(false);
@@ -10,7 +10,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:8080/dashboard');
+      window.location.replace('http://localhost:8080/Mainfeed');
     } else {
       setLoading(false);
     }
@@ -20,35 +20,37 @@ const Signup = () => {
     e.preventDefault();
 
     const user = {
-      email: email,
+      username: username,
       password1: password1,
       password2: password2
     };
 
-    fetch('http://localhost:8000/users/auth/register/', {
+    fetch('https://studenthub-api.herokuapp.com/users/auth/register/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(user)
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data.key) {
-          localStorage.clear();
-          localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:8080/login');
-        } else {
-          setEmail('');
-          setPassword1('');
-          setPassword2('');
-          localStorage.clear();
-          setErrors(true);
-        }
-      });
-  };
-
-  return (
+    .then(res => {
+      window.location.replace('http://localhost:8080/login');
+      res.json()
+    })
+    // .then(data => {
+    //   if (data.key) {
+    //       localStorage.clear();
+    //       localStorage.setItem('token', data.key);
+    //     } else {
+    //         setEmail('');
+    //         setPassword1('');
+    //         setPassword2('');
+    //         localStorage.clear();
+    //         setErrors(true);
+    //       }
+    //     });
+      };
+      
+      return (
     <div>
       <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
       <i className="fas fa-users" style={{color:'white', fontSize:'60px'}}/>
@@ -60,12 +62,12 @@ const Signup = () => {
       {errors === true && <h2 style={{textAlign: 'center', color:'white'}}>Oops! You cannot signup with provided credentials</h2>}
       <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white'}}>
       <form onSubmit={onSubmit}>
-        <label htmlFor='email'>Email address:</label> <br />
+        <label htmlFor='username'>Username:</label> <br />
         <input
-          name='email'
-          type='email'
-          value={email}
-          onChange={e => setEmail(e.target.value)}
+          name='username'
+          type='text'
+          value={username}
+          onChange={e => setUsername(e.target.value)}
           required
         />{' '}
         <br />

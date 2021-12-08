@@ -13,3 +13,5 @@ export { NewsItem } from './NewsItem';
 export { NewsList } from './NewsList';
 export { EditForm } from './EditProfile';
 export { Modal } from './Modal'
+export { GroupSection } from './GroupSection';
+export { GroupCreatePost } from './GroupCreatePost';
