@@ -46,7 +46,7 @@
 }
 
 .lsb-group-list-item:hover, .fas:hover {
-    transform: scale(1.1);
+    transform: scale(1.07);
     color: darkblue;
     font-size: 1.7rem;
 }
@@ -57,7 +57,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
