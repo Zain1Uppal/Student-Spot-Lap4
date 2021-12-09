@@ -41,6 +41,7 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           localStorage.setItem('userName', firstCap);
+          <Redirect to='/MainFeed'/>
         } else {
           setUsername('');
           setPassword('');
@@ -88,11 +89,7 @@ const Login = () => {
           />{' '}
           <br />
           <div className="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
-<<<<<<< HEAD
-          <Link to='/MainFeed'><input className="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} /></Link>
-=======
           <input className="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px', fontSize:'1.5rem'}} />
->>>>>>> 83bb8558ec6f5f980de89d081cb6ddde69643905
           <BackButton className="backButton" />
           <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', height: 'auto', width:'auto', textDecoration: 'none', margin: '10px',fontSize:'1.5rem' }}>
         <Link to='/' input className="btn btn-dark" id="homeButton" style={{fontSize:'1.5rem'}}><div>Home</div></Link>
