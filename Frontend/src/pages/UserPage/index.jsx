@@ -41,16 +41,13 @@ export const UserPage = ({match, location}) => {
                       })
           .then(data => {
             console.log(data)
-<<<<<<< HEAD
-            // setUserName(data.username);
-            setFirstName(data.first_name);
-=======
+            
             setUserName(data.data.username);
             setFirstName(data.data.first_name);
             setBio(data.data.bio);
             setCourse(data.data.course);
             setUniversity(data.data.university);
->>>>>>> 4415c669750b94a275f0fffadf8f83ed73330ae8
+
             // setUniCourse(data.uni_course);
             setLoading(true);
         
@@ -64,17 +61,12 @@ export const UserPage = ({match, location}) => {
         <Header />
     
         {loading === true && (  
-<<<<<<< HEAD
-        <div className="page-holder bg-gray-100">
-            <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
-                  <div className="page-header mb-4">
-                    <h1 className="page-heading">{username}'s Profile</h1>
-=======
+
         <div className="page-holder">
             <div className="col-lg-4">
                   <div className="">
                     <h1 className="page-heading1">{username}'s Profile</h1>
->>>>>>> 4415c669750b94a275f0fffadf8f83ed73330ae8
+
                   </div>
               <section>
                 <div className="row">
