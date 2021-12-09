@@ -151,17 +151,17 @@ class CommentDetail(APIView):
     # Retrieve, update, or delete a comment
     permission_classes = [IsCommenterOrReadOnly]
 
-    def get_object(self, pk):
+    def get_comment(self, pk):
         return get_object_or_404(Comment, pk=pk)
     
     def get(self, req, comment_id):
-        comment = self.get_object(comment_id)
+        comment = self.get_comment(comment_id)
         self.check_object_permissions(req, comment)
         serialized = CommentSerializer(comment)
         return Response({"data": serialized.data})
 
     def put(self, req, comment_id):
-        comment = self.get_object(comment_id)
+        comment = self.get_comment(comment_id)
         self.check_object_permissions(req, comment)
         serialized = CommentSerializer(comment, data=req.data, partial=True)
         if serialized.is_valid():
@@ -173,7 +173,7 @@ class CommentDetail(APIView):
         return self.put(req, comment_id)
 
     def delete(self, req, comment_id):
-        comment = self.get_object(comment_id)
+        comment = self.get_comment(comment_id)
         self.check_object_permissions(req, comment)
         comment.delete()
         return Response(status=204)
