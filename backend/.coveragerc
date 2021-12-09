@@ -1,0 +1,6 @@
+[run]
+omit = 
+    *migrations* 
+    backend/* 
+    *__init__*
+    manage.py
