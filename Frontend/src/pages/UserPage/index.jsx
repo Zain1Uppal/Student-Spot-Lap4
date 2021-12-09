@@ -188,10 +188,6 @@ export const UserPage = ({match, location}) => {
 };
 
 
-)
-
-};
-       
 
 export default UserPage;
 
