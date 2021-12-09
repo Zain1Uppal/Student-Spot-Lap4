@@ -45,6 +45,7 @@ export function CreatePost({ userId }) {
     function onSubmit(e) {
         e.preventDefault()
         setPostBody(body)
+        
     }
     function handleChange(e) {
         let value = (e.target.value)
