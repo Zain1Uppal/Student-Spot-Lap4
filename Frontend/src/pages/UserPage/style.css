@@ -78,6 +78,7 @@ a {
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
   z-index: 2;
 }
+
 img, svg {
   vertical-align: middle;
 }
@@ -116,3 +117,15 @@ img, svg {
   background-position: center center;
   background-size: cover;
 }
+
+.card-body2{
+  background-color: white;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgb(192, 192, 192);
+  margin-left: 30px;
+  margin-top: 130px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
