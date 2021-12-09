@@ -85,3 +85,7 @@
 .fa-pen-nib{
     color: rgb(146, 60, 3)
 }
+
+a {
+    text-decoration: none;
+}

@@ -128,7 +128,7 @@ export const UserPage = ({match, location}) => {
                            
                           
                         <p className="followers-pp">Followers:{followers}</p>
-                        <i className="fas fa-map-marker-alt fa-fw"></i><span className="ml-1">{place}</span>
+                        <i className="fas fa-map-marker-alt fa-fw"></i>&nbsp;<span className="ml-1">{place}</span>
                         <div className="btn-toolbar">
                         <button className="btn btn-outline-secondary" type="button" style={{margin:'10px'}}><i className="fa fa-paper-plane"></i> Message</button> 
                         {followed ? 
@@ -161,7 +161,7 @@ export const UserPage = ({match, location}) => {
                 </div>
               </section>
             </div>
-            <div className="col-lg-8">
+            <div className="col-lg-8" style={{paddingTop:'58px', marginBottom:'20px'}}>
               <div className="create-p-cont">
                 <CreatePost />
               </div>
