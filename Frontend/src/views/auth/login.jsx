@@ -55,7 +55,7 @@ const Login = () => {
   return (
       
     <div>
-    <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
+    <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '220px'}}>
     <i className="fas fa-users" style={{color:'white', fontSize:'60px'}}/>
     </div>
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
@@ -90,10 +90,10 @@ const Login = () => {
           />{' '}
           <br />
           <div className="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
-          <input className="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} />
+          <input className="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px', fontSize:'1.5rem'}} />
           <BackButton className="backButton" />
-          <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', height: 'auto', width:'auto', textDecoration: 'none', margin: '10px',}}>
-        <Link to='/' input className="btn btn-dark" id="homeButton" ><div>Home</div></Link>
+          <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', height: 'auto', width:'auto', textDecoration: 'none', margin: '10px',fontSize:'1.5rem' }}>
+        <Link to='/' input className="btn btn-dark" id="homeButton" style={{fontSize:'1.5rem'}}><div>Home</div></Link>
       </div>
   
           </div>
