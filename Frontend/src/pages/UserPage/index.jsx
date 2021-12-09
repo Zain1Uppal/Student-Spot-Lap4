@@ -118,7 +118,7 @@ export const UserPage = ({match, location}) => {
                 <div className="row">
                   <div className="col-lg-41">
                     <div className="card1 card-profile1">
-                      <div className="card-header" style={{backgroundImage: "url(https://pbs.twimg.com/media/EeI6u48WkAAC45D.jpg)"}}> </div>
+                      <div className="card-header" style={{backgroundImage: "url(https://i.pinimg.com/originals/42/4a/7f/424a7fcccbf967b8e54cc1536f155dc6.jpg)"}}> </div>
                       <div className="card-body1 text-center"> <img className="card-profile-img" src="https://lh3.googleusercontent.com/WOca4Iwh_d5fQ1uoIbLatcQ8H-CTtdRfIFp4IXrmUpFFDlYhf09bzqxCD26hXmKUszlP0N0CDgTe0pHhbzbkpKeRPg=w600" alt="profile img"/>
                         <h3 className="mb-3">{userName}</h3>
                         <p className="mb-4" style={{fontWeight:'bold', color:'#00308F', fontStyle:'italic'}}>{course}</p>
