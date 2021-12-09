@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { Footer } from './layout/index';
 import { MainFeed, Profile, Categories, FrontPage, Resources, News, UserPage} from './pages/index';
-import {default as NotFoundPage} from '../src/components/NotFoundRoute/index'
+import {default as NotFoundPage} from './components/NotFoundRoute/index'
 import { Biology, Chemistry, Computing, English, Maths, Physics } from './pages/GroupPages/index';
 import {GroupSection} from './components/GroupSection'
 
@@ -33,7 +33,6 @@ function App() {
                 <Route path="/news"><News /></Route>
                 <Route path="/categories/:cateName"><Categories/></Route>
                 <Route path="*" component={NotFoundPage} />
-                <Route path="/users/*" component={NotFoundPage} />
                 {/* </Router> */}
                 {/* <Route path="/biology"><Biology /></Route>
                 <Route path="/chemistry"><Chemistry /></Route>
