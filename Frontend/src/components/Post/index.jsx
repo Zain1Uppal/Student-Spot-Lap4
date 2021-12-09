@@ -24,19 +24,6 @@ export function Post({userId}) {
         .then(data => setPostData(data.data))
     },[])
 
-    // useEffect(() => {
-    //     fetch(`https://studenthub-api.herokuapp.com/posts/${post_id}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             Authorization: `Token ${localStorage.getItem('token')}`
-    //         }
-    //     })
-    //     .then(res => res.json())
-    //     .then(setDeletePost(true))
-        
-    // })
-
     const handleLiked = e => {
         e.preventDefault()
         setLiked(prev => !prev)
