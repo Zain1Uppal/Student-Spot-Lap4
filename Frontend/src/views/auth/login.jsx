@@ -40,9 +40,10 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          localStorage.setItem('userName', firstCap)
-          window.location.replace('http://localhost:8080/MainFeed');
-          // return <Redirect to= '/dashboard'  />
+          localStorage.setItem('userName', firstCap);
+          // window.location.replace('http://localhost:8080/MainFeed');
+          <Redirect to= '/MainFeed'  />
+          window.location.reload()
         } else {
           setUsername('');
           setPassword('');
