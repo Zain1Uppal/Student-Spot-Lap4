@@ -11,9 +11,13 @@ django-allauth = "*"
 django-cors-headers = "*"
 
 [dev-packages]
+coverage = "*"
 
 [requires]
 python_version = "3.9"
 
 [scripts]
 dev = "python manage.py runserver"
+test = "python manage.py test"
+coverage = "coverage run --source='.' manage.py test"
+coverage_report = "coverage report -m"

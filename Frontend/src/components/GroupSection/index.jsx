@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
-import { api } from '../../Urls'
+import { origin, api } from '../../Urls'
 
 export function GroupSection(cateName) {
     const [cateId, setCateId] = useState()
@@ -21,12 +21,18 @@ export function GroupSection(cateName) {
             },
         }).then(res => res.json())
             .then(data => {
-                data.data.map((i) => {
+                let datamap = data.data.map((i) => {
                     let firstCap = category.charAt(0).toUpperCase() + category.slice(1)
                     if (firstCap === i.name) {
                         setCateId(i.id)
+                        return true
+                    } else {
+                        return false
                     }
                 })
+                if (!datamap.includes(true)) {
+                    window.location.replace(`${origin}/404`)
+                }
             })
     }, [category])
 
@@ -38,11 +44,18 @@ export function GroupSection(cateName) {
                     'Content-Type': 'application/json',
                     Authorization: `Token ${localStorage.getItem('token')}`
                 },
-            }).then(res => res.json())
-                .then(data => {
-                    setCatePosts(data.data)
-                    setLoading1(false)
-                })
+            }).then(res => {
+                if (res.status === 200) {
+                    return res.json()
+                } else if (res.status === 404) {
+                    window.location.replace(`${urls.origin}/404`);
+                } else {
+                    window.location.replace(`${urls.origin}/mainfeed`);
+                }
+            }).then(data => {
+                setCatePosts(data.data)
+                setLoading1(false)
+            })
         }
     }, [cateId])
 

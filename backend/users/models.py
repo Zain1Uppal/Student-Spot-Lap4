@@ -13,7 +13,8 @@ class User(AbstractUser):
     bio = models.CharField(max_length=1000, null=True)
     university = models.CharField(max_length=50, null=True)
     course = models.CharField(max_length=50, null=True)
-    image_file = models.CharField(max_length=20, null=True)
+    image_file = models.CharField(max_length=200, null=True)
+    location = models.CharField(max_length=50, null=True)
 
     def __str__(self):
         return self.username

@@ -10,4 +10,10 @@ class UserSerializer(ModelSerializer):
     followers = serializers.SlugRelatedField(queryset=User.objects.all(), slug_field="username", many=True)
     class Meta:
         model = User
-        fields = ["id", "username", "email", "first_name", "last_name", "followed_users", "followed_categories", "followers", "bio", "university", "course", "image_file"]
+        fields = [
+            "id", "username", "email", 
+            "first_name", "last_name", 
+            "followed_users", "followed_categories", 
+            "followers", "bio", "university", 
+            "course", "location", "image_file"
+        ]

@@ -31,7 +31,6 @@ function App() {
                 <Route path="/news"><News /></Route>
                 <Route path="/categories/:cateName"><Categories /></Route>
                 <Route path="*" component={NotFoundPage} />
-                <Route path="/users/*" component={NotFoundPage} />
             </Switch>
 
             {/* <Footer /> */}
