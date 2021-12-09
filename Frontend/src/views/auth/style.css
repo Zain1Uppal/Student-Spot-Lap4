@@ -14,5 +14,8 @@
 #logout-button:hover {
     background-color: rgb(28, 28, 110);
     color: white;
+}
 
+body {
+    background-color: #00308F;
 }
