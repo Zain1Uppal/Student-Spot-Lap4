@@ -44,6 +44,7 @@ const Login = () => {
           // window.location.replace('http://localhost:8080/MainFeed');
           <Redirect to= '/MainFeed'  />
           window.location.reload()
+
         } else {
           setUsername('');
           setPassword('');

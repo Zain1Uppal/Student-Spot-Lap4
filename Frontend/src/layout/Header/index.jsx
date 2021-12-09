@@ -13,7 +13,7 @@ export function Header() {
             <nav>
                 <NavLink className="nav-link" to="/MainFeed">Feed</NavLink>
                 <NavLink className="nav-link" to="/Profile">Profile</NavLink>
-                <NavLink className="nav-link" to="/Categories">Groups</NavLink>
+                {/* <NavLink className="nav-link" to="/Categories">Groups</NavLink> */}
 
                 <Logout/>
 
