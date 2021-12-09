@@ -16,6 +16,7 @@ export function CreatePost({ userId }) {
     }
     const postDescription = useRef()
     useEffect(() => {
+<<<<<<< HEAD
         fetch('https://studenthub-api.herokuapp.com/posts/new/', {
             method: 'POST',
             headers: {
@@ -25,6 +26,18 @@ export function CreatePost({ userId }) {
             body: JSON.stringify(post)
         }).then(res => res.json())
         .then(data=>console.log(data))
+=======
+        if (postBody) {
+            fetch('https://studenthub-api.herokuapp.com/posts/new/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify(post)
+            })
+        }
+>>>>>>> 6a8b0e48f95591046915b07182bb198f37b1c6e9
     }, [postBody])
 
     useEffect(() => {

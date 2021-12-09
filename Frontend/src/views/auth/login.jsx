@@ -13,7 +13,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      window.location.replace('http://localhost:8080/MainFeed');
+      window.location.replace('https://student-hubs.netlify.app/mainfeed');
     } else {
       setLoading(false);
     }
@@ -39,8 +39,13 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
+<<<<<<< HEAD
           localStorage.setItem('userName', username);
           window.location.replace('https://student-hubs.netlify.app/MainFeed');
+=======
+          localStorage.setItem('userName', firstCap);
+          window.location.replace('https://student-hubs.netlify.app/mainfeed');
+>>>>>>> 6a8b0e48f95591046915b07182bb198f37b1c6e9
         } else {
           setUsername('');
           setPassword('');

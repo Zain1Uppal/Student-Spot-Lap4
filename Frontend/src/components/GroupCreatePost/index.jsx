@@ -15,14 +15,16 @@ export function GroupCreatePost({ userId }) {
     }
     const postDescription = useRef()
     useEffect(() => {
-        fetch('https://studenthub-api.herokuapp.com/posts/new/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify(post)
-        })
+        if (postBody) {
+            fetch('https://studenthub-api.herokuapp.com/posts/new/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify(post)
+            })
+        }
     }, [postBody])
 
     function onSubmit(e) {

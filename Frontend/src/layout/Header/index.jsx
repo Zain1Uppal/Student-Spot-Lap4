@@ -5,20 +5,20 @@ import './style.css';
 import Logout from '../../views/auth/Logout';
 
 export function Header() {
-    return(
+    return (
         <header>
-            <a className="logoLink" href="/MainFeed"><p><i className="fas fa-users"></i>StudentHub</p></a>
+            <a className="logoLink" href="/mainfeed"><p><i className="fas fa-users"></i>StudentHub</p></a>
             <HeaderSearch />
 
             <nav>
-                <NavLink className="nav-link" to="/MainFeed">Feed</NavLink>
-                <NavLink className="nav-link" to="/Profile">Profile</NavLink>
+                <NavLink className="nav-link" to="/mainfeed">Feed</NavLink>
+                <NavLink className="nav-link" to="/profile">Profile</NavLink>
                 {/* <NavLink className="nav-link" to="/Categories">Groups</NavLink> */}
 
-                <Logout/>
+                <Logout />
 
             </nav>
-            
+
         </header>
     )
 }
