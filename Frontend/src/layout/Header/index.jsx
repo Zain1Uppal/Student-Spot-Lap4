@@ -7,7 +7,7 @@ import Logout from '../../views/auth/Logout';
 export function Header() {
     return (
         <header>
-            <a className="logoLink" href="/MainFeed"><p><i className="fas fa-users"></i>StudentHub</p></a>
+            <a className="logoLink" href="/mainfeed"><p><i className="fas fa-users"></i>StudentHub</p></a>
             <HeaderSearch />
 
             <nav>
