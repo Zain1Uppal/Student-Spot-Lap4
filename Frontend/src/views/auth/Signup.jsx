@@ -52,7 +52,7 @@ const Signup = () => {
       
       return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
+      <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '220px'}}>
       <i className="fas fa-users" style={{color:'white', fontSize:'60px'}}/>
     </div>
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
