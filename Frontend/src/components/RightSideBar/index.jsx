@@ -43,7 +43,7 @@ export function RightSideBar() {
         return(
           followed.map((f, i) => {
             return(
-            <li className="rsb-friend" key={i}>
+            <li className="rsb-friend" key={i} >
               <div className="rsb-friend-pic-cont">
                   <img className="rsb-friend-pic"src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2048px-User_icon_2.svg.png" alt="rsb-friend-pic"/>
               </div>   

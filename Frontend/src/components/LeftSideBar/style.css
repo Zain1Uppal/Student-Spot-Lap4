@@ -5,12 +5,11 @@
 }
 
 .lsb-wrapper{
-    padding: 40px ;
-    
+    padding: 30px 40px ;
 }
 
 .lsb-list {
-    padding: 40px 20px;
+    padding: 30px 20px;
     margin: 0;
     list-style: none;
     cursor: pointer;
@@ -20,7 +19,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .lsb-list-item:hover, .fas:hover {
@@ -43,8 +42,7 @@
     padding: 40px 20px;
     margin: 0;
     list-style: none;
-   
-    
+    font-size: 2rem;
 }
 
 .lsb-group-list-item:hover, .fas:hover {
@@ -59,7 +57,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    font-size: 1.7rem;
+    font-size: 2rem;
     cursor: pointer;
 }
 
