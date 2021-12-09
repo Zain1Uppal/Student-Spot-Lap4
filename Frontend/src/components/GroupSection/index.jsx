@@ -10,6 +10,10 @@ export function GroupSection(cateName) {
     const [catePosts, setCatePosts] = useState()
     const [loading1, setLoading1] = useState(true)
 
+    const [ liked, setLiked ] = useState(false);
+    const [ unliked, setUnliked ] = useState(false);
+
+
     let category = cateName.cateName
     useEffect(() => {
         fetch(`https://studenthub-api.herokuapp.com/categories`, {
@@ -46,6 +50,15 @@ export function GroupSection(cateName) {
         })
     },[cateId])
 
+    const handleLiked = e => {
+        e.preventDefault()
+        setLiked(prev => !prev)
+    }
+
+    const handleUnliked = e => {
+        e.preventDefault();
+        setUnliked(prev => !prev)
+    }
 
     function renderId(){
         if(loading1){
@@ -56,9 +69,10 @@ export function GroupSection(cateName) {
             return(
                 catePosts.map((p,i) => {
                     return(
-
-                        <div className="post-feed" key={i}>
-                            <div className="post-wrapper">
+                      
+                        <div className="post-feed" key={i} style={{width:"600px"}}>
+                              <div style={{padding:'15px', fontWeight:'bolder', fontSize:'1.5rem', color:'#00308F'}}>{category}</div>
+                            <div className="post-wrapper" style={{width:"600px"}}>
                                 <div className="post-top">
                                     <div className="post-top-left">
                                         <img className="post-profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2048px-User_icon_2.svg.png" alt="user-pic"/>
@@ -73,8 +87,8 @@ export function GroupSection(cateName) {
                                 </div>
                                 <div className="post-bottom">
                                     <div className="post-bottom-left">
-                                        <i className="fas fa-thumbs-up">{p.reactions.thumbs_up}</i>
-                                        <i className="fas fa-thumbs-down">{p.reactions.thumbs_down}</i>
+                                    <i className="fas fa-thumbs-up" role="switch" onClick={handleLiked} style={{color: liked ? 'darkblue' : 'grey'}}><span className="reaction-num" >{p.reactions.thumbs_up}</span></i>
+                                    <i className="fas fa-thumbs-down" role="switch" onClick={handleUnliked} style={{ color: unliked ? 'darkred' : 'grey'}}><span className="reaction-num">{p.reactions.thumbs_down}</span></i>
                                     </div>
                                     <div className="post-bottom-right">
                                         <div className="post-comment-text">Add a comment</div>

@@ -40,6 +40,8 @@
     margin: auto;
     text-align: center;
     font-size: 1.7rem;
+    font-weight: bold;
+    color:royalblue;
 }
 
 .rsb-friend-pic {
@@ -57,6 +59,10 @@
     
 }
 
+p {
+    font-size:1.5rem;
+}
+
 .rsb-friend{
     display: flex;
     margin: 20px 0;
@@ -64,7 +70,6 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 1px 10px rgb(192, 192, 192);
-
 }
 
 .rsb-friend:hover{

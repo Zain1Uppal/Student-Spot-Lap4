@@ -113,12 +113,12 @@ export const UserPage = ({match, location}) => {
             <div className="col-lg-4">
                   <div className="">
 
-                    <h1 className="page-heading1">{userName}'s Profile</h1>
+                    <h1 className="page-heading1" style={{marginLeft:'100px'}}>{userName}'s Profile</h1>
 
                   </div>
               <section>
                 <div className="row">
-                  <div className="col-lg-41">
+                  <div className="col-lg-41" style={{marginLeft:'100px'}}>
                     <div className="card1 card-profile1">
                       <div className="card-header" style={{backgroundImage: "url(https://i.pinimg.com/originals/42/4a/7f/424a7fcccbf967b8e54cc1536f155dc6.jpg)"}}> </div>
                       <div className="card-body1 text-center"> <img className="card-profile-img" src="https://lh3.googleusercontent.com/WOca4Iwh_d5fQ1uoIbLatcQ8H-CTtdRfIFp4IXrmUpFFDlYhf09bzqxCD26hXmKUszlP0N0CDgTe0pHhbzbkpKeRPg=w600" alt="profile img"/>

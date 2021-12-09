@@ -52,7 +52,7 @@ const Signup = () => {
       
       return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '150px'}}>
+      <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', marginTop: '220px'}}>
       <i className="fas fa-users" style={{color:'white', fontSize:'60px'}}/>
     </div>
     <div style={{display: 'flex', justifyContent: 'center', fontSize: '45px', color: 'white'}}>
@@ -100,7 +100,7 @@ const Signup = () => {
         <br />
         <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', margin: '10px'}}>
         <input className="btn btn-primary" style={{margin: '10px'}} type="submit" value='Sign Up' />
-        <Link to='/login' className="btn btn-secondary" id="logInLink" style={{margin: '10px', height: 'auto', width:'auto', textDecoration: 'none !important'}}><div>Log In</div></Link>
+        <Link to='/login' className="btn btn-secondary" id="logInLink" style={{margin: '10px', height: 'auto', width:'auto', textDecoration: 'none !important', fontSize:'1.5rem'}}><div>Log In</div></Link>
         </div>
       </form>
       </div>

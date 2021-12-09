@@ -26,9 +26,10 @@ export function RightSideBar() {
                             window.location.replace('http://localhost:8080/login');
                           }
                         })
-            .then(data => { 
+            .then(data => {  
               setFollowed(data.data.followed_users)
               setloading(false)
+              
             });
         }
     }, []);

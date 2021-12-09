@@ -43,12 +43,12 @@
     margin: 0;
     list-style: none;
     font-size: 2rem;
-    
 }
 
 .lsb-group-list-item:hover, .fas:hover {
     transform: scale(1.1);
-    color: darkblue
+    color: darkblue;
+    font-size: 1.7rem;
 }
 
 
