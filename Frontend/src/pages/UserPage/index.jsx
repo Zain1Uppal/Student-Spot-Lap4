@@ -41,8 +41,10 @@ export const UserPage = ({ match, location }) => {
         .then(res => {
           if (res.status === 200) {
             return res.json()
+          } else if (res.status === 404) {
+            window.location.replace(`${urls.origin}/404`);
           } else {
-            return res.json()
+            window.location.replace(`${urls.origin}/mainfeed`);
           }
         })
         .then(data => {

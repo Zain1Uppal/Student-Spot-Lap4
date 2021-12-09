@@ -30,9 +30,10 @@ export const Profile = () => {
         .then(res => {
           if (res.status === 200) {
             return res.json()
+          } else if (res.status === 404) {
+            window.location.replace(`${urls.origin}/404`);
           } else {
-            localStorage.clear()
-            window.location.replace(`${urls.origin}/login`);
+            window.location.replace(`${urls.origin}/mainfeed`);
           }
         })
         .then(data => {
@@ -43,8 +44,6 @@ export const Profile = () => {
           setLocation(data.data.location)
 
           setLoading(false);
-
-
         });
     }
   }, []);
