@@ -21,8 +21,7 @@ export const Profile = () => {
         window.location.replace('http://localhost:8080/login');
       } else {
         console.log('inside second condition')
-        fetch(`http://localhost:8000/users/${username}/`, {
-          // fetch(`https://studenthub-api.herokuapp.com/users/${username}/`, { 
+        fetch(`https://studenthub-api.herokuapp.com/users/${username}/`, { 
 
           method: 'GET',
           headers: {
@@ -79,7 +78,7 @@ export const Profile = () => {
                       <div className="modalContainer" style={{display: 'flex', justifyContent: 'center', marginBottom: '15px'}}> <Modal /> </div>
     
                       <div className="card-body">
-                      <h4 className="user-bio-pp">About me:</h4>
+                      <h4 className="user-bio-pp" style={{fontWeight:'900', color:'#00308F', fontStyle:'italic' }}>About Me</h4>
                         <h4 className="user-bio-pp">{bio}</h4>
                       </div>
                     </div>

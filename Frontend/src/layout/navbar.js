@@ -8,7 +8,6 @@ const Navbar = () => {
 
   const handleLogout = e => {
     e.preventDefault();
-
     fetch('https://studenthub-api.herokuapp.com/users/auth/logout/', {
       method: 'POST',
       headers: {

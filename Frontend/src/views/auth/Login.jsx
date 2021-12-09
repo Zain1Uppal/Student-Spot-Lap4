@@ -62,7 +62,7 @@ const Login = () => {
         <div>StudentHub</div>
     </div>
       {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white', margin: '10px'}}>Login</div>}
-      {errors === true && <h2>Oops! There are some issues logging in with provided credentials</h2>}
+      {errors === true && <h2 style={{textAlign:'center', color:'white'}}>Oops! There are some issues logging in with provided credentials</h2>}
       {loading === false && (
         <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white'}}>
         <form onSubmit={onSubmit}>
@@ -70,6 +70,7 @@ const Login = () => {
           <input
             name='username'
             type='text'
+            placeholder='Enter username'
             value={username}
             style={{color:'black'}}
             required
@@ -80,7 +81,9 @@ const Login = () => {
           <input
             name='password'
             type='password'
+            placeholder='Enter password'
             value={password}
+            autoComplete= 'off'
             style={{color:'black'}}
             required
             onChange={e => setPassword(e.target.value)}

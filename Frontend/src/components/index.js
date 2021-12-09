@@ -15,3 +15,4 @@ export { EditForm } from './EditProfile';
 export { Modal } from './Modal'
 export { GroupSection } from './GroupSection';
 export { GroupCreatePost } from './GroupCreatePost';
+export { default as NotFoundPage } from './NotFoundRoute';

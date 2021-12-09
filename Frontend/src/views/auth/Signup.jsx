@@ -59,7 +59,7 @@ const Signup = () => {
         <div>StudentHub</div>
     </div>
       {loading === false && <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color:'white', margin: '10px'}}>Sign Up</div>}
-      {errors === true && <h2 style={{textAlign: 'center', color:'white'}}>Oops! You cannot signup with provided credentials</h2>}
+      {errors === true && <h2 style={{textAlign: 'center', color:'white'}}>Oops! You cannot signup with provided credentials.</h2>}
       <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', color: 'white'}}>
       <form onSubmit={onSubmit}>
         <label htmlFor='username'>Username:</label> <br />
@@ -67,6 +67,7 @@ const Signup = () => {
           name='username'
           type='text'
           value={username}
+          placeholder={'Enter username'}
           style={{color:'black'}}
           onChange={e => setUsername(e.target.value)}
           required
@@ -77,6 +78,7 @@ const Signup = () => {
           name='password1'
           type='password'
           value={password1}
+          placeholder={'Enter password'}
           style={{color:'black'}}
           onChange={e => setPassword1(e.target.value)}
           required
@@ -89,6 +91,7 @@ const Signup = () => {
           name='password2'
           type='password'
           value={password2}
+          placeholder={'Re-enter password'}
           style={{color:'black'}}
           onChange={e => setPassword2(e.target.value)}
           required
