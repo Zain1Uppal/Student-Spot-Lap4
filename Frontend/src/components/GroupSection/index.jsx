@@ -1,8 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import { GroupCreatePost, Post } from '../index';
-import { Header } from '../../layout/Header/index'
-import { LeftSideBar } from '../LeftSideBar';
-
 import './style.css';
 
 export function GroupSection(cateName) {
@@ -70,7 +66,7 @@ export function GroupSection(cateName) {
                 catePosts.map((p,i) => {
                     return(
                       
-                        <div className="post-feed" key={i} style={{width:"600px"}}>
+                        <div className="post-feed1" key={i} style={{width:"700px"}}>
                               <div style={{padding:'15px', fontWeight:'bolder', fontSize:'1.5rem', color:'#00308F'}}>{category}</div>
                             <div className="post-wrapper" style={{width:"600px"}}>
                                 <div className="post-top">
@@ -80,7 +76,7 @@ export function GroupSection(cateName) {
                                         <span className="post-date">{p.date}</span>
                                     </div>
                                     <div className="post-top-right"></div>
-                                    <i className="fas fa-caret-down"></i>
+                                    <i className="fas fa-trash"></i>
                                 </div>
                                 <div className="post-center">
                                     <span className="post-text" >{p.body}</span>
