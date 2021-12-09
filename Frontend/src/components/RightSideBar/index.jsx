@@ -23,7 +23,7 @@ export function RightSideBar() {
                             return res.json()
                           }else{
                             localStorage.clear()
-                            window.location.replace('http://localhost:8080/login');
+                            window.location.replace('https://student-hubs.netlify.app/login');
                           }
                         })
             .then(data => {  

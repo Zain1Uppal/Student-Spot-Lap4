@@ -4,7 +4,7 @@ import './style.css';
 export const HeaderSearch = () => {
     const [search, setSearch] = useState()
     function searchForUser(){
-        window.location.replace(`http://localhost:8080/users/${search}`)
+        window.location.replace(`https://student-hubs.netlify.app/${search}`)
     }
     return(
         <>
