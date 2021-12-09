@@ -10,14 +10,16 @@ import { ButtonToolbar } from 'react-bootstrap';
 export const UserPage = ({match, location}) => {
 
     const [firstName, setFirstName] = useState('');
-    const [username, setUserName] = useState('');
     const [university, setUniversity] = useState('')
     const [course, setCourse] = useState('')
     const [bio, setBio] = useState('')
+    const [followed, setFollowed] = useState(false)
+    const [followArr, setFollowArr] = useState()
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     let params = useParams()
     let username = params.username
+    let loggedUser = localStorage.getItem('userName')
   
     useEffect(() => {
       console.log('before if dashboard')
@@ -40,27 +42,59 @@ export const UserPage = ({match, location}) => {
                         }
                       })
           .then(data => {
-            console.log(data)
-            
-            setUserName(data.data.username);
+            console.log(data) 
             setFirstName(data.data.first_name);
             setBio(data.data.bio);
             setCourse(data.data.course);
             setUniversity(data.data.university);
-
+            data.data.followers.forEach((i) => {
+              if(i == loggedUser){
+                setFollowed(true)
+              }else{
+                setFollowed(false)
+              }
+            })
             // setUniCourse(data.uni_course);
-            setLoading(true);
+            setLoading(false);
         
           });
       }
     }, []);
+
+
+    let followingUser = null
+
+  
+
+    function onFollow(){
+      if(followed){
+        followingUser = {
+          unfollow_user: username
+        }
+      }else{
+        followingUser = {
+          follow_user: username
+        }
+      }
+        fetch(`https://studenthub-api.herokuapp.com/users/${loggedUser}/following`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Token ${localStorage.getItem('token')}`
+          },
+          body: JSON.stringify(followingUser)
+        }).then(res => res.json())
+        .then(data => setFollowed((prevState) => !prevState))
+
+    }
+
       
     return (
       <div className="pp-head">
          
         <Header />
     
-        {loading === true && (  
+        {loading === false && (  
 
         <div className="page-holder">
             <div className="col-lg-4">
@@ -80,7 +114,11 @@ export const UserPage = ({match, location}) => {
                         <p className="followers-pp">Followers:</p>
                         <div className="btn-toolbar">
                         <button className="btn btn-outline-secondary" type="button" style={{margin:'10px'}}><i className="fa fa-paper-plane"></i> Message</button> 
- <button className="btn btn-outline-dark" style={{marginLeft:'10px', marginRight:'10px'}} ><i className="fas fa-plus"></i>Follow</button>
+                        {followed ? 
+                          <button className="btn btn-outline-dark" style={{marginLeft:'10px', marginRight:'10px'}} onClick={onFollow}><i className="fas fa-plus"></i>unFollow</button>:
+                          <button className="btn btn-outline-dark" style={{marginLeft:'10px', marginRight:'10px'}} onClick={onFollow}><i className="fas fa-plus"></i>Follow</button>
+                        }
+ 
 <div className="flex-grow-1 ps-3" style={{marginTop:'10px'}}>
   </div>
     <ul className="social-links list-inline mb-0 mt-2">
