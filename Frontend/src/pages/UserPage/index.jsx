@@ -52,7 +52,7 @@ export const UserPage = ({match, location}) => {
             setCourse(data.data.course);
             setUniversity(data.data.university);
             setPlace(data.data.location);
-            setUsername(data.data.username;)
+            setUsername(data.data.username);
             setFollowers(data.data.followers.length)
             // setUniCourse(data.uni_course);
             setLoading(true);
@@ -143,7 +143,7 @@ export const UserPage = ({match, location}) => {
                               <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-twitter"></i></a></li>
                               <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-instagram"></i></a></li>
                             </ul>
-                          </div>
+                    
 
                       </div>
                     </div>
@@ -173,20 +173,16 @@ export const UserPage = ({match, location}) => {
               
             </div>
           
-          </div>
-          )}
+            </div>
+            )}
    
        
-               
-                        
-      </div>
-      
-    )
-    
-  };
+</div>
 
+)
+
+};
        
 
 export default UserPage;
-
 
