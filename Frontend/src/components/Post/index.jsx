@@ -35,7 +35,7 @@ export function Post({ userId }) {
 
     function dataPost() {
         return (
-            postData.reverse().map((p, i) =>
+            postData.slice(0, 6).reverse().map((p, i) =>
                 <div className="post-feed" key={i}>
                     <div className="post-wrapper">
                         <div className="post-top">
