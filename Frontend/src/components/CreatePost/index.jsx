@@ -25,7 +25,7 @@ export function CreatePost({ userId }) {
                     'Authorization': `Token ${localStorage.getItem('token')}`
                 },
                 body: JSON.stringify(post)
-            })
+            }).then(() => window.location.reload())
         }
     }, [postBody])
 

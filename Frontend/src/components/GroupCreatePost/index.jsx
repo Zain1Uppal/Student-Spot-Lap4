@@ -24,7 +24,7 @@ export function GroupCreatePost({ userId }) {
                     'Authorization': `Token ${localStorage.getItem('token')}`
                 },
                 body: JSON.stringify(post)
-            })
+            }).then(() => window.location.reload())
         }
     }, [postBody])
 
