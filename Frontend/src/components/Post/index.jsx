@@ -4,6 +4,12 @@ import './style.css'
 export function Post({userId}) {
     const [postData, setPostData] = useState([])
     let userName = localStorage.getItem('userName')
+
+    const [ liked, setLiked ] = useState(false);
+    const [ likedNum, setLikedNum ] = useState(0);
+    const [ unliked, setUnliked ] = useState(false);
+
+
     useEffect(()=>{
         console.log(userId)
         fetch(`https://studenthub-api.herokuapp.com/posts/users/${userName}/following`, {
@@ -16,6 +22,17 @@ export function Post({userId}) {
         .then(res => res.json())
         .then(data => setPostData(data.data))
     },[])
+
+    const handleLiked = e => {
+        e.preventDefault()
+        setLikedNum(prev0 => prev0 + 1)
+        setLiked(prev => !prev)
+    }
+
+    const handleUnliked = e => {
+        e.preventDefault();
+        setUnliked(prev => !prev)
+    }
     
     function dataPost(){
         return(
@@ -28,16 +45,22 @@ export function Post({userId}) {
                             <span className="post-username">{p.poster}</span>
                             <span className="post-date">{p.date}</span>
                         </div>
-                        <div className="post-top-right"></div>
-                        <i className="fas fa-caret-down"></i>
+                        <div className="post-top-right">
+                            <select>
+                                <option></option>
+                                <option value="edit">Edit</option>
+                                <option value="delete">Delete</option>
+                            </select>
+                        </div>
+                        
                     </div>
                     <div className="post-center">
                         <span className="post-text" >{p.body}</span>
                     </div>
                     <div className="post-bottom">
                         <div className="post-bottom-left">
-                            <i className="fas fa-thumbs-up">{p.reactions.thumbs_up}</i>
-                            <i className="fas fa-thumbs-down">{p.reactions.thumbs_down}</i>
+                            <i className="fas fa-thumbs-up" role="switch" onClick={handleLiked} style={{color: liked ? 'darkblue' : 'grey'}}><span className="reaction-num" >{p.reactions.thumbs_up}</span></i>
+                            <i className="fas fa-thumbs-down" role="switch" onClick={handleUnliked} style={{ color: unliked ? 'darkred' : 'grey'}}><span className="reaction-num">{p.reactions.thumbs_down}</span></i>
                         </div>
                         <div className="post-bottom-right">
                             <div className="post-comment-text">Add a comment</div>
