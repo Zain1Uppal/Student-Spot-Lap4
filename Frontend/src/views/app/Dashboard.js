@@ -11,7 +11,7 @@ export const Dashboard = () => {
       window.location.replace('http://localhost:8080/login');
     } else {
       console.log('inside second condition')
-      fetch('http://localhost:8000/users/auth/user/', {
+      fetch('https://studenthub-api.herokuapp.com/users/auth/user/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
