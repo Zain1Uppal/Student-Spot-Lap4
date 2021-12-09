@@ -41,7 +41,7 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           localStorage.setItem('userName', firstCap)
-          window.location.replace('http://localhost:8080/login');
+          window.location.replace('http://localhost:8080/MainFeed');
           // return <Redirect to= '/dashboard'  />
         } else {
           setUsername('');
