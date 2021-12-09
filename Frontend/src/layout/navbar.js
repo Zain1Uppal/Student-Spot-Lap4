@@ -2,12 +2,12 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Navbar = () => {
   const [isAuth, setIsAuth] = useState(false);
 
   const handleLogout = e => {
     e.preventDefault();
-
     fetch('https://studenthub-api.herokuapp.com/users/auth/logout/', {
       method: 'POST',
       headers: {
