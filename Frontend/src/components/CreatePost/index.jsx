@@ -23,7 +23,8 @@ export function CreatePost({ userId }) {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(post)
-        })
+        }).then(res => res.json())
+        .then(data=>console.log(data))
     }, [postBody])
 
     useEffect(() => {
@@ -43,6 +44,7 @@ export function CreatePost({ userId }) {
     function onSubmit(e) {
         e.preventDefault()
         setPostBody(body)
+        
     }
     function handleChange(e) {
         let value = (e.target.value)

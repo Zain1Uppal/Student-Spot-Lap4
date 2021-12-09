@@ -39,7 +39,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          localStorage.setItem('userName', firstCap);
+          localStorage.setItem('userName', username);
           window.location.replace('https://student-hubs.netlify.app/MainFeed');
         } else {
           setUsername('');
