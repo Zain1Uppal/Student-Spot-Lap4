@@ -18,7 +18,7 @@ function App() {
     return (
         <>
         
-            <Switch>
+        <Switch>
                 {/* <Router> */}
                 <Route exact path="/"><FrontPage/> <Navbar /> </Route>
                 <Route path='/login' component={Login} exact />
@@ -26,14 +26,15 @@ function App() {
                 <Route path='/logout' component={Logout} exact />
                 <Route path="/MainFeed"><MainFeed/></Route>
                 <Route path="/profile/"><Profile /></Route>
-                <Route path="/:username"><UserPage /></Route>
+                <Route path="/users/:username"><UserPage /></Route>
                 {/* <Route path="/Categories"><Categories/></Route> */}
                 <Route path="/dashboard"><Dashboard /></Route>
                 <Route path="/resources"><Resources /></Route>
                 <Route path="/news"><News /></Route>
-                <Route path="*" component={NotFoundPage} />
-                {/* </Router> */}
                 <Route path="/categories/:cateName"><Categories/></Route>
+                <Route path="*" component={NotFoundPage} />
+                <Route path="/users/*" component={NotFoundPage} />
+                {/* </Router> */}
                 {/* <Route path="/biology"><Biology /></Route>
                 <Route path="/chemistry"><Chemistry /></Route>
                 <Route path="/computing"><Computing /></Route>
