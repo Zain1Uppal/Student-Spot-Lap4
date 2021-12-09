@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    height: auto;
 }
 
 .res-row{
@@ -12,6 +13,9 @@
     height: 40px;
     border-bottom: 1px solid rgb(192, 192, 192);
     width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgb(192, 192, 192);
 }
 
 .res-book{
@@ -28,7 +32,8 @@
     max-width: 30%;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    margin-left: 5px;
 }
 
 .res-author{
@@ -37,6 +42,8 @@
     max-width: 20%;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1.5rem;
+    margin-top: 7px;
 }
 
 .res-year{
@@ -45,6 +52,8 @@
     max-width: 5%;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1.5rem;
+    margin-top: 7px;
 }
 
 .res-subject{
@@ -53,4 +62,11 @@
     max-width: 15%;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1.5rem;
+    margin-top: 7px;
+}
+
+.res-link{
+    font-size: 1.5rem;
+    margin-right: 5px;
 }
