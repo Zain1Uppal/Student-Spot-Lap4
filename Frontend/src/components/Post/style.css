@@ -99,14 +99,19 @@
     transform: scale(1.1);
 }
 
-.post-top-right select:focus{
+.fa-trash:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* .post-top-right select:focus{
     outline: none;
 }
 
 .post-top-right select{
     border-style: none;
     font-size: 1.3rem;
-}
+} */
 
 
 

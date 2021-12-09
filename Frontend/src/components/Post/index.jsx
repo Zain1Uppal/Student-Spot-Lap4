@@ -46,11 +46,12 @@ export function Post({userId}) {
                             <span className="post-date">{p.date}</span>
                         </div>
                         <div className="post-top-right">
-                            <select>
+                            <i class="fas fa-trash"></i>
+                            {/* <select>
                                 <option></option>
                                 <option value="edit">Edit</option>
                                 <option value="delete">Delete</option>
-                            </select>
+                            </select> */}
                         </div>
                         
                     </div>
