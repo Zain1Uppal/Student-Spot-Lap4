@@ -13,7 +13,7 @@ export function RightSideBar() {
     if (!localStorage.getItem('token')) {
       window.location.replace(`${urls.origin}/login`);
     } else {
-      fetch(`https://studenthub-api.herokuapp.com/users/${username}/`, {
+      fetch(`${urls.api}/users/${username}/`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

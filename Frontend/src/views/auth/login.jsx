@@ -28,7 +28,7 @@ const Login = () => {
       password: password
     };
 
-    fetch('https://studenthub-api.herokuapp.com/users/auth/login/', {
+    fetch(`${urls.api}/users/auth/login/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

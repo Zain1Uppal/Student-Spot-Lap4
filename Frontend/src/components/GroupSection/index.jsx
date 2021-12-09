@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
+import { api } from '../../Urls'
 
 export function GroupSection(cateName) {
     const [cateId, setCateId] = useState()
@@ -12,7 +13,7 @@ export function GroupSection(cateName) {
 
     let category = cateName.cateName
     useEffect(() => {
-        fetch(`https://studenthub-api.herokuapp.com/categories`, {
+        fetch(`${api}/categories`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ export function GroupSection(cateName) {
 
     useEffect(() => {
         if (cateId) {
-            fetch(`https://studenthub-api.herokuapp.com/posts/categories/${cateId}`, {
+            fetch(`${api}/posts/categories/${cateId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

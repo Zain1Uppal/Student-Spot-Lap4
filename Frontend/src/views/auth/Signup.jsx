@@ -26,7 +26,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch('https://studenthub-api.herokuapp.com/users/auth/register/', {
+    fetch(`${urls.api}/users/auth/register/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

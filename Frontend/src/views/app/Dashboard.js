@@ -9,7 +9,7 @@ export const Dashboard = () => {
     if (!localStorage.getItem('token')) {
       window.location.replace(`${urls.origin}/login`);
     } else {
-      fetch('https://studenthub-api.herokuapp.com/users/auth/user/', {
+      fetch(`${urls.api}/users/auth/user/`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

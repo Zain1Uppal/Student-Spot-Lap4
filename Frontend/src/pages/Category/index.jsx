@@ -15,7 +15,7 @@ export function Category() {
     if (!localStorage.getItem('token')) {
       window.location.replace(`${urls.origin}/login`);
     } else {
-      fetch('https://studenthub-api.herokuapp.com/posts/categories/${cateId}', {
+      fetch(`${urls.api}/posts/categories/${cateId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

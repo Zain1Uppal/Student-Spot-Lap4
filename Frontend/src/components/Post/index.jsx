@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css'
+import { api } from '../../Urls'
 
 export function Post({ userId }) {
     const [postData, setPostData] = useState([])
@@ -12,7 +13,7 @@ export function Post({ userId }) {
 
 
     useEffect(() => {
-        fetch(`https://studenthub-api.herokuapp.com/posts/users/${userName}/following`, {
+        fetch(`${api}/posts/users/${userName}/following`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

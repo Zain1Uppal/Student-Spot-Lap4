@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Categories } from '../../pages';
 import './style.css';
+import { api } from '../../Urls'
 
 export function CreatePost({ userId }) {
     const [postBody, setPostBody] = useState('')
@@ -17,7 +18,7 @@ export function CreatePost({ userId }) {
     const postDescription = useRef()
     useEffect(() => {
         if (postBody) {
-            fetch('https://studenthub-api.herokuapp.com/posts/new/', {
+            fetch(`${api}/posts/new/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,7 +30,7 @@ export function CreatePost({ userId }) {
     }, [postBody])
 
     useEffect(() => {
-        fetch('https://studenthub-api.herokuapp.com/categories/', {
+        fetch(`${api}/categories/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +46,7 @@ export function CreatePost({ userId }) {
     function onSubmit(e) {
         e.preventDefault()
         setPostBody(body)
-        
+
     }
     function handleChange(e) {
         let value = (e.target.value)

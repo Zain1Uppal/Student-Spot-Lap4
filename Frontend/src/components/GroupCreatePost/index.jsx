@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './style.css'
+import { api } from '../../Urls'
 
 export function GroupCreatePost({ userId }) {
     const [postBody, setPostBody] = useState('')
@@ -16,7 +17,7 @@ export function GroupCreatePost({ userId }) {
     const postDescription = useRef()
     useEffect(() => {
         if (postBody) {
-            fetch('https://studenthub-api.herokuapp.com/posts/new/', {
+            fetch(`${api}/posts/new/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

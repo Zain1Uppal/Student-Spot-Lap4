@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const handleLogout = e => {
     e.preventDefault();
-    fetch('https://studenthub-api.herokuapp.com/users/auth/logout/', {
+    fetch(`${urls.api}/users/auth/logout/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
