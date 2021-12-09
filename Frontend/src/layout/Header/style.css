@@ -2,7 +2,8 @@
     width: 100vw;
     /* height: 8vh; */
     display: flex;
-    background-color: white;
+    background-color: #00308F;
+    /* background-color: white; */
     box-shadow: 1px 1px 10px rgb(192, 192, 192);
     font-size: 1.4rem;
     margin: auto;
@@ -21,8 +22,8 @@ header p {
     margin: auto 5px;
     font-size: 2rem;
     text-decoration: none!important;
-    color:darkblue;
-    
+    /* color:darkblue; */
+    color: white;
 }
 
 .nav-link a {
@@ -39,25 +40,29 @@ nav {
 }
 
 .fa-users {
-    color: darkblue;
+    color: white;
+    /* color: darkblue; */
     font-size: 2rem;
     margin: auto 30px;
 }
 
 .nav-link {
-    color: darkblue;
+    color: white;
+    /* color: darkblue; */
     text-decoration: none;
 }
 
 .nav-link:active {
-    color: darkblue;
+    color: white;
+    /* color: darkblue; */
     font-size: 1.3rem;
     text-decoration: none;
 }
 
 .nav-link:hover {
     transform: scale(1.2);
-    color: darkblue;
+    /* color: darkblue; */
+    color: white;
     text-decoration: none;
 }
 
@@ -84,3 +89,6 @@ nav button:hover {
     margin-top: 10px;
 }
 
+.search-input input {
+    color: white;
+}
