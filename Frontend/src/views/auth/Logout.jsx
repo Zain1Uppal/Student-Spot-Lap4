@@ -24,7 +24,6 @@ const Logout = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         localStorage.clear();
         window.location.replace('https://student-hubs.netlify.app/login');
       });
@@ -34,7 +33,7 @@ const Logout = () => {
     <div>
       {loading === false && (
         <Fragment>
-         <button id='logout-button' type='button' value='Logout' onClick={handleLogout} >Logout</button>
+          <button id='logout-button' type='button' value='Logout' onClick={handleLogout} >Logout</button>
           {/* <h1>Are you sure you want to logout?</h1> */}
         </Fragment>
       )}
