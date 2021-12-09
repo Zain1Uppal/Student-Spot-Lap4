@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CreatePost, Post } from '../../components/index';
 import { Header } from '../../layout/index';
 import { ButtonToolbar } from 'react-bootstrap';
+import * as urls from '../../Urls'
 // import '@popperjs/core';
 // import {default as email} from '../../views/auth/Signup';
 export const UserPage = ({ match, location }) => {
@@ -28,7 +29,7 @@ export const UserPage = ({ match, location }) => {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) {
-      window.location.replace('http://localhost:8080/login');
+      window.location.replace(`${urls.origin}/login`);
     } else {
       fetch(`https://studenthub-api.herokuapp.com/users/${username}`, {
         method: 'GET',

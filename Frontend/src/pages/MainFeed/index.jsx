@@ -3,6 +3,7 @@ import { Header } from '../../layout/index';
 import { Feed, LeftSideBar, RightSideBar } from '../../components/index'
 import './style.css';
 import { Profile } from '../Profile/index'
+import * as urls from '../../Urls'
 
 export function MainFeed() {
   const [userEmail, setUserEmail] = useState('');
@@ -11,7 +12,7 @@ export function MainFeed() {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) {
-      window.location.replace('http://localhost:8080/login');
+      window.location.replace(`${urls.origin}/login`);
     } else {
       fetch('https://studenthub-api.herokuapp.com/users/auth/user/', {
         method: 'GET',
@@ -25,7 +26,7 @@ export function MainFeed() {
             return res.json()
           } else {
             localStorage.clear()
-            window.location.replace('https://student-hubs.netlify.app/login');
+            window.location.replace(`${urls.origin}/login`);
           }
         })
         .then(data => {

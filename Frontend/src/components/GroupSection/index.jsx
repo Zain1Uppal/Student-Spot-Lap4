@@ -24,25 +24,25 @@ export function GroupSection(cateName) {
                     let firstCap = category.charAt(0).toUpperCase() + category.slice(1)
                     if (firstCap === i.name) {
                         setCateId(i.id)
-                    } else {
-                        console.warn('error')
                     }
                 })
             })
     }, [category])
 
     useEffect(() => {
-        fetch(`https://studenthub-api.herokuapp.com/posts/categories/${cateId}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Token ${localStorage.getItem('token')}`
-            },
-        }).then(res => res.json())
-            .then(data => {
-                setCatePosts(data.data)
-                setLoading1(false)
-            })
+        if (cateId) {
+            fetch(`https://studenthub-api.herokuapp.com/posts/categories/${cateId}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Token ${localStorage.getItem('token')}`
+                },
+            }).then(res => res.json())
+                .then(data => {
+                    setCatePosts(data.data)
+                    setLoading1(false)
+                })
+        }
     }, [cateId])
 
     const handleLiked = e => {

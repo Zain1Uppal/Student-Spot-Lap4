@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
+import * as urls from '../../Urls'
 
 export const Dashboard = () => {
   const [userName, setUserName] = useState('');
@@ -6,7 +7,7 @@ export const Dashboard = () => {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) {
-      window.location.replace('http://localhost:8080/login');
+      window.location.replace(`${urls.origin}/login`);
     } else {
       fetch('https://studenthub-api.herokuapp.com/users/auth/user/', {
         method: 'GET',
@@ -20,7 +21,7 @@ export const Dashboard = () => {
             return res.json()
           } else {
             localStorage.clear()
-            window.location.replace('http://localhost:8080/login');
+            window.location.replace(`${urls.origin}/login`);
           }
         })
         .then(data => {

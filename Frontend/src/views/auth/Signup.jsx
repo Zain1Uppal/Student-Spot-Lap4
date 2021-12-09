@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import * as urls from '../../Urls'
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -10,7 +11,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('https://student-hubs.netlify.app/mainfeed');
+      window.location.replace(`${urls.origin}/mainfeed`);
     } else {
       setLoading(false);
     }
@@ -33,7 +34,7 @@ const Signup = () => {
       body: JSON.stringify(user)
     })
       .then(res => {
-        window.location.replace('https://student-hubs.netlify.app/login');
+        window.location.replace(`${urls.origin}/login`);
         res.json()
       })
     // .then(data => {

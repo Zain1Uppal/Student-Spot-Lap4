@@ -1,6 +1,7 @@
 // import { auto } from '@popperjs/core';
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import * as urls from '../Urls'
 
 
 const Navbar = () => {
@@ -18,7 +19,7 @@ const Navbar = () => {
       .then(res => res.json())
       .then(data => {
         localStorage.clear();
-        window.location.replace('http://localhost:8080/login');
+        window.location.replace(`${urls.origin}/login`);
       });
   };
 

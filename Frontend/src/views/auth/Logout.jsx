@@ -1,12 +1,13 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import './style.css'
+import * as urls from '../../Urls'
 
 const Logout = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (localStorage.getItem('token') == null) {
-      window.location.replace('https://student-hubs.netlify.app/login');
+      window.location.replace(`${urls.origin}/login`);
     } else {
       setLoading(false);
     }
@@ -25,7 +26,7 @@ const Logout = () => {
       .then(res => res.json())
       .then(data => {
         localStorage.clear();
-        window.location.replace('https://student-hubs.netlify.app/login');
+        window.location.replace(`${urls.origin}/login`);
       });
   };
 

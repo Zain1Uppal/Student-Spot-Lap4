@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { CreatePost, Post, Modal } from '../../components/index';
 import './style.css';
 import { Header } from '../../layout/index';
+import * as urls from '../../Urls'
 
 export const Profile = () => {
   const [firstName, setFirstName] = useState('');
@@ -16,7 +17,7 @@ export const Profile = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!localStorage.getItem('token')) {
-      window.location.replace('http://localhost:8080/login');
+      window.location.replace(`${urls.origin}/login`);
     } else {
       fetch(`https://studenthub-api.herokuapp.com/users/${username}/`, {
 
@@ -31,7 +32,7 @@ export const Profile = () => {
             return res.json()
           } else {
             localStorage.clear()
-            window.location.replace('http://localhost:8080/login');
+            window.location.replace(`${urls.origin}/login`);
           }
         })
         .then(data => {
@@ -71,7 +72,7 @@ export const Profile = () => {
                       <p className="mb-4">{university}</p>
                       <p className="followers-pp">Followers: {followers}</p>
 
-                      <i className="fas fa-map-marker-alt fa-fw"></i>&nbsp;<span class="ml-1">{location}</span>
+                      <i className="fas fa-map-marker-alt fa-fw"></i>&nbsp;<span className="ml-1">{location}</span>
 
                       <div className="flex-grow-1 ps-3" style={{ marginTop: '10px' }}>
 

@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import './style.css';
 import { Header } from '../../layout';
 import { LeftSideBar } from '../../components';
+import * as urls from '../../Urls'
 
 export function Category() {
   const [category, setCategory] = useState('');
@@ -12,7 +13,7 @@ export function Category() {
 
   useEffect(() => {
     if (!localStorage.getItem('token')) {
-      window.location.replace('http://localhost:8080/login');
+      window.location.replace(`${urls.origin}/login`);
     } else {
       fetch('https://studenthub-api.herokuapp.com/posts/categories/${cateId}', {
         method: 'GET',
@@ -26,7 +27,7 @@ export function Category() {
             return res.json()
           } else {
             localStorage.clear()
-            window.location.replace('http://localhost:8080/login');
+            window.location.replace(`${urls.origin}/login`);
           }
         })
         .then(data => {

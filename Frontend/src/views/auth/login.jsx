@@ -3,6 +3,7 @@ import { BackButton } from '../../components';
 import { Redirect } from 'react-router-dom';
 import { MainFeed } from '../../pages';
 import { Link } from 'react-router-dom';
+import * as urls from '../../Urls'
 
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      window.location.replace('https://student-hubs.netlify.app/mainfeed');
+      window.location.replace(`${urls.origin}/mainfeed`);
     } else {
       setLoading(false);
     }
@@ -40,7 +41,7 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           localStorage.setItem('userName', firstCap);
-          window.location.replace('https://student-hubs.netlify.app/MainFeed');
+          window.location.replace(`${urls.origin}/mainfeed`);
         } else {
           setUsername('');
           setPassword('');
