@@ -13,7 +13,7 @@ export const ResourcesList = ({ name, author, year, url, subject }) => {
                     <p className="res-author">{author}</p>
                     <p className="res-year">{year}</p>
                     <p className="res-subject">{subject}</p>
-                    <a className="res-link" href={url}>More Info</a>
+                    <a className="res-link" href={url} target="_blank">More Info</a>
                     
                 </div>
             </div>
