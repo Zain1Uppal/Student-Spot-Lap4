@@ -6,7 +6,7 @@ const Logout = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') == null) {
-      window.location.replace('http://localhost:8080/login');
+      window.location.replace('https://student-hubs.netlify.app/login');
     } else {
       setLoading(false);
     }
