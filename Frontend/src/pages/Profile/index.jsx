@@ -61,11 +61,11 @@ export const Profile = () => {
         <div className="page-holder">
             <div className="col-lg-4">
                   <div className="">
-                    <h1 className="page-heading1" >{username}'s Profile</h1>
+                    <h1 className="page-heading1" style={{marginLeft:'100px'}} >{username}'s Profile</h1>
                   </div>
               <section>
                 <div className="row">
-                  <div className="col-lg-41">
+                  <div className="col-lg-41" style={{marginLeft:'100px'}}>
                     <div className="card1 card-profile1">
                       <div className="card-header" style={{backgroundImage: "url(https://pbs.twimg.com/media/EeI6u48WkAAC45D.jpg)"}}> </div>
                       <div className="card-body1 text-center"> <img className="card-profile-img" src="https://i.imgur.com/o9fpo46.jpg" alt="profile img"/>
