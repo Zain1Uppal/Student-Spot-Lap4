@@ -11,7 +11,7 @@ class NotFoundPage extends React.Component {
             </div>
             <h1 style={{ color: 'white', textAlign: 'center', fontWeight: 'bold' }}>This page does not exist.</h1>
             <p style={{ textAlign: "center" }}>
-                <Link to='/mainfeed' input className="btn btn-dark" id="homeButton" >Home</Link>
+                <Link to='/mainfeed' input="true" className="btn btn-dark" id="homeButton" >Home</Link>
             </p>
         </div>;
     }
