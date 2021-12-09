@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import {useParams} from 'react-router';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CreatePost, Post } from '../../components/index';
@@ -15,6 +16,8 @@ export const UserPage = ({match, location}) => {
     const [bio, setBio] = useState('')
 
     const [loading, setLoading] = useState(false);
+    let params = useParams()
+    let username = params.username
   
     useEffect(() => {
       console.log('before if dashboard')
@@ -23,7 +26,7 @@ export const UserPage = ({match, location}) => {
         window.location.replace('http://localhost:8080/login');
       } else {
         console.log('inside second condition')
-        fetch('https://studenthub-api.herokuapp.com/users/', {
+        fetch(`https://studenthub-api.herokuapp.com/users/${username}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -33,17 +36,21 @@ export const UserPage = ({match, location}) => {
           .then(res => {if(res.status === 200){
                           return res.json()
                         } else{
-                          localStorage.clear()
-                          window.location.replace('http://localhost:8080/login');
+                          console.log('error')
                         }
                       })
           .then(data => {
             console.log(data)
+<<<<<<< HEAD
+            // setUserName(data.username);
+            setFirstName(data.first_name);
+=======
             setUserName(data.data.username);
             setFirstName(data.data.first_name);
             setBio(data.data.bio);
             setCourse(data.data.course);
             setUniversity(data.data.university);
+>>>>>>> 4415c669750b94a275f0fffadf8f83ed73330ae8
             // setUniCourse(data.uni_course);
             setLoading(true);
         
@@ -57,10 +64,17 @@ export const UserPage = ({match, location}) => {
         <Header />
     
         {loading === true && (  
+<<<<<<< HEAD
+        <div className="page-holder bg-gray-100">
+            <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
+                  <div className="page-header mb-4">
+                    <h1 className="page-heading">{username}'s Profile</h1>
+=======
         <div className="page-holder">
             <div className="col-lg-4">
                   <div className="">
                     <h1 className="page-heading1">{username}'s Profile</h1>
+>>>>>>> 4415c669750b94a275f0fffadf8f83ed73330ae8
                   </div>
               <section>
                 <div className="row">

@@ -26,7 +26,7 @@ function App() {
                 <Route path='/logout' component={Logout} exact />
                 <Route path="/MainFeed"><MainFeed/></Route>
                 <Route path="/profile/"><Profile /></Route>
-                <Route path="/users/:username"><UserPage /></Route>
+                <Route path="/:username"><UserPage /></Route>
                 {/* <Route path="/Categories"><Categories/></Route> */}
                 <Route path="/dashboard"><Dashboard /></Route>
                 <Route path="/resources"><Resources /></Route>

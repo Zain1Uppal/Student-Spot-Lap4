@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.css';
 
 export function RightSideBar() {
@@ -26,7 +27,6 @@ export function RightSideBar() {
                           }
                         })
             .then(data => { 
-              console.log(data.data.followed_users)
               setFollowed(data.data.followed_users)
               setloading(false)
             });
@@ -46,7 +46,7 @@ export function RightSideBar() {
               <div className="rsb-friend-pic-cont">
                   <img className="rsb-friend-pic"src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2048px-User_icon_2.svg.png" alt="rsb-friend-pic"/>
               </div>   
-              <div className="rsb-friend-username">{f}</div>
+              <div className="rsb-friend-username"><NavLink to={f} >{f}</NavLink></div>
             </li>
 
             )
