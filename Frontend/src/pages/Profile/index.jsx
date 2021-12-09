@@ -77,9 +77,9 @@ export const Profile = () => {
                       <div className="flex-grow-1 ps-3" style={{ marginTop: '10px' }}>
 
                         <ul className="social-links list-inline mb-0 mt-2">
-                          <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="Bob's Facebook" aria-label="Bob's Facebook"><i className="fab fa-facebook"></i></a></li>
-                          <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-twitter"></i></a></li>
-                          <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-instagram"></i></a></li>
+                          <li className="list-inline-item"><a href="https://www.facebook.com/" target="_blank" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="Bob's Facebook" aria-label="Bob's Facebook"><i className="fab fa-facebook"></i></a></li>
+                          <li className="list-inline-item"><a href="https://twitter.com/" target="_blank" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-twitter"></i></a></li>
+                          <li className="list-inline-item"><a href="https://www.instagram.com" target="_blank" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-instagram"></i></a></li>
                         </ul>
                       </div>
                     </div>
