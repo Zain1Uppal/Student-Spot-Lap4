@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './style.css'
+import { api } from '../../Urls'
 
-export function GroupCreatePost({userId}){
-    const [postBody, setPostBody] = useState('') 
+export function GroupCreatePost({ userId }) {
+    const [postBody, setPostBody] = useState('')
     const [body, setBody] = useState('')
     const [category, setCategory] = useState()
-    
+
 
 
     const post = {
@@ -13,30 +14,29 @@ export function GroupCreatePost({userId}){
         poster: userId,
         tags: category
     }
-    console.log('this is the post'+ JSON.stringify(post))
     const postDescription = useRef()
     useEffect(() => {
-        fetch('http://localhost:8000/posts/new/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify(post)
-        })
-    },[postBody])
-    
-    function onSubmit(e){
+        if (postBody) {
+            fetch(`${api}/posts/new/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${localStorage.getItem('token')}`
+                },
+                body: JSON.stringify(post)
+            }).then(() => window.location.reload())
+        }
+    }, [postBody])
+
+    function onSubmit(e) {
         e.preventDefault()
         setPostBody(body)
-        console.log('this is the cat'+category)
-        
     }
 
-    return(
+    return (
         <div className="create-post-gs">
             <form className="cp-wrapper-gs" onSubmit={e => onSubmit(e)}>
-                <textarea className="cp-input-gs" placeholder="Share your thoughts..." maxLength="220" ref={postDescription}  onChange={e => setBody(e.target.value)}required></textarea>
+                <textarea className="cp-input-gs" placeholder="Share your thoughts..." maxLength="220" ref={postDescription} onChange={e => setBody(e.target.value)} required></textarea>
                 <button className="cp-button-gs">+</button>
             </form>
         </div>

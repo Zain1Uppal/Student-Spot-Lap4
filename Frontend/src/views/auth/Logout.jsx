@@ -1,12 +1,13 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import './style.css'
+import * as urls from '../../Urls'
 
 const Logout = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (localStorage.getItem('token') == null) {
-      window.location.replace('http://localhost:8080/login');
+      window.location.replace(`${urls.origin}/login`);
     } else {
       setLoading(false);
     }
@@ -15,7 +16,7 @@ const Logout = () => {
   const handleLogout = e => {
     e.preventDefault();
 
-    fetch('http://localhost:8000/users/auth/logout/', {
+    fetch(`${urls.api}/users/auth/logout/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,9 +25,8 @@ const Logout = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         localStorage.clear();
-        window.location.replace('http://localhost:8080/login');
+        window.location.replace(`${urls.origin}/login`);
       });
   };
 
@@ -34,7 +34,7 @@ const Logout = () => {
     <div>
       {loading === false && (
         <Fragment>
-         <button id='logout-button' type='button' value='Logout' onClick={handleLogout} >Logout</button>
+          <button id='logout-button' type='button' value='Logout' onClick={handleLogout} >Logout</button>
           {/* <h1>Are you sure you want to logout?</h1> */}
         </Fragment>
       )}
