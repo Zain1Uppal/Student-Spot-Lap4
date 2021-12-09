@@ -25,7 +25,7 @@ export function CreatePost({userId}) {
             },
             body: JSON.stringify(post)
         })
-    },[])
+    },[postBody])
     
     useEffect(() => {
         fetch('https://studenthub-api.herokuapp.com/categories/', {
@@ -44,7 +44,6 @@ export function CreatePost({userId}) {
     function onSubmit(e){
         e.preventDefault()
         setPostBody(body)
-        console.log(category)
     }
     function handleChange(e){
         let value = (e.target.value)
