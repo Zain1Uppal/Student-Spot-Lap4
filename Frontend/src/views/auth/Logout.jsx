@@ -26,7 +26,7 @@ const Logout = () => {
       .then(data => {
         console.log(data);
         localStorage.clear();
-        window.location.replace('http://localhost:8080/login');
+        window.location.replace('https://student-hubs.netlify.app/login');
       });
   };
 
