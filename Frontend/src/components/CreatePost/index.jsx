@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect }from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Categories } from '../../pages';
 import './style.css';
 
-export function CreatePost({userId}) {
-    const [postBody, setPostBody] = useState('') 
+export function CreatePost({ userId }) {
+    const [postBody, setPostBody] = useState('')
     const [body, setBody] = useState('')
     const [category, setCategory] = useState([])
     const [getCategories, setGetCategories] = useState()
@@ -14,10 +14,9 @@ export function CreatePost({userId}) {
         poster: localStorage.getItem('userName'),
         tags: category
     }
-    console.log('this is the post'+ JSON.stringify(post))
     const postDescription = useRef()
     useEffect(() => {
-            fetch('https://studenthub-api.herokuapp.com/posts/new/', {
+        fetch('https://studenthub-api.herokuapp.com/posts/new/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,8 +24,8 @@ export function CreatePost({userId}) {
             },
             body: JSON.stringify(post)
         })
-    },[postBody])
-    
+    }, [postBody])
+
     useEffect(() => {
         fetch('https://studenthub-api.herokuapp.com/categories/', {
             method: 'GET',
@@ -35,47 +34,47 @@ export function CreatePost({userId}) {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             },
         }).then(res => res.json())
-        .then(data => {
-            setGetCategories(data.data)
-            setLoading(false)
-        })
-    },[])
-    
-    function onSubmit(e){
+            .then(data => {
+                setGetCategories(data.data)
+                setLoading(false)
+            })
+    }, [])
+
+    function onSubmit(e) {
         e.preventDefault()
         setPostBody(body)
     }
-    function handleChange(e){
+    function handleChange(e) {
         let value = (e.target.value)
         let catIndex = category.indexOf(value)
-        if(catIndex === -1){
-            setCategory((prevState) => [...prevState,value])
-        }else{
+        if (catIndex === -1) {
+            setCategory((prevState) => [...prevState, value])
+        } else {
             setCategory((prevState) => [...prevState.slice(0, catIndex), ...prevState.slice(catIndex + 1)])
-            
+
         }
-        
+
     }
-        
-        function categoriesShow(){
-            if(loading){
-                return(
-                    <h1>loading</h1>
+
+    function categoriesShow() {
+        if (loading) {
+            return (
+                <h1>loading</h1>
+            )
+        } else {
+            return getCategories.map((c, i) => {
+                return (
+                    <li key={i}><input type="checkbox" id={c.name} value={c.id} /><label htmlFor={c.name}>{c.name}</label></li>
                 )
-            }else{
-                return getCategories.map((c, i) => {
-                    return(
-                        <li key={i}><input  type="checkbox" id={c.name} value={c.id} /><label htmlFor={c.name}>{c.name}</label></li>
-                    )
             })
 
         }
     }
 
-    return(
+    return (
         <div className="create-post">
             <form className="cp-wrapper" onSubmit={e => onSubmit(e)}>
-                <textarea className="cp-input" placeholder="Share your thoughts..." maxLength="220" ref={postDescription}  onChange={e => setBody(e.target.value)}required></textarea>
+                <textarea className="cp-input" placeholder="Share your thoughts..." maxLength="220" ref={postDescription} onChange={e => setBody(e.target.value)} required></textarea>
                 <button className="cp-button">+</button>
                 <div className="tag-wrapper">
                     <ul className="ks-cboxtags" onChange={handleChange}>
