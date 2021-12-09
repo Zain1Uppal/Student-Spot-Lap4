@@ -41,8 +41,7 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           localStorage.setItem('userName', firstCap);
-          // window.location.replace('http://localhost:8080/MainFeed');
-          <Redirect to= '/MainFeed'  />
+          <Redirect to='/MainFeed'/>
         } else {
           setUsername('');
           setPassword('');
