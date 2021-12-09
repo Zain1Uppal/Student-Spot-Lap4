@@ -11,5 +11,8 @@ export { ResourcesList } from './ResourcesList';
 export { ResourcesSB } from './ResourcesSB';
 export { NewsItem } from './NewsItem';
 export { NewsList } from './NewsList';
+export { EditForm } from './EditProfile';
+export { Modal } from './Modal'
 export { GroupSection } from './GroupSection';
 export { GroupCreatePost } from './GroupCreatePost';
+export { default as NotFoundPage } from './NotFoundRoute';

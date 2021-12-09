@@ -16,7 +16,7 @@ export function GroupCreatePost({userId}){
     console.log('this is the post'+ JSON.stringify(post))
     const postDescription = useRef()
     useEffect(() => {
-        fetch('http://localhost:8000/posts/new/', {
+        fetch('https://studenthub-api.herokuapp.com/posts/new/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

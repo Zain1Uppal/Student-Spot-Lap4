@@ -17,7 +17,7 @@ export function CreatePost({userId}) {
     console.log('this is the post'+ JSON.stringify(post))
     const postDescription = useRef()
     useEffect(() => {
-        fetch('http://localhost:8000/posts/new/', {
+            fetch('https://studenthub-api.herokuapp.com/posts/new/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export function CreatePost({userId}) {
     },[postBody])
     
     useEffect(() => {
-        fetch('http://localhost:8000/categories/', {
+        fetch('https://studenthub-api.herokuapp.com/categories/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

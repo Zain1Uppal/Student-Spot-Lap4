@@ -10,7 +10,7 @@
 
 All require at least regular login authentication to access
 
-```JSON
+```JS
 headers = {
   "content-type": "application/json",
   "Authorization": "Token <user auth token>"
@@ -47,7 +47,7 @@ headers = {
       - `"unfollow_user": username`
       - `"unfollow_category": category_id`
 
-      ```JSON
+      ```JS
         body = {
           "follow_user": "Jim"
         }
@@ -75,7 +75,7 @@ headers = {
   - POST -> create new category
     - Request body:
 
-      ```JSON
+      ```JS
         body = {
             "name": "Category name"
         }
@@ -96,9 +96,9 @@ headers = {
 ### `posts/new/`
 
 - POST -> Create new post
-  - Request body (note: tags are optional):
+  - Request body (note: if no tags just pass empty array):
 
-    ```JSON
+    ```JS
       body = {
           "body": "Post Content",
           "poster": "username",
@@ -115,7 +115,7 @@ headers = {
     - Can update body and/or tags
       - When updating tags, send the full updated tags list
 
-      ```JSON
+      ```JS
         body = {
           "body": "Edited Post Content",
           "tags": [<updated list of category ids>]
@@ -130,7 +130,7 @@ headers = {
 - PATCH -> Update post reactions
   - Body should consist of the reaction name and an action of "add" or "remove"
 
-  ```JSON
+  ```JS
     body = {
       "reaction": "thumbs_up",
       "action": "add"
@@ -160,7 +160,7 @@ headers = {
 - POST -> Create new comment
   - Request body:
 
-    ```JSON
+    ```JS
       body = {
           "message": "Comment content",
           "post": post_id,
@@ -176,7 +176,7 @@ headers = {
   - PUT/PATCH -> Edit comment
     - Request body:
 
-      ```JSON
+      ```JS
         body = {
           "message": "Edited Comment Content",
         }

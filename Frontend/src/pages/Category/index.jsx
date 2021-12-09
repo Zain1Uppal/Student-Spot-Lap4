@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useParams} from 'react-router'
 import './style.css';
 import { Header } from '../../layout';
 import { LeftSideBar } from '../../components';
@@ -7,6 +8,7 @@ export function Category() {
     const [category, setCategory] = useState('');
     const [categoryID, setCategoryID] = useState('');
     const [loading, setLoading] = useState(true);
+    let {cateId} = useParams()
   
     useEffect(() => {
       console.log('before if dashboard')
@@ -15,7 +17,7 @@ export function Category() {
         window.location.replace('http://localhost:8080/login');
       } else {
         console.log('inside second condition')
-        fetch('http://localhost:8000/categories/', {
+        fetch('https://studenthub-api.herokuapp.com/posts/categories/${cateId}', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -30,8 +32,9 @@ export function Category() {
                         }
                       })
           .then(data => {
-            setCategoryID(data.id);
-            setCategory(data.name)
+            console.log(data.data)
+            setCategoryID(data.data.id);
+            setCategory(data.data.name)
             setLoading(false);
           });
       }
