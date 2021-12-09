@@ -1,5 +1,3 @@
-from logging import log
-from django import test
 from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APIClient
@@ -16,10 +14,10 @@ class BaseTestCase(TestCase):
         cls.user = User.objects.create_user("Pingu", "pingu@nootnoot.com", "nootnoot")
         cls.superuser = User.objects.create_superuser("Bob", "example@example.com", "example123")
 
-    def test_category_str(self):
-        self.assertEqual(str(Category.objects.get()), self.category.name)
-
 class TestUnauthorisedViews(BaseTestCase):
+    """
+    Testing views for a non-authenticated user (not logged in)
+    """
     c = APIClient()
 
     def test_unauth_index(self):
@@ -39,6 +37,9 @@ class TestUnauthorisedViews(BaseTestCase):
         self.assertDictContainsSubset(response.data, {"detail": "Authentication credentials were not provided."})
 
 class TestAuthorisedViews(BaseTestCase):
+    """
+    Testing views for a logged-in/authenticated regular user
+    """
 
     def setUp(self):
         self.c = APIClient()
@@ -62,7 +63,10 @@ class TestAuthorisedViews(BaseTestCase):
         self.assertEqual(response.status_code, 403)
 
 class TestAdminViews(BaseTestCase):
-    
+    """
+    Testing views for a logged-in/authenticated admin user
+    """
+
     def setUp(self):
         self.c = APIClient()
         self.c.login(username="Bob", password="example123")
@@ -78,3 +82,11 @@ class TestAdminViews(BaseTestCase):
         test_data = {"body": "oops"}
         response = self.c.post(reverse('categories-create'), test_data, format="json")
         self.assertEqual(response.status_code, 400)
+
+class TestModel(BaseTestCase):
+    """
+    Testing the database model
+    """
+    
+    def test_category_str(self):
+        self.assertEqual(str(Category.objects.get()), self.category.name)

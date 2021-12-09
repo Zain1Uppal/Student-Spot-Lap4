@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.deletion import SET_NULL
 from django.db.models.fields import CharField, DateField
 from django.db.models.fields.json import JSONField
 from django.db.models.fields.related import ForeignKey, ManyToManyField
