@@ -25,7 +25,7 @@ export function CreatePost({userId}) {
             },
             body: JSON.stringify(post)
         })
-    },[postBody])
+    },[])
     
     useEffect(() => {
         fetch('https://studenthub-api.herokuapp.com/categories/', {
