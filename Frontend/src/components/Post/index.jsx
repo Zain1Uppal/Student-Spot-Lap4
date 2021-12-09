@@ -6,8 +6,9 @@ export function Post({userId}) {
     let userName = localStorage.getItem('userName')
 
     const [ liked, setLiked ] = useState(false);
-    const [ likedNum, setLikedNum ] = useState(0);
     const [ unliked, setUnliked ] = useState(false);
+
+    const [ deletePost, setDeletePost ] = useState(false);
 
 
     useEffect(()=>{
@@ -23,9 +24,21 @@ export function Post({userId}) {
         .then(data => setPostData(data.data))
     },[])
 
+    // useEffect(() => {
+    //     fetch(`https://studenthub-api.herokuapp.com/posts/${post_id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             Authorization: `Token ${localStorage.getItem('token')}`
+    //         }
+    //     })
+    //     .then(res => res.json())
+    //     .then(setDeletePost(true))
+        
+    // })
+
     const handleLiked = e => {
         e.preventDefault()
-        setLikedNum(prev0 => prev0 + 1)
         setLiked(prev => !prev)
     }
 
@@ -46,7 +59,7 @@ export function Post({userId}) {
                             <span className="post-date">{p.date}</span>
                         </div>
                         <div className="post-top-right">
-                            <i class="fas fa-trash"></i>
+                            <i className="fas fa-trash"></i>
                             {/* <select>
                                 <option></option>
                                 <option value="edit">Edit</option>
