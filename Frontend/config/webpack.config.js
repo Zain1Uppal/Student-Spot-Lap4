@@ -1,49 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
-  output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'index.bundle.js',
-    publicPath: '/'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        resolve: {
-          extensions: [".js", ".jsx"]
-        },
-        exclude: /nodeModules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10000,
-            },
-          },
-        ],
-      },
-    ]
-  },
-  plugins: [new HtmlWebpackPlugin({ template: './public/index.html', favicon: "./public/favicon.ico", })]
-  ,
-}
-
-
 const ROOT_DIRECTORY = path.join(__dirname, '../'); // the root of your project
 const PUBLIC_DIRECTORY = path.join(ROOT_DIRECTORY, 'public'); // the root of the frontend, i.e. html file
 
@@ -69,6 +25,7 @@ const config = {
     new HtmlWebpackPlugin({
       // used to add the JavaScript code to the HTML
       template: path.join(PUBLIC_DIRECTORY, 'index.html'),
+      favicon: "./public/favicon.ico",
     }),
   ],
   module: {
@@ -81,14 +38,27 @@ const config = {
           extensions: [".js", ".jsx"]
         }, 
         exclude: /node_modules/, 
-        loader: 'babel-loader' 
+        use: {
+          loader: 'babel-loader'
+        }
       }, // transpile JavaScript files
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       }, // transpile css files
       {
-        test: /\.(png|svg|jpg|gif|pdf)$/,
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      }, // svg files
+      {
+        test: /\.(png|jpg|gif|pdf)$/,
         use: ['file-loader'],
       }, // transpile image files
     ],
