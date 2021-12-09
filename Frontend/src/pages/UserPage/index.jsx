@@ -120,7 +120,7 @@ export const UserPage = ({match, location}) => {
                 <div className="row">
                   <div className="col-lg-41">
                     <div className="card1 card-profile1">
-                      <div className="card-header" style={{backgroundImage: "url(https://pbs.twimg.com/media/EeI6u48WkAAC45D.jpg)"}}> </div>
+                      <div className="card-header" style={{backgroundImage: "url(https://i.pinimg.com/originals/42/4a/7f/424a7fcccbf967b8e54cc1536f155dc6.jpg)"}}> </div>
                       <div className="card-body1 text-center"> <img className="card-profile-img" src="https://lh3.googleusercontent.com/WOca4Iwh_d5fQ1uoIbLatcQ8H-CTtdRfIFp4IXrmUpFFDlYhf09bzqxCD26hXmKUszlP0N0CDgTe0pHhbzbkpKeRPg=w600" alt="profile img"/>
                         <h3 className="mb-3">{userName}</h3>
                         <p className="mb-4" style={{fontWeight:'bold', color:'#00308F', fontStyle:'italic'}}>{course}</p>
@@ -130,7 +130,7 @@ export const UserPage = ({match, location}) => {
                            
                           
                         <p className="followers-pp">Followers:{followers}</p>
-                        <i className="fas fa-map-marker-alt fa-fw"></i><span className="ml-1">{place}</span>
+                        <i className="fas fa-map-marker-alt fa-fw"></i>&nbsp;<span className="ml-1">{place}</span>
                         <div className="btn-toolbar">
                         <button className="btn btn-outline-secondary" type="button" style={{margin:'10px'}}><i className="fa fa-paper-plane"></i> Message</button> 
                         {followed ? 
@@ -163,7 +163,7 @@ export const UserPage = ({match, location}) => {
                 </div>
               </section>
             </div>
-            <div className="col-lg-8">
+            <div className="col-lg-8" style={{paddingTop:'58px', marginBottom:'20px'}}>
               <div className="create-p-cont">
                 <CreatePost />
               </div>
@@ -186,7 +186,6 @@ export const UserPage = ({match, location}) => {
     )
     
 };
-
 
 
 export default UserPage;

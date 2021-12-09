@@ -18,7 +18,7 @@ function App() {
     return (
         <>
         
-            <Switch>
+        <Switch>
                 {/* <Router> */}
                 <Route exact path="/"><FrontPage/> <Navbar /> </Route>
                 <Route path='/login' component={Login} exact />
