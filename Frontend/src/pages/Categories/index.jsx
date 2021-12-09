@@ -12,7 +12,7 @@ export function Categories() {
             <Header />
             <div className="content-categories">
                 <LeftSideBar />
-                <GroupSection cateName={params.cateName}/>
+                <GroupSection cateName={params.cateName} />
             </div>
         </div>        
         
