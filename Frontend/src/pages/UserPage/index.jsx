@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import {useParams} from 'react-router';
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from '../../layout/index';
@@ -9,6 +10,8 @@ export const UserPage = ({match, location}) => {
     const [firstName, setFirstName] = useState('');
     // const [uniCourse, setUniCourse] = useState('');
     const [loading, setLoading] = useState(false);
+    let params = useParams()
+    let username = params.username
   
     useEffect(() => {
       console.log('before if dashboard')
@@ -17,7 +20,7 @@ export const UserPage = ({match, location}) => {
         window.location.replace('http://localhost:8080/login');
       } else {
         console.log('inside second condition')
-        fetch('https://studenthub-api.herokuapp.com/users/', {
+        fetch(`https://studenthub-api.herokuapp.com/users/${username}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -27,13 +30,12 @@ export const UserPage = ({match, location}) => {
           .then(res => {if(res.status === 200){
                           return res.json()
                         } else{
-                          localStorage.clear()
-                          window.location.replace('http://localhost:8080/login');
+                          console.log('error')
                         }
                       })
           .then(data => {
             console.log(data)
-            setUserName(data.username);
+            // setUserName(data.username);
             setFirstName(data.first_name);
             // setUniCourse(data.uni_course);
             setLoading(true);
@@ -51,7 +53,7 @@ export const UserPage = ({match, location}) => {
         <div className="page-holder bg-gray-100">
             <div className="container-fluid px-lg-4 px-xl-5 contentDiv">
                   <div className="page-header mb-4">
-                    <h1 className="page-heading">{userName}'s Profile</h1>
+                    <h1 className="page-heading">{username}'s Profile</h1>
                   </div>
               <section>
                 <div className="row">
