@@ -42,7 +42,7 @@ export const UserPage = ({match, location}) => {
                         }
                       })
           .then(data => {
-            console.log(data)
+            console.log(data) 
             setFirstName(data.data.first_name);
             setBio(data.data.bio);
             setCourse(data.data.course);
@@ -95,10 +95,12 @@ export const UserPage = ({match, location}) => {
         <Header />
     
         {loading === false && (  
+
         <div className="page-holder">
             <div className="col-lg-4">
                   <div className="">
                     <h1 className="page-heading1">{username}'s Profile</h1>
+
                   </div>
               <section>
                 <div className="row">

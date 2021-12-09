@@ -59,7 +59,7 @@ class UserDetail(APIView):
         return self.put(req, username)
 
     def delete(self, req, username):
-        user = self.get_object(username)
+        user = self.get_user(username)
         self.check_object_permissions(req, user)
         user.delete()
         return Response(status=204)
