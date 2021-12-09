@@ -83,6 +83,7 @@
 .reaction-num{
     font-size: 1.6rem;
     margin-left: 30px;
+    font-family: Montserrat;
 }
 
 .post-bottom:hover .fas:hover {

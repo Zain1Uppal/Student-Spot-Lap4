@@ -61,7 +61,7 @@ export const Profile = () => {
         <div className="page-holder">
             <div className="col-lg-4">
                   <div className="">
-                    <h1 className="page-heading1">{username}'s Profile</h1>
+                    <h1 className="page-heading1" >{username}'s Profile</h1>
                   </div>
               <section>
                 <div className="row">
@@ -74,7 +74,7 @@ export const Profile = () => {
                         <p className="mb-4">{university}</p>
                         <p className="followers-pp">Followers: {followers}</p>
                         
-                        <i className="fas fa-map-marker-alt fa-fw"></i><span class="ml-1">{location}</span>
+                        <i className="fas fa-map-marker-alt fa-fw"></i>&nbsp;<span class="ml-1">{location}</span>
                      
                         <div className="flex-grow-1 ps-3" style={{marginTop:'10px'}}>
                         
@@ -101,7 +101,7 @@ export const Profile = () => {
                 </div>
               </section>
             </div>
-            <div className="col-lg-8">
+            <div className="col-lg-8" style={{paddingTop:'58px', marginBottom:'20px'}}>
               <div className="create-p-cont">
                 <CreatePost />
               </div>
