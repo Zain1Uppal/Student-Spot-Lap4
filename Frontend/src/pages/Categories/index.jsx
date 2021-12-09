@@ -6,14 +6,13 @@ import {useParams} from 'react-router';
 import './style.css';
 
 export function Categories() {
-    let cateName = window.location.href
-    console.log(cateName)
+    const params = useParams()
     return(
         <div className="categories-page">
             <Header />
             <div className="content-categories">
                 <LeftSideBar />
-                <GroupSection/>
+                <GroupSection cateName={params.cateName}/>
             </div>
         </div>        
         
