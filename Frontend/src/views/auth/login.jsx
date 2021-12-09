@@ -41,8 +41,6 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           localStorage.setItem('userName', firstCap);
-          // window.location.replace('http://localhost:8080/MainFeed');
-          <Redirect to= '/MainFeed'  />
         } else {
           setUsername('');
           setPassword('');
@@ -90,7 +88,7 @@ const Login = () => {
           />{' '}
           <br />
           <div className="button-box col-lg-12" style={{textAlign: 'center', marginTop: '20px'}}>
-          <input className="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} />
+          <Link to='/MainFeed'><input className="btn btn-primary" type="submit" value="Log In" style={{padding:'10px', margin:'10px'}} /></Link>
           <BackButton className="backButton" />
           <div style={{display: 'flex', justifyContent: 'center', fontSize: '20px', height: 'auto', width:'auto', textDecoration: 'none', margin: '10px',}}>
         <Link to='/' input className="btn btn-dark" id="homeButton" ><div>Home</div></Link>
