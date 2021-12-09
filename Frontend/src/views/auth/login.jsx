@@ -41,7 +41,7 @@ const Login = () => {
           localStorage.clear();
           localStorage.setItem('token', data.key);
           localStorage.setItem('userName', firstCap)
-          window.location.replace('https://student-hubs.netlify.app/Mainfeed');
+          window.location.replace('https://student-hubs.netlify.app/MainFeed');
           // return <Redirect to= '/dashboard'  />
         } else {
           setUsername('');
