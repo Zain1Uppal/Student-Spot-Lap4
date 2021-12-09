@@ -10,9 +10,12 @@ import { ButtonToolbar } from 'react-bootstrap';
 export const UserPage = ({match, location}) => {
 
     const [firstName, setFirstName] = useState('');
+    const [userName, setUsername] = useState('');
     const [university, setUniversity] = useState('')
     const [course, setCourse] = useState('')
     const [bio, setBio] = useState('')
+    const [place, setPlace] = useState('')
+    const [followers, setFollowers] = useState('')
     const [followed, setFollowed] = useState(false)
     const [followArr, setFollowArr] = useState()
    
@@ -21,6 +24,7 @@ export const UserPage = ({match, location}) => {
     let params = useParams()
     let username = params.username
     let loggedUser = localStorage.getItem('userName')
+
   
     useEffect(() => {
       console.log('before if dashboard')
@@ -51,6 +55,12 @@ export const UserPage = ({match, location}) => {
             setBio(data.data.bio);
             setCourse(data.data.course);
             setUniversity(data.data.university);
+            setPlace(data.data.location);
+            setUsername(data.data.username);
+            setFollowers(data.data.followers.length)
+            // setUniCourse(data.uni_course);
+            setLoading(true);
+
             data.data.followers.forEach((i) => {
               if(i == loggedUser){
                 setFollowed(true)
@@ -58,7 +68,7 @@ export const UserPage = ({match, location}) => {
                 setFollowed(false)
               }
             })
-            // setUniCourse(data.uni_course);
+       
             setLoading(false);
           }}
           )}
@@ -102,7 +112,8 @@ export const UserPage = ({match, location}) => {
         <div className="page-holder">
             <div className="col-lg-4">
                   <div className="">
-                    <h1 className="page-heading1">{username}'s Profile</h1>
+
+                    <h1 className="page-heading1">{userName}'s Profile</h1>
 
                   </div>
               <section>
@@ -110,35 +121,40 @@ export const UserPage = ({match, location}) => {
                   <div className="col-lg-41">
                     <div className="card1 card-profile1">
                       <div className="card-header" style={{backgroundImage: "url(https://pbs.twimg.com/media/EeI6u48WkAAC45D.jpg)"}}> </div>
-                      <div className="card-body1 text-center"> <img className="card-profile-img" src="https://i1.sndcdn.com/artworks-3oZK5ERGW22yFVJk-UvXrTA-t500x500.jpg" alt="profile img"/>
-                        <h3 className="mb-3">{username}</h3>
+                      <div className="card-body1 text-center"> <img className="card-profile-img" src="https://lh3.googleusercontent.com/WOca4Iwh_d5fQ1uoIbLatcQ8H-CTtdRfIFp4IXrmUpFFDlYhf09bzqxCD26hXmKUszlP0N0CDgTe0pHhbzbkpKeRPg=w600" alt="profile img"/>
+                        <h3 className="mb-3">{userName}</h3>
                         <p className="mb-4" style={{fontWeight:'bold', color:'#00308F', fontStyle:'italic'}}>{course}</p>
                         <p className="mb-4">{university}</p>
-                        <p className="followers-pp">Followers:</p>
+
+                      
+                           
+                          
+                        <p className="followers-pp">Followers:{followers}</p>
+                        <i className="fas fa-map-marker-alt fa-fw"></i><span className="ml-1">{place}</span>
                         <div className="btn-toolbar">
                         <button className="btn btn-outline-secondary" type="button" style={{margin:'10px'}}><i className="fa fa-paper-plane"></i> Message</button> 
                         {followed ? 
-                          <button className="btn btn-outline-dark" style={{marginLeft:'10px', marginRight:'10px'}} onClick={onFollow}><i className="fas fa-plus"></i>unFollow</button>:
+                          <button className="btn btn-outline-dark" style={{marginLeft:'10px', marginRight:'10px'}} onClick={onFollow}><i className="fas fa-minus"></i>unFollow</button>:
                           <button className="btn btn-outline-dark" style={{marginLeft:'10px', marginRight:'10px'}} onClick={onFollow}><i className="fas fa-plus"></i>Follow</button>
                         }
  
-<div className="flex-grow-1 ps-3" style={{marginTop:'10px'}}>
-  </div>
-    <ul className="social-links list-inline mb-0 mt-2">
-      <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="Bob's Facebook" aria-label="Bob's Facebook"><i className="fab fa-facebook"></i></a></li>
-      <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-twitter"></i></a></li>
-      <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-instagram"></i></a></li>
-    </ul>
-  </div>
+                        <div className="flex-grow-1 ps-3" style={{marginTop:'10px'}}>
+                          </div>
+                            <ul className="social-links list-inline mb-0 mt-2">
+                              <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="Bob's Facebook" aria-label="Bob's Facebook"><i className="fab fa-facebook"></i></a></li>
+                              <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-twitter"></i></a></li>
+                              <li className="list-inline-item"><a href="https://www.google.com/" data-bs-toggle="#tooltip" data-placement="top" title="" data-bs-original-title="@bob" aria-label="@bob"><i className="fab fa-instagram"></i></a></li>
+                            </ul>
+                    
+
                       </div>
                     </div>
+                  </div>
                     
-                    <div className=" card-profile-div">
+                  <div className=" card-profile-div">
                       
                       <h4 className="card-heading"></h4>
-                     
-    
-                      <div className="card-body">
+                      <div className="card-body2">
                       <h4 className="user-bio-pp" style={{fontWeight:'900', color:'#00308F', fontStyle:'italic' }}>About Me</h4>
                         <h4 className="user-bio-pp">{bio}</h4>
                       </div>
@@ -152,15 +168,15 @@ export const UserPage = ({match, location}) => {
                 <CreatePost />
               </div>
               <div className="pp-post-cont">
-                ALL THE POSTS GOES BELOW. DELETE THIS TEXT ONCE ALL IS CONNECTED
+           
                 <Post />
                 
               </div>
               
             </div>
           
-          </div>
-          )}
+            </div>
+            )}
    
        
                
@@ -171,8 +187,11 @@ export const UserPage = ({match, location}) => {
     
 };
 
+
+)
+
+};
        
 
 export default UserPage;
-
 
