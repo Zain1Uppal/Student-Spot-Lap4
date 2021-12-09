@@ -67,7 +67,7 @@ export function Modal(){
         <div className="overlay-modal" onClick={toggleModal}></div>
         <div className="modal-content">
           <Button className="close-modal-btn" onClick={toggleModal}>X</Button>
-          <h1 style={{textAlign:'center'}}>Edit Profile</h1>
+          <h1 style={{textAlign:'center', margin:'10px'}}>Edit Profile</h1>
           <EditForm />
           <Button className="update-modal-btn">Update</Button>
         </div>
