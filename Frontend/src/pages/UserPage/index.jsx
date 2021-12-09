@@ -18,6 +18,7 @@ export const UserPage = ({match, location}) => {
     const [followers, setFollowers] = useState('')
     const [followed, setFollowed] = useState(false)
     const [followArr, setFollowArr] = useState()
+   
 
     const [loading, setLoading] = useState(true);
     let params = useParams()
@@ -41,11 +42,14 @@ export const UserPage = ({match, location}) => {
         })
           .then(res => {if(res.status === 200){
                           return res.json()
-                        } else{
-                          console.log('error')
+                        } else {
+                          return res.json()
                         }
                       })
-          .then(data => {
+          .then(data => {if(data.detail == 'Not Found.'){
+            
+            <h1>user not found search for different user</h1>
+          }else{
             console.log(data) 
             setFirstName(data.data.first_name);
             setBio(data.data.bio);
@@ -66,11 +70,9 @@ export const UserPage = ({match, location}) => {
             })
        
             setLoading(false);
-
-        
-          });
-      }
-    }, []);
+          }}
+          )}
+        }, []);
 
 
     let followingUser = null
@@ -104,7 +106,7 @@ export const UserPage = ({match, location}) => {
       <div className="pp-head">
          
         <Header />
-    
+
         {loading === false && (  
 
         <div className="page-holder">
@@ -177,12 +179,14 @@ export const UserPage = ({match, location}) => {
             )}
    
        
-</div>
-
-)
-
+               
+                        
+      </div>
+      
+    )
+    
 };
-       
+
 
 export default UserPage;
 

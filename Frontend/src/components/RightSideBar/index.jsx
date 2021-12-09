@@ -47,7 +47,9 @@ export function RightSideBar() {
               <div className="rsb-friend-pic-cont">
                   <img className="rsb-friend-pic"src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/2048px-User_icon_2.svg.png" alt="rsb-friend-pic"/>
               </div>   
+
               <div className="rsb-friend-username"><NavLink to={f} style={{textDecoration:'none'}}>{f}</NavLink></div>
+
             </li>
 
             )
