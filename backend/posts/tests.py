@@ -38,6 +38,18 @@ class TestAuthorisedViews(BaseTestCase):
         self.c = APIClient()
         self.c.login(username="Pingu", password="nootnoot")
 
+    def test_auth_index(self):
+        response = self.c.get(reverse('posts-index'))
+        self.assertEqual(response.status_code, 200)
+        resp_data = response.data["data"]
+        self.assertEqual(len(resp_data), 1)
+
+    def test_auth_create(self):
+        test_data = {"body": "New Test Post", "poster": self.user.username, "tags": []}
+        response = self.c.post(reverse('posts-create'), test_data, format='json')
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Post.objects.count(), 2)
+        self.assertEqual(response.data["id"], 2)
 
 class TestAdminViews(BaseTestCase):
     """
@@ -48,11 +60,7 @@ class TestAdminViews(BaseTestCase):
         self.c = APIClient()
         self.c.login(username="Bob", password="example123")
 
-    def test_auth_index(self):
-        response = self.c.get(reverse('posts-index'))
-        self.assertEqual(response.status_code, 200)
-        resp_data = response.data["data"]
-        self.assertEqual(len(resp_data), 1)
+    
 
 class TestModels(BaseTestCase):
     """
