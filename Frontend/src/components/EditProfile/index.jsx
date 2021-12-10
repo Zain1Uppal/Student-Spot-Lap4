@@ -83,11 +83,12 @@
 
 // export default EditForm;
 import React from 'react';
+import './style.css';
 
 export const EditForm = () => {
     return(
-<form className="card mb-4" style={{marginTop:'0'}}>
-                      <div className="card-body">
+<form className="card mb-4" style={{margin:'0', border:'0'}}>
+                      <div className="card-body4" style={{padding:'10px'}}>
                         <div className="row">
                         <div className="col-sm-6 col-md-6">
                             <div className="mb-4">
@@ -147,7 +148,7 @@ export const EditForm = () => {
                          
                            <div className="col-sm-6 col-md-4">
                              <div className="mb-4">
-                               <label className="form-label">City</label>
+                               <label className="form-label">Location (optional)</label>
                                <input className="form-control" type="text" placeholder="City"/>
                              </div>
                            </div>

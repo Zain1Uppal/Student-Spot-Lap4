@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Specifies where the React server is running is safe to receive requests from
-CORS_ALLOWED_ORIGINS = ['http://localhost','http://localhost:8080' , 'https://hoppscotch.io']
+CORS_ALLOWED_ORIGINS = ['http://localhost','http://localhost:8080' , 'https://student-hubs.netlify.app']
 
 
 # Application definition

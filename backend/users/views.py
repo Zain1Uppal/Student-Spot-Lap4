@@ -25,9 +25,11 @@ def index(req):
             "username": d["username"],
             "followed_users": d["followed_users"],
             "followed_categories": d["followed_categories"],
+            "followers": d["followers"],
             "bio": d["bio"],
             "university": d["university"],
             "course": d["course"],
+            "location": d["location"],
             "image_file": d["image_file"]
         } for d in resp_data]
         return Response({"data": resp})
@@ -59,7 +61,7 @@ class UserDetail(APIView):
         return self.put(req, username)
 
     def delete(self, req, username):
-        user = self.get_object(username)
+        user = self.get_user(username)
         self.check_object_permissions(req, user)
         user.delete()
         return Response(status=204)

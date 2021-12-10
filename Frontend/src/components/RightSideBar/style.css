@@ -25,6 +25,7 @@
     box-shadow: 1px 1px 10px rgb(192, 192, 192);
 }
 
+
 .rsb-pic-cont .rsb-user-pic{
     width: 90px;
     height: 90px;
@@ -38,6 +39,9 @@
     padding: 20px 0;
     margin: auto;
     text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color:royalblue;
 }
 
 .rsb-friend-pic {
@@ -51,17 +55,30 @@
 
 .right-side-bottom{
     list-style: none;
+    font-size: 1.7rem;
     
+}
+
+p {
+    font-size:1.5rem;
 }
 
 .rsb-friend{
     display: flex;
-    margin: 30px 0;
+    margin: 20px 0;
     cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgb(192, 192, 192);
+}
+
+.rsb-friend:hover{
+    transform: scale(1.1);
 }
 
 .rsb-friend-username{
-    margin: 2px 20px;
+    margin: 7px 20px;
+    font-size: 1.6rem;
 }
 
 .rsb-friend-pic-cont{
@@ -71,3 +88,4 @@
     box-shadow: 1px 1px 10px rgb(192, 192, 192);
     border-radius: 10px;
 }
+

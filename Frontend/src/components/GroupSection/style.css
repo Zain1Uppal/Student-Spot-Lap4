@@ -22,3 +22,11 @@
     display: block;
     margin-left: -20px;
 }
+
+.post-feed1{
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+    box-shadow: 1px 1px 10px rgb(192, 192, 192);
+}

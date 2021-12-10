@@ -73,5 +73,11 @@
     color: rgb(192, 192, 192);
     cursor: pointer;
     margin: auto;
-    margin-top: 5px;
+    margin-top: 2px;
   }
+
+.search-input button{
+  border-style: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+}

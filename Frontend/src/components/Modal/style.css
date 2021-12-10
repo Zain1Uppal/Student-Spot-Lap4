@@ -51,11 +51,17 @@
     bottom: 0;
     position: fixed;
     background: rgb(128, 127, 127, 0.6);
+    z-index: 5;
 
+}
+
+.btn-modal{
+    margin-top: 20px;
 }
 
 .modal-content {
     height:auto;
+    z-index: 6;
 }
 
 .-modal-open .fixed,
